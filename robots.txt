@@ -1,0 +1,17 @@
+# Allow all search engines to crawl everything
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://paktaxcalc.vercel.app/sitemap.xml
+
+# Block specific bots (optional - prevents scraping)
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+# Crawl delay (optional - prevents server overload)
+Crawl-delay: 1
+ 

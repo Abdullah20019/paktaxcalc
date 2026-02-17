@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://paktaxcalc.vercel.app/</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Salary Tax Calculator -->
+  <url>
+    <loc>https://paktaxcalc.vercel.app/#salary</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- PTA Mobile Tax Calculator -->
+  <url>
+    <loc>https://paktaxcalc.vercel.app/#pta</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Business Tax Calculator -->
+  <url>
+    <loc>https://paktaxcalc.vercel.app/#business</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Zakat Calculator -->
+  <url>
+    <loc>https://paktaxcalc.vercel.app/#zakat</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Agricultural Tax Calculator -->
+  <url>
+    <loc>https://paktaxcalc.vercel.app/#agriculture</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Sales Tax Calculator -->
+  <url>
+    <loc>https://paktaxcalc.vercel.app/#sales</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Property Tax Calculator -->
+  <url>
+    <loc>https://paktaxcalc.vercel.app/#property</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Pension Calculator -->
+  <url>
+    <loc>https://paktaxcalc.vercel.app/#pension</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
+ 
