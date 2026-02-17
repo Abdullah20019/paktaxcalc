@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/premium-style.css">
+
     <!-- SEO Meta Tags -->
     <title>Pakistan Tax Calculator 2025-2026 | Salary, PTA, Business, Zakat, Property & Pension Calculator</title>
     <meta name="description" content="Free Pakistan Tax Calculators for 2025-2026: Calculate Salary Tax, PTA Mobile Import Tax, Business Tax, Zakat, Agricultural Tax, Sales Tax, Property Tax & Pension. Updated FBR rates. 100% accurate, instant results, mobile-friendly.">
@@ -1218,6 +1220,47 @@
                 </div>
             </div>
         </section>
+
+        // ===== CALCULATOR SWITCHING FUNCTION =====
+function showCalculator(calcType) {
+    // Hide all calculators
+    const allCalculators = document.querySelectorAll('.calculator-content');
+    allCalculators.forEach(calc => {
+        calc.classList.remove('active');
+        calc.style.display = 'none';
+    });
+
+    // Remove active state from all tabs
+    const allTabs = document.querySelectorAll('.calculator-tab');
+    allTabs.forEach(tab => {
+        tab.classList.remove('active-tab');
+    });
+
+    // Show selected calculator
+    const selectedCalc = document.getElementById('calculator-' + calcType);
+    if (selectedCalc) {
+        selectedCalc.classList.add('active');
+        selectedCalc.style.display = 'block';
+    }
+
+    // Add active state to selected tab
+    const selectedTab = document.getElementById('tab-' + calcType);
+    if (selectedTab) {
+        selectedTab.classList.add('active-tab');
+    }
+
+    // Scroll to calculator on mobile
+    if (window.innerWidth < 768 && selectedCalc) {
+        setTimeout(() => {
+            selectedCalc.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+    }
+}
+
+// Initialize - show salary calculator on page load
+window.addEventListener('load', function() {
+    showCalculator('salary');
+});
 
         <!-- FAQ Toggle Script -->
         <script>
