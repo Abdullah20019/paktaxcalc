@@ -1221,46 +1221,74 @@
             </div>
         </section>
 
-        // ===== CALCULATOR SWITCHING FUNCTION =====
-function showCalculator(calcType) {
-    // Hide all calculators
-    const allCalculators = document.querySelectorAll('.calculator-content');
-    allCalculators.forEach(calc => {
-        calc.classList.remove('active');
-        calc.style.display = 'none';
+        <script>
+    // ===== CALCULATOR SWITCHING FUNCTION =====
+    function showCalculator(calcType) {
+        // Hide all calculators
+        const allCalculators = document.querySelectorAll('.calculator-content');
+        allCalculators.forEach(calc => {
+            calc.classList.remove('active');
+            calc.style.display = 'none';
+        });
+
+        // Remove active state from all tabs
+        const allTabs = document.querySelectorAll('.calculator-tab');
+        allTabs.forEach(tab => {
+            tab.classList.remove('active-tab');
+        });
+
+        // Show selected calculator
+        const selectedCalc = document.getElementById('calculator-' + calcType);
+        if (selectedCalc) {
+            selectedCalc.classList.add('active');
+            selectedCalc.style.display = 'block';
+        }
+
+        // Add active state to selected tab
+        const selectedTab = document.getElementById('tab-' + calcType);
+        if (selectedTab) {
+            selectedTab.classList.add('active-tab');
+        }
+
+        // Scroll to calculator on mobile
+        if (window.innerWidth < 768 && selectedCalc) {
+            setTimeout(() => {
+                selectedCalc.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
+    }
+
+    // Initialize - show salary calculator on page load
+    window.addEventListener('load', function() {
+        showCalculator('salary');
     });
 
-    // Remove active state from all tabs
-    const allTabs = document.querySelectorAll('.calculator-tab');
-    allTabs.forEach(tab => {
-        tab.classList.remove('active-tab');
-    });
-
-    // Show selected calculator
-    const selectedCalc = document.getElementById('calculator-' + calcType);
-    if (selectedCalc) {
-        selectedCalc.classList.add('active');
-        selectedCalc.style.display = 'block';
+    // FAQ Toggle Function (existing)
+    function toggleFaqs() {
+        const moreFaqs = document.getElementById('moreFaqs');
+        const btnText = document.getElementById('btnText');
+        const arrowDown = document.getElementById('arrowDown');
+        const arrowUp = document.getElementById('arrowUp');
+        
+        if (moreFaqs.classList.contains('hidden')) {
+            moreFaqs.classList.remove('hidden');
+            btnText.textContent = 'Show Less FAQs';
+            arrowDown.classList.add('hidden');
+            arrowUp.classList.remove('hidden');
+            
+            setTimeout(() => {
+                moreFaqs.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+        } else {
+            moreFaqs.classList.add('hidden');
+            btnText.textContent = 'Show More FAQs';
+            arrowDown.classList.remove('hidden');
+            arrowUp.classList.add('hidden');
+            
+            document.getElementById('faq').scrollIntoView({ behavior: 'smooth' });
+        }
     }
-
-    // Add active state to selected tab
-    const selectedTab = document.getElementById('tab-' + calcType);
-    if (selectedTab) {
-        selectedTab.classList.add('active-tab');
-    }
-
-    // Scroll to calculator on mobile
-    if (window.innerWidth < 768 && selectedCalc) {
-        setTimeout(() => {
-            selectedCalc.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 100);
-    }
-}
-
-// Initialize - show salary calculator on page load
-window.addEventListener('load', function() {
-    showCalculator('salary');
-});
+</script>
 
         <!-- FAQ Toggle Script -->
         <script>
