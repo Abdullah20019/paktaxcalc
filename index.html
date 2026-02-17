@@ -964,32 +964,274 @@
             </div>
         </div>
 
-        <!-- FAQ SECTION (keeping previous one) -->
-        <div class="max-w-6xl mx-auto mt-12 bg-white rounded-2xl shadow-xl p-6 md:p-8">
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">❓ Frequently Asked Questions</h2>
-            
-            <div class="space-y-4">
-                <div class="border-b pb-4">
-                    <h3 class="font-bold text-lg text-gray-800 mb-2">What is the minimum income to pay tax in Pakistan?</h3>
-                    <p class="text-gray-700">Income up to Rs. 600,000 per year (Rs. 50,000/month) is tax-free for FY 2025-2026.</p>
-                </div>
+                <!-- FAQ Section -->
+        <section id="faq" class="bg-white py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
+                    ❓ Frequently Asked Questions
+                </h2>
+                
+                <div class="max-w-4xl mx-auto space-y-4">
+                    
+                    <!-- First 4 FAQs (Always Visible) -->
+                    
+                    <!-- FAQ 1 -->
+                    <details class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                        <summary class="font-bold text-lg cursor-pointer text-gray-900">
+                            What is the minimum income to pay tax in Pakistan?
+                        </summary>
+                        <p class="mt-4 text-gray-700 leading-relaxed">
+                            Income up to <strong>Rs. 600,000 per year</strong> (Rs. 50,000/month) is completely <strong>tax-free</strong> for FY 2025-2026. If you earn less than this, you pay zero income tax.
+                        </p>
+                    </details>
 
-                <div class="border-b pb-4">
-                    <h3 class="font-bold text-lg text-gray-800 mb-2">How is salary tax calculated in Pakistan?</h3>
-                    <p class="text-gray-700">Tax is calculated using progressive slabs. Your annual income is divided into brackets, and each bracket is taxed at its respective rate.</p>
-                </div>
+                    <!-- FAQ 2 -->
+                    <details class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                        <summary class="font-bold text-lg cursor-pointer text-gray-900">
+                            How is salary tax calculated in Pakistan?
+                        </summary>
+                        <p class="mt-4 text-gray-700 leading-relaxed">
+                            Tax is calculated using <strong>progressive slabs</strong>. Your annual income is divided into brackets (Rs. 0-600K, 600K-1.2M, etc.), and each bracket is taxed at its respective rate (0%, 2.5%, 12.5%, etc.). Higher income = higher tax rate.
+                        </p>
+                    </details>
 
-                <div class="border-b pb-4">
-                    <h3 class="font-bold text-lg text-gray-800 mb-2">What is PTA tax on mobile phones?</h3>
-                    <p class="text-gray-700">PTA charges 15-30% tax on imported phones based on value and registration type (CNIC/Passport).</p>
-                </div>
+                    <!-- FAQ 3 -->
+                    <details class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                        <summary class="font-bold text-lg cursor-pointer text-gray-900">
+                            What is PTA tax on mobile phones?
+                        </summary>
+                        <p class="mt-4 text-gray-700 leading-relaxed">
+                            PTA charges <strong>15-30% tax</strong> on imported phones based on value and registration type (CNIC/Passport). Tax is paid when registering the phone's IMEI within 60 days of import.
+                        </p>
+                    </details>
 
-                <div>
-                    <h3 class="font-bold text-lg text-gray-800 mb-2">Is this calculator accurate?</h3>
-                    <p class="text-gray-700">Yes! We use official FBR tax rates for FY 2025-2026. Calculations are 100% accurate for standard cases.</p>
+                    <!-- FAQ 4 -->
+                    <details class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                        <summary class="font-bold text-lg cursor-pointer text-gray-900">
+                            Is this calculator accurate?
+                        </summary>
+                        <p class="mt-4 text-gray-700 leading-relaxed">
+                            <strong>Yes!</strong> We use official FBR tax rates for FY 2025-2026. Calculations are 100% accurate for standard cases. Updated regularly with latest government rates.
+                        </p>
+                    </details>
+
+                    <!-- More FAQs Container (Hidden by default) -->
+                    <div id="moreFaqs" class="space-y-4 hidden">
+
+                        <!-- FAQ 5 -->
+                        <details class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                            <summary class="font-bold text-lg cursor-pointer text-gray-900">
+                                How do I file income tax return in Pakistan?
+                            </summary>
+                            <p class="mt-4 text-gray-700 leading-relaxed">
+                                File online through <strong>FBR IRIS portal</strong> (iris.fbr.gov.pk). Login with your NTN, select tax year, fill income details, and submit. Deadline is <strong>September 30</strong> every year. <a href="blog/file-tax-return-pakistan.html" class="text-indigo-600 hover:underline font-semibold">Read complete guide →</a>
+                            </p>
+                        </details>
+
+                        <!-- FAQ 6 -->
+                        <details class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                            <summary class="font-bold text-lg cursor-pointer text-gray-900">
+                                What is NTN and how do I get it?
+                            </summary>
+                            <p class="mt-4 text-gray-700 leading-relaxed">
+                                <strong>NTN (National Tax Number)</strong> is your tax identification number. For individuals, it's the same as your CNIC. Register free online at FBR IRIS portal - takes 5-10 minutes. <a href="blog/ntn-registration-guide-pakistan.html" class="text-indigo-600 hover:underline font-semibold">Step-by-step guide →</a>
+                            </p>
+                        </details>
+
+                        <!-- FAQ 7 -->
+                        <details class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                            <summary class="font-bold text-lg cursor-pointer text-gray-900">
+                                Do freelancers pay tax in Pakistan?
+                            </summary>
+                            <p class="mt-4 text-gray-700 leading-relaxed">
+                                <strong>Yes.</strong> Freelancers earning from Fiverr, Upwork, or any platform must pay income tax. Same tax slabs apply. First Rs. 600,000 is tax-free. Banks deduct 1% withholding tax on foreign remittances. <a href="blog/freelancer-tax-guide-pakistan.html" class="text-indigo-600 hover:underline font-semibold">Complete freelancer guide →</a>
+                            </p>
+                        </details>
+
+                        <!-- FAQ 8 -->
+                        <details class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                            <summary class="font-bold text-lg cursor-pointer text-gray-900">
+                                What is the difference between filer and non-filer?
+                            </summary>
+                            <p class="mt-4 text-gray-700 leading-relaxed">
+                                <strong>Filer:</strong> Person who files annual tax return (appears in Active Taxpayers List). Gets lower withholding tax rates on transactions.<br>
+                                <strong>Non-filer:</strong> Doesn't file return. Pays double tax on property, vehicles, and banking transactions. Always file to save money!
+                            </p>
+                        </details>
+
+                        <!-- FAQ 9 -->
+                        <details class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                            <summary class="font-bold text-lg cursor-pointer text-gray-900">
+                                How much Zakat should I pay in Pakistan?
+                            </summary>
+                            <p class="mt-4 text-gray-700 leading-relaxed">
+                                Zakat is <strong>2.5%</strong> of your total wealth (savings, gold, investments) if it exceeds Nisab (Rs. 180,000 silver or Rs. 1,800,000 gold) for one lunar year. <a href="blog/zakat-guide-pakistan.html" class="text-indigo-600 hover:underline font-semibold">Complete Zakat guide →</a>
+                            </p>
+                        </details>
+
+                        <!-- FAQ 10 -->
+                        <details class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                            <summary class="font-bold text-lg cursor-pointer text-gray-900">
+                                What tax exemptions are available in Pakistan?
+                            </summary>
+                            <p class="mt-4 text-gray-700 leading-relaxed">
+                                Tax-free allowances include: Medical allowance (10% of salary or Rs. 200K), House Rent (45% of basic), Conveyance, Leave encashment, Gratuity, Employer pension contributions. <a href="blog/tax-exemptions-pakistan.html" class="text-indigo-600 hover:underline font-semibold">Complete exemptions list →</a>
+                            </p>
+                        </details>
+
+                        <!-- FAQ 11 -->
+                        <details class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                            <summary class="font-bold text-lg cursor-pointer text-gray-900">
+                                How to reduce salary tax legally?
+                            </summary>
+                            <p class="mt-4 text-gray-700 leading-relaxed">
+                                Get medical allowance in salary structure, claim house rent allowance (if renting), invest in life insurance/pension funds (tax credits), maximize tax-free benefits, file annual return to claim refunds. <a href="blog/salary-tax-tips.html" class="text-indigo-600 hover:underline font-semibold">10 tax-saving tips →</a>
+                            </p>
+                        </details>
+
+                        <!-- FAQ 12 -->
+                        <details class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                            <summary class="font-bold text-lg cursor-pointer text-gray-900">
+                                What is capital gains tax on property in Pakistan?
+                            </summary>
+                            <p class="mt-4 text-gray-700 leading-relaxed">
+                                Tax on profit when selling property: <strong>0% if held 5+ years</strong>, 15% if less than 1 year, declining rates for 1-5 years. Non-filers pay double. <a href="blog/capital-gains-tax-pakistan.html" class="text-indigo-600 hover:underline font-semibold">Complete CGT guide →</a>
+                            </p>
+                        </details>
+
+                        <!-- FAQ 13 -->
+                        <details class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                            <summary class="font-bold text-lg cursor-pointer text-gray-900">
+                                Do I need to pay tax if my company already deducts it?
+                            </summary>
+                            <p class="mt-4 text-gray-700 leading-relaxed">
+                                If your employer deducts correct tax monthly, you may not owe more. But you <strong>must still file annual return</strong> by Sep 30 to maintain filer status. File to claim refund if excess tax was deducted.
+                            </p>
+                        </details>
+
+                        <!-- FAQ 14 -->
+                        <details class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                            <summary class="font-bold text-lg cursor-pointer text-gray-900">
+                                How long does FBR tax refund take?
+                            </summary>
+                            <p class="mt-4 text-gray-700 leading-relaxed">
+                                FBR typically processes tax refunds in <strong>45-90 days</strong> after filing. Refund is transferred directly to your bank account linked with IRIS portal. Track status online through FBR portal.
+                            </p>
+                        </details>
+
+                        <!-- FAQ 15 -->
+                        <details class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                            <summary class="font-bold text-lg cursor-pointer text-gray-900">
+                                What happens if I don't file tax return?
+                            </summary>
+                            <p class="mt-4 text-gray-700 leading-relaxed">
+                                Penalties: Late fee Rs. 1,000-40,000, become non-filer (double tax on transactions), bank account restrictions, cannot buy property/vehicle, legal prosecution in severe cases. Always file on time!
+                            </p>
+                        </details>
+
+                        <!-- FAQ 16 -->
+                        <details class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                            <summary class="font-bold text-lg cursor-pointer text-gray-900">
+                                Can I deduct Zakat from income tax?
+                            </summary>
+                            <p class="mt-4 text-gray-700 leading-relaxed">
+                                <strong>Yes!</strong> Zakat paid is 100% deductible from income tax in Pakistan. Provide receipts when filing return. You must pay both (Zakat is religious, tax is civic), but Zakat reduces your tax liability.
+                            </p>
+                        </details>
+
+                        <!-- FAQ 17 -->
+                        <details class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                            <summary class="font-bold text-lg cursor-pointer text-gray-900">
+                                What is advance tax and who pays it?
+                            </summary>
+                            <p class="mt-4 text-gray-700 leading-relaxed">
+                                Advance tax is paid <strong>quarterly throughout the year</strong> by business owners and self-employed persons. Helps spread tax burden instead of paying lump sum at year-end. Dates: March 15, June 15, Sept 15, Dec 15.
+                            </p>
+                        </details>
+
+                        <!-- FAQ 18 -->
+                        <details class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                            <summary class="font-bold text-lg cursor-pointer text-gray-900">
+                                How to check filer status online?
+                            </summary>
+                            <p class="mt-4 text-gray-700 leading-relaxed">
+                                Visit <strong>e.fbr.gov.pk/esbn/</strong> → Select "Active Taxpayer List" → Enter CNIC → Search. Or SMS: <code>ATL [CNIC]</code> to 9966. If status shows "Active", you're a filer.
+                            </p>
+                        </details>
+
+                        <!-- FAQ 19 -->
+                        <details class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                            <summary class="font-bold text-lg cursor-pointer text-gray-900">
+                                Do overseas Pakistanis pay tax in Pakistan?
+                            </summary>
+                            <p class="mt-4 text-gray-700 leading-relaxed">
+                                <strong>Generally NO</strong> if you're non-resident (living abroad 183+ days/year) and income is earned abroad. But tax applies on Pakistan-sourced income (rental, business, property sale). Dual taxation treaties may apply.
+                            </p>
+                        </details>
+
+                        <!-- FAQ 20 -->
+                        <details class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                            <summary class="font-bold text-lg cursor-pointer text-gray-900">
+                                Where can I get help with tax filing?
+                            </summary>
+                            <p class="mt-4 text-gray-700 leading-relaxed">
+                                <strong>FBR Helpline:</strong> 051-111-772-772 (free support)<br>
+                                <strong>WhatsApp:</strong> +92-51-111-772-772<br>
+                                <strong>Email:</strong> helpdesk@fbr.gov.pk<br>
+                                <strong>Online:</strong> <a href="blog/fbr-portal-guide-pakistan.html" class="text-indigo-600 hover:underline font-semibold">Complete FBR portal guide →</a>
+                            </p>
+                        </details>
+
+                    </div>
+
+                    <!-- Show More / Show Less Button -->
+                    <div class="text-center mt-8">
+                        <button id="toggleFaqBtn" onclick="toggleFaqs()" class="inline-flex items-center bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+                            <span id="btnText">Show More FAQs</span>
+                            <svg id="arrowDown" class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                            <svg id="arrowUp" class="w-6 h-6 ml-2 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+                            </svg>
+                        </button>
+                    </div>
+
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- FAQ Toggle Script -->
+        <script>
+            function toggleFaqs() {
+                const moreFaqs = document.getElementById('moreFaqs');
+                const btnText = document.getElementById('btnText');
+                const arrowDown = document.getElementById('arrowDown');
+                const arrowUp = document.getElementById('arrowUp');
+                
+                if (moreFaqs.classList.contains('hidden')) {
+                    // Show more FAQs
+                    moreFaqs.classList.remove('hidden');
+                    btnText.textContent = 'Show Less FAQs';
+                    arrowDown.classList.add('hidden');
+                    arrowUp.classList.remove('hidden');
+                    
+                    // Smooth scroll to more FAQs
+                    setTimeout(() => {
+                        moreFaqs.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }, 100);
+                } else {
+                    // Hide FAQs
+                    moreFaqs.classList.add('hidden');
+                    btnText.textContent = 'Show More FAQs';
+                    arrowDown.classList.remove('hidden');
+                    arrowUp.classList.add('hidden');
+                    
+                    // Scroll back to FAQ section
+                    document.getElementById('faq').scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        </script>
 
         <!-- Newsletter -->
         <div class="max-w-4xl mx-auto mt-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl shadow-2xl p-8 text-center text-white">
