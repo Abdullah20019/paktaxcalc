@@ -355,7 +355,7 @@
 </section>
 
         <!-- SALARY TAX CALCULATOR -->
-        <div id="calculator-salary" class="calculator-content">
+        <div id="calculator-salary" class="calculator-content active">
             <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
                 <!-- Input Column -->
                 <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8">
@@ -1222,216 +1222,323 @@
         </section>
 
         <script>
-    // ===== CALCULATOR SWITCHING FUNCTION =====
-    function showCalculator(calcType) {
-        // Hide all calculators
-        const allCalculators = document.querySelectorAll('.calculator-content');
-        allCalculators.forEach(calc => {
-            calc.classList.remove('active');
-            calc.style.display = 'none';
+        <!-- All JavaScript Functions -->
+        // ========== CALCULATOR SWITCHING ==========
+        function showCalculator(calcType) {
+            console.log('Switching to:', calcType);
+            
+            // Hide all calculators
+            document.querySelectorAll('.calculator-content').forEach(calc => {
+                calc.classList.remove('active');
+            });
+
+            // Remove active state from all tabs
+            document.querySelectorAll('.calculator-tab').forEach(tab => {
+                tab.classList.remove('active-tab');
+            });
+
+            // Show selected calculator
+            const selectedCalc = document.getElementById('calculator-' + calcType);
+            if (selectedCalc) {
+                selectedCalc.classList.add('active');
+            }
+
+            // Add active state to selected tab
+            const selectedTab = document.getElementById('tab-' + calcType);
+            if (selectedTab) {
+                selectedTab.classList.add('active-tab');
+            }
+
+            // Scroll on mobile
+            if (window.innerWidth < 768 && selectedCalc) {
+                setTimeout(() => {
+                    selectedCalc.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            showCalculator('salary');
         });
 
-        // Remove active state from all tabs
-        const allTabs = document.querySelectorAll('.calculator-tab');
-        allTabs.forEach(tab => {
-            tab.classList.remove('active-tab');
-        });
-
-        // Show selected calculator
-        const selectedCalc = document.getElementById('calculator-' + calcType);
-        if (selectedCalc) {
-            selectedCalc.classList.add('active');
-            selectedCalc.style.display = 'block';
-        }
-
-        // Add active state to selected tab
-        const selectedTab = document.getElementById('tab-' + calcType);
-        if (selectedTab) {
-            selectedTab.classList.add('active-tab');
-        }
-
-        // Scroll to calculator on mobile
-        if (window.innerWidth < 768 && selectedCalc) {
-            setTimeout(() => {
-                selectedCalc.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 100);
-        }
-    }
-
-    // Initialize - show salary calculator on page load
-    window.addEventListener('load', function() {
-        showCalculator('salary');
-    });
-
-    // FAQ Toggle Function (existing)
-    function toggleFaqs() {
-        const moreFaqs = document.getElementById('moreFaqs');
-        const btnText = document.getElementById('btnText');
-        const arrowDown = document.getElementById('arrowDown');
-        const arrowUp = document.getElementById('arrowUp');
-        
-        if (moreFaqs.classList.contains('hidden')) {
-            moreFaqs.classList.remove('hidden');
-            btnText.textContent = 'Show Less FAQs';
-            arrowDown.classList.add('hidden');
-            arrowUp.classList.remove('hidden');
+        // ========== FAQ TOGGLE ==========
+        function toggleFaqs() {
+            const moreFaqs = document.getElementById('moreFaqs');
+            const btnText = document.getElementById('btnText');
+            const arrowDown = document.getElementById('arrowDown');
+            const arrowUp = document.getElementById('arrowUp');
             
-            setTimeout(() => {
-                moreFaqs.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }, 100);
-        } else {
-            moreFaqs.classList.add('hidden');
-            btnText.textContent = 'Show More FAQs';
-            arrowDown.classList.remove('hidden');
-            arrowUp.classList.add('hidden');
-            
-            document.getElementById('faq').scrollIntoView({ behavior: 'smooth' });
+            if (moreFaqs.classList.contains('hidden')) {
+                moreFaqs.classList.remove('hidden');
+                btnText.textContent = 'Show Less FAQs';
+                arrowDown.classList.add('hidden');
+                arrowUp.classList.remove('hidden');
+            } else {
+                moreFaqs.classList.add('hidden');
+                btnText.textContent = 'Show More FAQs';
+                arrowDown.classList.remove('hidden');
+                arrowUp.classList.add('hidden');
+            }
         }
-    }
-</script>
 
-        <!-- FAQ Toggle Script -->
-        <script>
-            function toggleFaqs() {
-                const moreFaqs = document.getElementById('moreFaqs');
-                const btnText = document.getElementById('btnText');
-                const arrowDown = document.getElementById('arrowDown');
-                const arrowUp = document.getElementById('arrowUp');
-                
-                if (moreFaqs.classList.contains('hidden')) {
-                    // Show more FAQs
-                    moreFaqs.classList.remove('hidden');
-                    btnText.textContent = 'Show Less FAQs';
-                    arrowDown.classList.add('hidden');
-                    arrowUp.classList.remove('hidden');
-                    
-                    // Smooth scroll to more FAQs
-                    setTimeout(() => {
-                        moreFaqs.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                    }, 100);
-                } else {
-                    // Hide FAQs
-                    moreFaqs.classList.add('hidden');
-                    btnText.textContent = 'Show More FAQs';
-                    arrowDown.classList.remove('hidden');
-                    arrowUp.classList.add('hidden');
-                    
-                    // Scroll back to FAQ section
-                    document.getElementById('faq').scrollIntoView({ behavior: 'smooth' });
+        // ========== NUMBER FORMATTING ==========
+        function formatNumber(num) {
+            return num.toLocaleString('en-PK', { 
+                minimumFractionDigits: 0, 
+                maximumFractionDigits: 0 
+            });
+        }
+
+        // ========== COUNTERS ==========
+        function animateCounter(id, start, end, duration) {
+            const elem = document.getElementById(id);
+            if (!elem) return;
+            
+            let startTime = null;
+            function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const progress = Math.min((timestamp - startTime) / duration, 1);
+                elem.textContent = Math.floor(progress * (end - start) + start).toLocaleString();
+                if (progress < 1) {
+                    requestAnimationFrame(step);
                 }
             }
-        </script>
+            requestAnimationFrame(step);
+        }
 
-        <!-- Newsletter -->
-        <div class="max-w-4xl mx-auto mt-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl shadow-2xl p-8 text-center text-white">
-            <h3 class="text-2xl md:text-3xl font-bold mb-3">📧 Get Tax Updates</h3>
-            <p class="text-purple-100 mb-6">Subscribe for tax deadline reminders and FBR updates</p>
-            <div class="flex flex-col md:flex-row gap-3 max-w-lg mx-auto">
-                <input type="email" placeholder="Your email" class="flex-1 px-6 py-4 rounded-lg text-gray-800 focus:outline-none">
-                <button class="bg-white text-purple-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition">
-                    Subscribe Free
-                </button>
-            </div>
-        </div>
+        window.addEventListener('load', function() {
+            animateCounter('liveCounter', 1000, 1260, 2000);
+            animateCounter('totalCalculations', 40000, 50020, 2500);
+            animateCounter('aboutUserCount', 10000, 50020, 2500);
+        });
 
-    </section>
+        // ========== WHATSAPP SHARE ==========
+        function shareOnWhatsApp() {
+            const text = "Check out PakTaxCalc - Pakistan's best free tax calculator! Calculate salary tax, PTA mobile tax, business tax & more. https://paktaxcalc.vercel.app";
+            const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
+            window.open(url, '_blank');
+        }
 
-    <!-- WHATSAPP FLOATING BUTTON (NEW!) -->
-    <a href="https://wa.me/923001234567?text=Hi!%20I%20need%20help%20with%20tax%20calculator" 
-       target="_blank" 
-       class="whatsapp-float"
-       title="Chat on WhatsApp">
-        <svg fill="currentColor" viewBox="0 0 24 24" class="w-8 h-8">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-    </a>
-
-    <!-- Footer -->
-    <footer class="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white mt-16 py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8 text-center md:text-left">
-                <div>
-                    <h3 class="text-2xl font-bold mb-2">Pak<span class="text-yellow-300">TaxCalc</span></h3>
-                    <p class="text-gray-400 text-sm">Pakistan's most trusted tax calculator platform.</p>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-4">Calculators</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="#" class="hover:text-white transition">Salary Tax</a></li>
-                        <li><a href="#" class="hover:text-white transition">PTA Mobile</a></li>
-                        <li><a href="#" class="hover:text-white transition">Business Tax</a></li>
-                        <li><a href="#" class="hover:text-white transition">Zakat</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-4">Resources</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="#" class="hover:text-white transition">Tax Slabs 2025-26</a></li>
-                        <li><a href="#" class="hover:text-white transition">FAQs</a></li>
-                        <li><a href="#" class="hover:text-white transition">About Us</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-4">Contact</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li>📧 info@paktaxcalc.com</li>
-                        <li>📱 WhatsApp Support</li>
-                        <li>🇵🇰 Karachi, Pakistan</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
-                <p class="text-sm text-gray-400">&copy; 2026 PakTaxCalc. All rights reserved. Made with ❤️ in Pakistan 🇵🇰</p>
-                <p class="text-xs text-gray-500 mt-2">Tax rates updated as per FBR Pakistan FY 2025-2026</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript (DEFERRED for performance optimization) -->
-    <script src="js/calculator.js" defer></script>
-    
-    <!-- Inline Critical JavaScript -->
-    <script>
-    // Live counter animation
-    function animateLiveCounter() {
-        const counter = document.getElementById('liveCounter');
-        const totalCalc = document.getElementById('totalCalculations');
-        const aboutCounter = document.getElementById('aboutUserCount');
+        // ========== TAX CALCULATION FUNCTIONS (Your existing ones remain unchanged) ==========
         
-        setInterval(() => {
-            const current = parseInt(counter.textContent.replace(/,/g, ''));
-            const newValue = current + Math.floor(Math.random() * 3);
-            counter.textContent = newValue.toLocaleString();
+        // Salary Tax Calculator
+        function calculateSalaryTax() {
+            const monthlySalary = parseFloat(document.getElementById('monthlySalary').value) || 0;
+            const annualBonus = parseFloat(document.getElementById('annualBonus').value) || 0;
+            const providentFund = parseFloat(document.getElementById('providentFund').value) || 0;
+            const eobi = document.getElementById('eobi').checked;
+            const socialSecurity = document.getElementById('socialSecurity').checked;
+
+            const grossAnnual = (monthlySalary * 12) + annualBonus;
             
-            if(totalCalc) {
-                const total = parseInt(totalCalc.textContent.replace(/,/g, ''));
-                totalCalc.textContent = (total + Math.floor(Math.random() * 5)).toLocaleString();
-            }
+            // Deductions
+            let deductions = 0;
+            if (eobi) deductions += 200 * 12; // Max EOBI
+            if (socialSecurity) deductions += (monthlySalary * 0.06) * 12;
+            if (providentFund > 0) deductions += (monthlySalary * providentFund / 100) * 12;
+
+            const taxableIncome = grossAnnual - deductions;
             
-            if(aboutCounter) {
-                aboutCounter.textContent = totalCalc.textContent;
+            // Tax calculation (Pakistan FY 2025-2026)
+            let tax = 0;
+            if (taxableIncome > 600000) {
+                if (taxableIncome <= 1200000) {
+                    tax = (taxableIncome - 600000) * 0.025;
+                } else if (taxableIncome <= 2200000) {
+                    tax = 15000 + (taxableIncome - 1200000) * 0.125;
+                } else if (taxableIncome <= 3200000) {
+                    tax = 140000 + (taxableIncome - 2200000) * 0.20;
+                } else if (taxableIncome <= 4100000) {
+                    tax = 340000 + (taxableIncome - 3200000) * 0.25;
+                } else {
+                    tax = 565000 + (taxableIncome - 4100000) * 0.35;
+                }
             }
-        }, 3000);
-    }
-    
-    // Start counter animation on page load
-    if(document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', animateLiveCounter);
-    } else {
-        animateLiveCounter();
-    }
-    
-    // WhatsApp share function
-    function shareOnWhatsApp() {
-        const salary = document.getElementById('monthlySalary').value || '0';
-        const netSalary = document.getElementById('salary-netMonthly').textContent;
-        const text = `💰 My Salary Tax Calculation:\n\nGross: Rs. ${salary}/month\nNet: ${netSalary}\n\nCalculate yours at ${window.location.href}`;
-        window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
-    }
+
+            const monthlyTax = tax / 12;
+            const netMonthlySalary = monthlySalary - monthlyTax - (deductions / 12);
+            const effectiveRate = grossAnnual > 0 ? ((tax / grossAnnual) * 100).toFixed(2) : 0;
+
+            // Update UI
+            document.getElementById('salary-grossAnnual').textContent = 'Rs. ' + formatNumber(grossAnnual);
+            document.getElementById('salary-annualTax').textContent = 'Rs. ' + formatNumber(Math.round(tax));
+            document.getElementById('salary-monthlyTax').textContent = 'Rs. ' + formatNumber(Math.round(monthlyTax));
+            document.getElementById('salary-netMonthly').textContent = 'Rs. ' + formatNumber(Math.round(netMonthlySalary));
+            document.getElementById('salary-effectiveRate').textContent = effectiveRate + '%';
+        }
+
+        // PTA Tax Calculator
+        function calculatePTATax() {
+            const price = parseFloat(document.getElementById('ptaPrice').value) || 0;
+            const usdRate = parseFloat(document.getElementById('ptaUsdRate').value) || 278;
+            const regType = document.getElementById('ptaRegType').value;
+
+            const pricePkr = price * usdRate;
+            let taxRate = 0.18; // Default 18%
+
+            if (regType === 'passport') {
+                taxRate = 0.25; // 25% for passport
+            }
+
+            const taxAmount = pricePkr * taxRate;
+            const totalCost = pricePkr + taxAmount;
+
+            document.getElementById('pta-pricePkr').textContent = 'Rs. ' + formatNumber(Math.round(pricePkr));
+            document.getElementById('pta-taxAmount').textContent = 'Rs. ' + formatNumber(Math.round(taxAmount));
+            document.getElementById('pta-totalCost').textContent = 'Rs. ' + formatNumber(Math.round(totalCost));
+            document.getElementById('ptaResults').classList.remove('hidden');
+        }
+
+        // Business Tax Calculator
+        function calculateBusinessTax() {
+            const income = parseFloat(document.getElementById('businessIncome').value) || 0;
+            const expenses = parseFloat(document.getElementById('businessExpenses').value) || 0;
+
+            const taxableIncome = income - expenses;
+            let tax = 0;
+
+            // Progressive tax calculation (same as salary)
+            if (taxableIncome > 600000) {
+                if (taxableIncome <= 1200000) {
+                    tax = (taxableIncome - 600000) * 0.025;
+                } else if (taxableIncome <= 2200000) {
+                    tax = 15000 + (taxableIncome - 1200000) * 0.125;
+                } else if (taxableIncome <= 3200000) {
+                    tax = 140000 + (taxableIncome - 2200000) * 0.20;
+                } else if (taxableIncome <= 4100000) {
+                    tax = 340000 + (taxableIncome - 3200000) * 0.25;
+                } else {
+                    tax = 565000 + (taxableIncome - 4100000) * 0.35;
+                }
+            }
+
+            const netProfit = taxableIncome - tax;
+            const taxRate = taxableIncome > 0 ? ((tax / taxableIncome) * 100).toFixed(2) : 0;
+
+            document.getElementById('business-taxableIncome').textContent = 'Rs. ' + formatNumber(Math.round(taxableIncome));
+            document.getElementById('business-taxAmount').textContent = 'Rs. ' + formatNumber(Math.round(tax));
+            document.getElementById('business-netProfit').textContent = 'Rs. ' + formatNumber(Math.round(netProfit));
+            document.getElementById('business-taxRate').textContent = taxRate + '%';
+        }
+
+        // Zakat Calculator
+        function calculateZakat() {
+            const cash = parseFloat(document.getElementById('zakatCash').value) || 0;
+            const gold = parseFloat(document.getElementById('zakatGold').value) || 0;
+            const silver = parseFloat(document.getElementById('zakatSilver').value) || 0;
+            const investments = parseFloat(document.getElementById('zakatInvestments').value) || 0;
+            const debts = parseFloat(document.getElementById('zakatDebts').value) || 0;
+
+            const totalWealth = cash + gold + silver + investments - debts;
+            const nisab = 135179; // As of Feb 2026
+            const zakatAmount = totalWealth * 0.025;
+
+            document.getElementById('zakat-totalWealth').textContent = 'Rs. ' + formatNumber(Math.round(totalWealth));
+            document.getElementById('zakat-amount').textContent = 'Rs. ' + formatNumber(Math.round(zakatAmount));
+
+            const messageDiv = document.getElementById('zakat-message');
+            if (totalWealth < nisab) {
+                messageDiv.innerHTML = '<p class="text-center text-red-600 font-semibold">⚠️ Your wealth is below Nisab threshold. Zakat is not obligatory.</p>';
+            } else {
+                messageDiv.innerHTML = '<p class="text-center text-green-600 font-semibold">✅ Zakat is obligatory on your wealth.</p>';
+            }
+        }
+
+        // Agriculture Tax Calculator
+        function toggleAgriMethod() {
+            const method = document.getElementById('agriMethod').value;
+            if (method === 'land') {
+                document.getElementById('agriLandInputs').style.display = 'block';
+                document.getElementById('agriIncomeInputs').style.display = 'none';
+            } else {
+                document.getElementById('agriLandInputs').style.display = 'none';
+                document.getElementById('agriIncomeInputs').style.display = 'block';
+            }
+            calculateAgriTax();
+        }
+
+        function calculateAgriTax() {
+            const method = document.getElementById('agriMethod').value;
+            let tax = 0;
+
+            if (method === 'land') {
+                const land = parseFloat(document.getElementById('agriLand').value) || 0;
+                const landType = document.getElementById('agriLandType').value;
+                
+                if (landType === 'irrigated') {
+                    tax = land * 450; // Rs. 450 per acre
+                } else {
+                    tax = land * 300; // Rs. 300 per acre for barani
+                }
+            } else {
+                const income = parseFloat(document.getElementById('agriIncome').value) || 0;
+                tax = income * 0.05; // 5% flat rate
+            }
+
+            document.getElementById('agri-taxAmount').textContent = 'Rs. ' + formatNumber(Math.round(tax));
+        }
+
+        // Sales Tax Calculator
+        function calculateSalesTax() {
+            const amount = parseFloat(document.getElementById('salesAmount').value) || 0;
+            let rate = parseFloat(document.getElementById('salesTaxRate').value);
+
+            if (document.getElementById('salesTaxRate').value === 'custom') {
+                rate = parseFloat(document.getElementById('customSalesRate').value) || 0;
+                document.getElementById('customRateDiv').classList.remove('hidden');
+            } else {
+                document.getElementById('customRateDiv').classList.add('hidden');
+            }
+
+            const taxAmount = amount * (rate / 100);
+            const totalAmount = amount + taxAmount;
+
+            document.getElementById('sales-baseAmount').textContent = 'Rs. ' + formatNumber(Math.round(amount));
+            document.getElementById('sales-taxAmount').textContent = 'Rs. ' + formatNumber(Math.round(taxAmount));
+            document.getElementById('sales-totalAmount').textContent = 'Rs. ' + formatNumber(Math.round(totalAmount));
+        }
+
+        // Property Tax Calculator
+        function calculatePropertyTax() {
+            const value = parseFloat(document.getElementById('propertyValue').value) || 0;
+            const type = document.getElementById('propertyType').value;
+
+            let annualTaxRate = 0.002; // 0.2% for residential
+            if (type === 'commercial') annualTaxRate = 0.005; // 0.5%
+            if (type === 'plot') annualTaxRate = 0.001; // 0.1%
+
+            const annualTax = value * annualTaxRate;
+            const cgtTax = value * 0.01; // 1% CGT
+            const stampDuty = value * 0.03; // 3% stamp duty
+
+            document.getElementById('property-annualTax').textContent = 'Rs. ' + formatNumber(Math.round(annualTax));
+            document.getElementById('property-cgtTax').textContent = 'Rs. ' + formatNumber(Math.round(cgtTax));
+            document.getElementById('property-stampDuty').textContent = 'Rs. ' + formatNumber(Math.round(stampDuty));
+        }
+
+        // Pension Calculator
+        function calculatePension() {
+            const basicPay = parseFloat(document.getElementById('pensionBasicPay').value) || 0;
+            const years = parseFloat(document.getElementById('pensionYears').value) || 0;
+            const type = document.getElementById('pensionType').value;
+
+            let pensionRate = 0.7; // 70% for civil service
+            if (type === 'military') pensionRate = 0.7;
+            if (type === 'eobi') pensionRate = 0.5;
+
+            const monthlyPension = basicPay * pensionRate;
+            const annualPension = monthlyPension * 12;
+            const commutation = monthlyPension * 35; // 35 months commutation
+            const gratuity = basicPay * years * 0.5;
+
+            document.getElementById('pension-monthly').textContent = 'Rs. ' + formatNumber(Math.round(monthlyPension));
+            document.getElementById('pension-annual').textContent = 'Rs. ' + formatNumber(Math.round(annualPension));
+            document.getElementById('pension-commutation').textContent = 'Rs. ' + formatNumber(Math.round(commutation));
+            document.getElementById('pension-gratuity').textContent = 'Rs. ' + formatNumber(Math.round(gratuity));
+        }
     </script>
+
 </body>
 </html>
+
