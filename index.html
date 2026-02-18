@@ -139,47 +139,99 @@
 
 <body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen"></body>
     
-    <!-- Premium Header - MOBILE OPTIMIZED -->
+    <!-- Premium Header - MOBILE OPTIMIZED WITH WORKING MENU -->
 <header class="bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 shadow-2xl">
-    <nav class="container mx-auto px-4 py-5">
-        <div class="flex justify-between items-center">
-            <!-- LEFT SIDE: Logo (ONLY ONE of these should exist) -->
-            <div class="flex items-center space-x-3">
-                <div class="bg-white rounded-xl p-2 shadow-lg">
-                    <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-                    </svg>
-                </div>
-                <div>
-                    <h1 class="text-2xl md:text-3xl font-black text-white tracking-tight">
-                        Pak<span class="text-yellow-300">TaxCalc</span>
-                    </h1>
-                </div>
-            </div>
-
-            <!-- RIGHT SIDE: Navigation Links -->
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="blog/" class="text-white hover:text-yellow-300 font-semibold transition-colors">
-                    📚 Tax Guides
-                </a>
-                <a href="about.html" class="text-white hover:text-yellow-300 font-semibold transition-colors">
-                    About
-                </a>
-                <a href="contact.html" class="text-white hover:text-yellow-300 font-semibold transition-colors">
-                    Contact
-                </a>
-            </div>
-
-            <!-- Mobile Menu Button -->
-            <button class="md:hidden text-white hover:text-yellow-300">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
+  <nav class="container mx-auto px-4 py-5">
+    <div class="flex justify-between items-center">
+      <!-- LEFT SIDE: Logo -->
+      <div class="flex items-center space-x-3">
+        <div class="bg-white rounded-xl p-2 shadow-lg">
+          <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+              d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z">
+            </path>
+          </svg>
         </div>
-    </nav>
+        <div>
+          <h1 class="text-2xl md:text-3xl font-black text-white tracking-tight">
+            Pak<span class="text-yellow-300">TaxCalc</span>
+          </h1>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE: Desktop Navigation Links -->
+      <div class="hidden md:flex items-center space-x-6">
+        <a href="blog/" class="text-white hover:text-yellow-300 font-semibold transition-colors">
+          📚 Tax Guides
+        </a>
+        <a href="about.html" class="text-white hover:text-yellow-300 font-semibold transition-colors">
+          About
+        </a>
+        <a href="contact.html" class="text-white hover:text-yellow-300 font-semibold transition-colors">
+          Contact
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobileMenuBtn" class="md:hidden text-white hover:text-yellow-300 transition-colors p-2">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="mobileMenuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobileMenu" class="md:hidden overflow-hidden transition-all duration-300 ease-in-out max-h-0">
+      <div class="flex flex-col space-y-2 pt-4 pb-2">
+        <a href="blog/" class="text-white hover:text-yellow-300 font-bold py-3 px-4 rounded-xl hover:bg-white/15 flex items-center">
+          <span class="text-2xl mr-3">📚</span>
+          <span>Tax Guides</span>
+        </a>
+        <a href="about.html" class="text-white hover:text-yellow-300 font-bold py-3 px-4 rounded-xl hover:bg-white/15 flex items-center">
+          <span class="text-2xl mr-3">ℹ️</span>
+          <span>About Us</span>
+        </a>
+        <a href="contact.html" class="text-white hover:text-yellow-300 font-bold py-3 px-4 rounded-xl hover:bg-white/15 flex items-center">
+          <span class="text-2xl mr-3">📧</span>
+          <span>Contact</span>
+        </a>
+      </div>
+    </div>
+  </nav>
 </header>
 
+<script>
+  // Mobile menu toggle
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileMenuIcon = document.getElementById('mobileMenuIcon');
+
+  if (mobileMenuBtn && mobileMenu && mobileMenuIcon) {
+    mobileMenuBtn.addEventListener('click', () => {
+      const isOpen = mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== '0px';
+      if (isOpen) {
+        // close
+        mobileMenu.style.maxHeight = '0px';
+        mobileMenuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+      } else {
+        // open
+        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+        mobileMenuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+      }
+    });
+
+    // optional: close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        if (mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== '0px') {
+          mobileMenu.style.maxHeight = '0px';
+          mobileMenuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+        }
+      }
+    });
+  }
+</script>
 
     <!-- Hero Section - HIGH CONTRAST MOBILE OPTIMIZED -->
 <section class="premium-gradient text-white py-12 md:py-20 relative overflow-hidden hero-pattern">
