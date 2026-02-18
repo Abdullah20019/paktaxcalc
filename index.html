@@ -1649,7 +1649,7 @@
             const debts = parseFloat(document.getElementById('zakatDebts').value) || 0;
 
             const totalWealth = cash + gold + silver + investments - debts;
-            const nisab = 135179; // As of Feb 2026
+            const nisab = 503529; // As of Ramadan 2026
             const zakatAmount = totalWealth * 0.025;
 
             document.getElementById('zakat-totalWealth').textContent = 'Rs. ' + formatNumber(Math.round(totalWealth));
