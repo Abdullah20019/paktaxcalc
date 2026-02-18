@@ -381,8 +381,7 @@ function calculateZakat() {
     let debts = parseFloat(document.getElementById('zakatDebts').value) || 0;
     
     let totalWealth = cash + gold + silver + investments - debts;
-    let nisab = 135179;
-    
+    let nisab = 503529;
     let zakatAmount = 0;
     let message = '';
     
