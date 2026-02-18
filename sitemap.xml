@@ -1,201 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
+
   <!-- Homepage -->
   <url>
     <loc>https://paktaxcalc.com/</loc>
-    <lastmod>2026-02-18</lastmod>
+    <lastmod>2026-02-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-  
-  <!-- NEW: About Page -->
+
+  <!-- About Page -->
   <url>
     <loc>https://paktaxcalc.com/about.html</loc>
-    <lastmod>2026-02-18</lastmod>
+    <lastmod>2026-02-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- NEW: Contact Page -->
+
+  <!-- Contact Page -->
   <url>
     <loc>https://paktaxcalc.com/contact.html</loc>
-    <lastmod>2026-02-18</lastmod>
+    <lastmod>2026-02-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- NEW: Privacy Policy (Required for AdSense) -->
+
+  <!-- Privacy Policy -->
   <url>
     <loc>https://paktaxcalc.com/privacy-policy.html</loc>
-    <lastmod>2026-02-18</lastmod>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
-  
-  <!-- NEW: Terms & Conditions (Required for AdSense) -->
+
+  <!-- Terms & Conditions -->
   <url>
     <loc>https://paktaxcalc.com/terms-conditions.html</loc>
-    <lastmod>2026-02-18</lastmod>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
-  
-  <!-- NEW: Disclaimer -->
+
+  <!-- Disclaimer -->
   <url>
     <loc>https://paktaxcalc.com/disclaimer.html</loc>
-    <lastmod>2026-02-18</lastmod>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <!-- Salary Tax Calculator -->
-  <url>
-    <loc>https://paktaxcalc.com/#salary</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- PTA Mobile Tax Calculator -->
-  <url>
-    <loc>https://paktaxcalc.com/#pta</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Business Tax Calculator -->
-  <url>
-    <loc>https://paktaxcalc.com/#business</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Zakat Calculator -->
-  <url>
-    <loc>https://paktaxcalc.com/#zakat</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Agricultural Tax Calculator -->
-  <url>
-    <loc>https://paktaxcalc.com/#agriculture</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Sales Tax Calculator -->
-  <url>
-    <loc>https://paktaxcalc.com/#sales</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Property Tax Calculator -->
-  <url>
-    <loc>https://paktaxcalc.com/#property</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Pension Calculator -->
-  <url>
-    <loc>https://paktaxcalc.com/#pension</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
 
   <!-- Blog Homepage -->
   <url>
     <loc>https://paktaxcalc.com/blog/</loc>
-    <lastmod>2026-02-18</lastmod>
+    <lastmod>2026-02-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-  
+
   <!-- Blog Posts -->
   <url>
     <loc>https://paktaxcalc.com/blog/income-tax-guide-2026.html</loc>
-    <lastmod>2026-02-16</lastmod>
+    <lastmod>2025-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <url>
     <loc>https://paktaxcalc.com/blog/salary-tax-tips.html</loc>
-    <lastmod>2026-02-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://paktaxcalc.com/blog/pta-tax-guide-2026.html</loc>
-    <lastmod>2026-02-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://paktaxcalc.com/blog/file-tax-return-pakistan.html</loc>
-    <lastmod>2026-02-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://paktaxcalc.com/blog/business-tax-guide-pakistan.html</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2025-12-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- High-Priority Blog Posts (Feb 17-18, 2026) -->
   <url>
-    <loc>https://paktaxcalc.com/blog/freelancer-tax-guide-pakistan.html</loc>
-    <lastmod>2026-02-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://paktaxcalc.com/blog/ntn-registration-guide-pakistan.html</loc>
-    <lastmod>2026-02-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://paktaxcalc.com/blog/tax-exemptions-pakistan.html</loc>
-    <lastmod>2026-02-17</lastmod>
+    <loc>https://paktaxcalc.com/blog/pta-tax-guide-2026.html</loc>
+    <lastmod>2026-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <url>
-    <loc>https://paktaxcalc.com/blog/capital-gains-tax-pakistan.html</loc>
-    <lastmod>2026-02-17</lastmod>
+    <loc>https://paktaxcalc.com/blog/file-tax-return-pakistan.html</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://paktaxcalc.com/blog/business-tax-guide-pakistan.html</loc>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
+
   <url>
-    <loc>https://paktaxcalc.com/blog/fbr-portal-guide-pakistan.html</loc>
-    <lastmod>2026-02-17</lastmod>
+    <loc>https://paktaxcalc.com/blog/freelancer-tax-guide-pakistan.html</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://paktaxcalc.com/blog/ntn-registration-guide-pakistan.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://paktaxcalc.com/blog/tax-exemptions-pakistan.html</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
+  <url>
+    <loc>https://paktaxcalc.com/blog/capital-gains-tax-pakistan.html</loc>
+    <lastmod>2026-02-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://paktaxcalc.com/blog/fbr-portal-guide-pakistan.html</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <url>
     <loc>https://paktaxcalc.com/blog/zakat-guide-pakistan.html</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
