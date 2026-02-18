@@ -136,41 +136,50 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen"></body>
     
     <!-- Premium Header - MOBILE OPTIMIZED -->
-<header class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 shadow-2xl sticky top-0 z-50">
-    <nav class="container mx-auto px-3 py-3 md:px-4 md:py-5">
+<header class="bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 shadow-2xl">
+    <nav class="container mx-auto px-4 py-5">
         <div class="flex justify-between items-center">
-            <!-- Premium Logo - CLEANER -->
-            <div class="flex items-center space-x-2">
-                <div class="bg-white rounded-lg p-1.5 shadow-lg">
-                    <svg class="w-6 h-6 md:w-8 md:h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <!-- LEFT SIDE: Logo (ONLY ONE of these should exist) -->
+            <div class="flex items-center space-x-3">
+                <div class="bg-white rounded-xl p-2 shadow-lg">
+                    <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                     </svg>
                 </div>
                 <div>
-                    <h1 class="text-lg md:text-3xl font-black text-white tracking-tight leading-none">
-                        Pak<span class="text-yellow-300">Tax</span>Calc
+                    <h1 class="text-2xl md:text-3xl font-black text-white tracking-tight">
+                        Pak<span class="text-yellow-300">TaxCalc</span>
                     </h1>
-                    <p class="text-[10px] md:text-xs text-purple-100">All-in-One Tax Calculator</p>
                 </div>
             </div>
 
-            <!-- Mobile: Show compact badge -->
-            <div class="flex md:hidden items-center space-x-1 bg-green-500 px-2 py-1 rounded-full">
-                <span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>
-                <span class="text-white text-[10px] font-bold">Live</span>
+            <!-- RIGHT SIDE: Navigation Links -->
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="blog/" class="text-white hover:text-yellow-300 font-semibold transition-colors">
+                    📚 Tax Guides
+                </a>
+                <a href="about.html" class="text-white hover:text-yellow-300 font-semibold transition-colors">
+                    About
+                </a>
+                <a href="contact.html" class="text-white hover:text-yellow-300 font-semibold transition-colors">
+                    Contact
+                </a>
             </div>
 
-            <!-- Desktop: Live User Counter -->
-            <div class="hidden md:flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
-                <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                <span class="text-white text-sm font-semibold"><span id="liveCounter">1,247</span> users online</span>
-            </div>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white hover:text-yellow-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </div>
     </nav>
 </header>
+
 
     <!-- Hero Section - HIGH CONTRAST MOBILE OPTIMIZED -->
 <section class="premium-gradient text-white py-12 md:py-20 relative overflow-hidden hero-pattern">
@@ -1253,57 +1262,124 @@
     </svg>
 </a>
 
-<!-- Premium Footer -->
-<footer class="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white mt-16 py-12">
-    <div class="container mx-auto px-4">
-        <div class="grid md:grid-cols-4 gap-8 text-center md:text-left">
-            <!-- Column 1: Brand -->
-            <div>
-                <h3 class="text-2xl font-bold mb-4">
-                    <span>Pak</span><span class="text-yellow-300">Tax</span><span>Calc</span>
+    <!-- Tax Guides Section -->
+    <section class="container mx-auto px-4 py-16">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+                📚 Expert Tax Guides
+            </h2>
+            <p class="text-lg text-gray-600">
+                Learn everything about Pakistani taxes with our detailed guides
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 mb-8">
+            <!-- Guide 1 -->
+            <a href="blog/income-tax-guide-2026.html" class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all p-6 block hover:scale-105">
+                <div class="text-4xl mb-3">💰</div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2 hover:text-indigo-600 transition-colors">
+                    Complete Income Tax Guide 2026
                 </h3>
-                <p class="text-gray-400 text-sm mb-4">Pakistan's most trusted free tax calculator platform.</p>
-            </div>
+                <p class="text-gray-600 text-sm mb-3">
+                    Everything about filing income tax in Pakistan. Updated with latest FBR rates and slabs.
+                </p>
+                <span class="text-indigo-600 font-semibold text-sm">Read Guide →</span>
+            </a>
 
-            <!-- Column 2: Calculators -->
-            <div>
-                <h4 class="font-bold mb-4 text-lg">Calculators</h4>
-                <ul class="space-y-2 text-sm text-gray-400">
-                    <li><a href="#salary" onclick="showCalculator('salary')" class="hover:text-white transition">💰 Salary Tax</a></li>
-                    <li><a href="#pta" onclick="showCalculator('pta')" class="hover:text-white transition">📱 PTA Mobile</a></li>
-                    <li><a href="#business" onclick="showCalculator('business')" class="hover:text-white transition">💼 Business Tax</a></li>
-                    <li><a href="#zakat" onclick="showCalculator('zakat')" class="hover:text-white transition">🕌 Zakat</a></li>
-                </ul>
-            </div>
+            <!-- Guide 2 -->
+            <a href="blog/freelancer-tax-guide-pakistan.html" class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all p-6 block hover:scale-105">
+                <div class="text-4xl mb-3">💼</div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2 hover:text-indigo-600 transition-colors">
+                    Freelancer Tax Guide Pakistan
+                </h3>
+                <p class="text-gray-600 text-sm mb-3">
+                    Complete tax guide for Fiverr, Upwork workers. Learn rates, exemptions, and filing returns.
+                </p>
+                <span class="text-indigo-600 font-semibold text-sm">Read Guide →</span>
+            </a>
 
-            <!-- Column 3: Resources -->
-            <div>
-                <h4 class="font-bold mb-4 text-lg">Resources</h4>
-                <ul class="space-y-2 text-sm text-gray-400">
-                    <li><a href="#" class="hover:text-white transition">📚 Tax Guides</a></li>
-                    <li><a href="#faq" class="hover:text-white transition">❓ FAQs</a></li>
-                    <li><a href="#" class="hover:text-white transition">ℹ️ About Us</a></li>
-                </ul>
-            </div>
-
-            <!-- Column 4: Contact -->
-            <div>
-                <h4 class="font-bold mb-4 text-lg">Contact & Support</h4>
-                <ul class="space-y-2 text-sm text-gray-400">
-                    <li>📧 info@paktaxcalc.com</li>
-                    <li>📞 WhatsApp Support</li>
-                    <li>📍 Rawalpindi, Pakistan</li>
-                </ul>
-            </div>
+            <!-- Guide 3 -->
+            <a href="blog/file-tax-return-pakistan.html" class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all p-6 block hover:scale-105">
+                <div class="text-4xl mb-3">📋</div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2 hover:text-indigo-600 transition-colors">
+                    How to File Tax Return 2026
+                </h3>
+                <p class="text-gray-600 text-sm mb-3">
+                    Step-by-step guide to filing returns online via IRIS portal. Required docs and deadlines.
+                </p>
+                <span class="text-indigo-600 font-semibold text-sm">Read Guide →</span>
+            </a>
         </div>
 
-        <!-- Bottom Bar -->
-        <div class="border-t border-gray-700 mt-10 pt-8 text-center">
-            <p class="text-sm text-gray-400">© 2026 <strong>PakTaxCalc</strong>. All rights reserved. Made with ❤️ in Pakistan 🇵🇰</p>
-            <p class="text-xs text-gray-500 mt-2">Tax rates updated as per <strong>FBR Pakistan</strong> FY 2025-2026</p>
+        <div class="text-center">
+            <a href="blog/" class="inline-flex items-center bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:from-purple-700 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl">
+                View All Tax Guides
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+            </a>
         </div>
-    </div>
-</footer>
+    </section>
+    
+<!-- Premium Footer -->
+    <footer class="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <!-- Brand -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">
+                        Pak<span class="text-yellow-300">TaxCalc</span>
+                    </h3>
+                    <p class="text-gray-400 text-sm">
+                        Pakistan's most trusted free tax calculator platform. Making tax calculations simple since 2025.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="index.html" class="hover:text-yellow-300 transition-colors">Home</a></li>
+                        <li><a href="blog/" class="hover:text-yellow-300 transition-colors">Tax Guides</a></li>
+                        <li><a href="about.html" class="hover:text-yellow-300 transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-yellow-300 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Calculators -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Calculators</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#salary" class="hover:text-yellow-300 transition-colors">Salary Tax</a></li>
+                        <li><a href="#pta" class="hover:text-yellow-300 transition-colors">PTA Mobile Tax</a></li>
+                        <li><a href="#business" class="hover:text-yellow-300 transition-colors">Business Tax</a></li>
+                        <li><a href="#zakat" class="hover:text-yellow-300 transition-colors">Zakat</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <p class="text-gray-400 text-sm mb-2">
+                        📧 abdullahmasood20019@gmail.com
+                    </p>
+                    <p class="text-gray-400 text-sm mb-4">
+                        💬 Questions? We're here to help!
+                    </p>
+                    <div class="space-y-2">
+                        <a href="privacy-policy.html" class="block text-gray-400 text-xs hover:text-yellow-300 transition-colors">Privacy Policy</a>
+                        <a href="terms-conditions.html" class="block text-gray-400 text-xs hover:text-yellow-300 transition-colors">Terms & Conditions</a>
+                        <a href="disclaimer.html" class="block text-gray-400 text-xs hover:text-yellow-300 transition-colors">Disclaimer</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-6 text-center">
+                <p class="text-sm text-gray-400">&copy; 2026 PakTaxCalc. All rights reserved. Made with ❤️ in Pakistan 🇵🇰</p>
+                <p class="text-xs text-gray-500 mt-2">Tax rates updated as per FBR Pakistan FY 2025-2026</p>
+            </div>
+        </div>
+    </footer>
 
 <!-- NOW YOUR SCRIPT TAG STARTS -->
 <script>
