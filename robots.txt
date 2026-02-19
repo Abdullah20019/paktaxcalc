@@ -2,20 +2,13 @@
 User-agent: *
 Allow: /
 Allow: /blog/
-Allow: /blog/posts/
 
 # Sitemap location
-Sitemap: https://paktaxcalc.vercel.app/sitemap.xml
+Sitemap: https://paktaxcalc.com/sitemap.xml
 
-# Block specific bots (prevents scraping)
-User-agent: AhrefsBot
-Disallow: /
-
-User-agent: SemrushBot
-Disallow: /
-
+# Block only harmful bots
 User-agent: DotBot
 Disallow: /
 
-# Crawl delay (prevents server overload)
+# Crawl delay
 Crawl-delay: 1
