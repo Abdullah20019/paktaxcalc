@@ -245,8 +245,9 @@
             <!-- Premium Badge -->
             <div class="inline-flex items-center bg-white backdrop-blur-md px-4 md:px-6 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-bold mb-4 md:mb-6 shadow-lg border-2 border-white">
                 <span class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
-                <span class="hidden sm:inline text-gray-800">🇵🇰 Pakistan's #1 Tax Calculator •</span>
-                <span class="sm:ml-1 font-black text-indigo-600"><span id="totalCalculations">50,000+</span> Users Monthly</span>
+                <span class="hidden sm:inline text-gray-800">🇵🇰 Pakistan's Free Tax Calculator •</span>
+                <span class="sm:ml-1 font-black text-indigo-600">Updated for 2026 ✓</span>
+
             </div>
             
             <!-- Main Title - DARK TEXT -->
@@ -1042,11 +1043,12 @@
                         To make tax calculations accessible, accurate, and easy for every Pakistani. We believe financial literacy starts with understanding your taxes.
                     </p>
                     
-                    <div class="grid grid-cols-3 gap-4 text-center">
-                        <div>
-                            <div class="text-3xl font-black text-yellow-300"><span id="aboutUserCount">15,847</span>+</div>
-                            <div class="text-sm text-purple-200 mt-1">Daily Users</div>
-                        </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-black text-yellow-300">8+</div>
+                        <div class="text-sm text-purple-200">Calculators</div>
+                    </div>
+
+
                         <div>
                             <div class="text-3xl font-black text-yellow-300">8</div>
                             <div class="text-sm text-purple-200 mt-1">Calculators</div>
@@ -1508,29 +1510,6 @@
                 maximumFractionDigits: 0 
             });
         }
-
-        // ========== COUNTERS ==========
-        function animateCounter(id, start, end, duration) {
-            const elem = document.getElementById(id);
-            if (!elem) return;
-            
-            let startTime = null;
-            function step(timestamp) {
-                if (!startTime) startTime = timestamp;
-                const progress = Math.min((timestamp - startTime) / duration, 1);
-                elem.textContent = Math.floor(progress * (end - start) + start).toLocaleString();
-                if (progress < 1) {
-                    requestAnimationFrame(step);
-                }
-            }
-            requestAnimationFrame(step);
-        }
-
-        window.addEventListener('load', function() {
-            animateCounter('liveCounter', 1000, 1260, 2000);
-            animateCounter('totalCalculations', 40000, 50020, 2500);
-            animateCounter('aboutUserCount', 10000, 50020, 2500);
-        });
 
         // ========== WHATSAPP SHARE ==========
         function shareOnWhatsApp() {
