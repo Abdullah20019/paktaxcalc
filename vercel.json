@@ -1,3 +1,16 @@
 {
-  "cleanUrls": false
+  "cleanUrls": false,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "paktaxcalc.vercel.app"
+        }
+      ],
+      "destination": "https://paktaxcalc.com/$1",
+      "permanent": true
+    }
+  ]
 }
