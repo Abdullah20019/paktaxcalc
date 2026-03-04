@@ -1494,12 +1494,11 @@
                 // Mouse hover for desktop
                 tab.addEventListener('mouseenter', () => updateCalcCursor(tab));
                 
-                // Touch events for mobile
-                tab.addEventListener('touchstart', function(e) {
-                    e.preventDefault(); // Prevent default touch behavior
+                // Touch events for mobile - don't prevent default to allow scrolling
+                tab.addEventListener('touchend', function(e) {
                     const calcType = this.id.replace('tab-', '');
                     showCalculator(calcType);
-                }, { passive: false });
+                }, { passive: true });
                 
                 // Ensure click works as fallback
                 tab.addEventListener('click', function(e) {

@@ -342,7 +342,8 @@
     border: 1px solid var(--border);
     border-radius: 9999px;
     padding: 4px;
-    overflow: hidden;
+    overflow: visible;
+    max-width: 100%;
 }
 
 .calc-tabs-container {
@@ -353,6 +354,10 @@
     overflow-x: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x pan-y;
+    scroll-behavior: smooth;
+    width: 100%;
 }
 
 .calc-tabs-container::-webkit-scrollbar {
