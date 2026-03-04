@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,82 +6,136 @@
     <title>Disclaimer - PakTaxCalc</title>
     <meta name="description" content="Legal disclaimer for PakTaxCalc tax calculator. Important information about accuracy and limitations.">
     <link rel="canonical" href="https://paktaxcalc.com/disclaimer.html">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/premium-style.css">
+    <link rel="stylesheet" href="css/dark-theme.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+<body class="bg-[#0a0a0a] text-white min-h-screen">
     
-    <header class="bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 shadow-2xl">
-        <nav class="container mx-auto px-4 py-5">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-3">
-                    <div class="bg-white rounded-xl p-2 shadow-lg">
-                        <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-                        </svg>
-                    </div>
-                    <div>
-                        <h1 class="text-2xl md:text-3xl font-black text-white tracking-tight">
-                            Pak<span class="text-yellow-300">TaxCalc</span>
-                        </h1>
-                    </div>
-                </div>
-                <a href="index.html" class="text-white hover:text-yellow-300 font-semibold transition-colors">
-                    ← Home
-                </a>
-            </div>
-        </nav>
-    </header>
+    <!-- Dark Header with Animated Navigation -->
+<header class="dark-header fixed w-full top-0 z-50">
+  <nav class="container mx-auto px-4 py-4">
+    <div class="flex justify-between items-center">
+      <!-- Logo -->
+      <a href="/" class="flex items-center space-x-3 group">
+        <div class="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-emerald-500/30 transition-all">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+              d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z">
+            </path>
+          </svg>
+        </div>
+        <div class="text-2xl font-bold tracking-tight">
+          Pak<span class="text-emerald-400">Tax</span>Calc
+        </div>
+      </a>
+
+      <!-- Desktop Slide Tabs Navigation -->
+      <div class="hidden md:block">
+        <div class="slide-tabs-container" id="slideTabs">
+          <div class="slide-tabs-cursor" id="slideCursor"></div>
+          <a href="index.html" class="slide-tab" data-index="0">Home</a>
+          <a href="blog/" class="slide-tab" data-index="1">Tax Guides</a>
+          <a href="about.html" class="slide-tab" data-index="2">About</a>
+          <a href="contact.html" class="slide-tab" data-index="3">Contact</a>
+        </div>
+      </div>
+
+      <!-- Animated Hamburger Menu -->
+      <button id="mobileMenuBtn" class="md:hidden hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden mobile-menu mt-4 rounded-xl overflow-hidden max-h-0 transition-all duration-300">
+      <div class="flex flex-col p-4 space-y-2">
+        <a href="index.html" class="py-3 px-4 rounded-lg hover:bg-white/5 text-gray-300 hover:text-emerald-400 transition-colors">Home</a>
+        <a href="blog/" class="py-3 px-4 rounded-lg hover:bg-white/5 text-gray-300 hover:text-emerald-400 transition-colors">Tax Guides</a>
+        <a href="about.html" class="py-3 px-4 rounded-lg hover:bg-white/5 text-gray-300 hover:text-emerald-400 transition-colors">About</a>
+        <a href="contact.html" class="py-3 px-4 rounded-lg hover:bg-white/5 text-gray-300 hover:text-emerald-400 transition-colors">Contact</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Spacer for fixed header -->
+<div class="h-20"></div>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', () => {
+      const isOpen = mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== '0px';
+      mobileMenu.style.maxHeight = isOpen ? '0px' : mobileMenu.scrollHeight + 'px';
+      mobileMenuBtn.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        mobileMenu.style.maxHeight = '0px';
+        mobileMenuBtn.classList.remove('active');
+      }
+    });
+  }
+</script>
 
     <div class="container mx-auto px-4 py-12">
-        <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl p-8 md:p-12">
+        <div class="max-w-4xl mx-auto bg-[#141414] border border-white/10 rounded-2xl p-8 md:p-12">
             
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
                 ⚠️ Disclaimer
             </h1>
             
-            <p class="text-gray-600 mb-8">
+            <p class="text-gray-400 mb-8">
                 <strong>Last Updated:</strong> February 18, 2026
             </p>
 
             <div class="prose prose-lg max-w-none">
 
-                <div class="bg-red-50 border-l-4 border-red-400 p-6 my-8">
-                    <h2 class="text-xl font-bold text-red-900 mb-3">⚠️ Please Read Carefully</h2>
-                    <p class="text-red-800 text-lg font-semibold">
+                <div class="bg-red-500/10 border-l-4 border-red-400 p-6 my-8">
+                    <h2 class="text-xl font-bold text-red-300 mb-3">⚠️ Please Read Carefully</h2>
+                    <p class="text-red-300 text-lg font-semibold">
                         The information provided by PakTaxCalc is for <strong>educational and informational purposes only</strong>. It should NOT be considered as professional tax, legal, or financial advice.
                     </p>
                 </div>
 
-                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">1. No Professional Advice</h2>
-                <p class="text-gray-700 leading-relaxed mb-4">
+                <h2 class="text-2xl font-bold text-white mt-8 mb-4">1. No Professional Advice</h2>
+                <p class="text-gray-300 leading-relaxed mb-4">
                     PakTaxCalc is <strong>NOT</strong>:
                 </p>
-                <ul class="list-disc pl-6 text-gray-700 mb-4">
+                <ul class="list-disc pl-6 text-gray-300 mb-4">
                     <li>❌ A licensed tax consultant or chartered accountant</li>
                     <li>❌ An official representative of the Federal Board of Revenue (FBR)</li>
                     <li>❌ A legal advisory service</li>
                     <li>❌ A substitute for professional financial planning</li>
                 </ul>
-                <p class="text-gray-700 leading-relaxed mb-4">
+                <p class="text-gray-300 leading-relaxed mb-4">
                     Our calculators and guides are designed to help you <strong>understand</strong> tax concepts and <strong>estimate</strong> your potential tax liability. However, they cannot replace personalized advice from qualified professionals.
                 </p>
 
-                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">2. Accuracy Limitations</h2>
+                <h2 class="text-2xl font-bold text-white mt-8 mb-4">2. Accuracy Limitations</h2>
                 
-                <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">2.1 Best Effort, No Guarantee</h3>
-                <p class="text-gray-700 leading-relaxed mb-4">
+                <h3 class="text-xl font-semibold text-white mt-6 mb-3">2.1 Best Effort, No Guarantee</h3>
+                <p class="text-gray-300 leading-relaxed mb-4">
                     While we make every effort to:
                 </p>
-                <ul class="list-disc pl-6 text-gray-700 mb-4">
+                <ul class="list-disc pl-6 text-gray-300 mb-4">
                     <li>✅ Use official FBR tax rates for FY 2025-2026</li>
                     <li>✅ Update calculators promptly when rates change</li>
                     <li>✅ Test our calculations thoroughly</li>
                     <li>✅ Provide accurate educational content</li>
                 </ul>
-                <p class="text-gray-700 leading-relaxed mb-4">
+                <p class="text-gray-300 leading-relaxed mb-4">
                     We <strong>cannot guarantee 100% accuracy</strong> in all situations because:
                 </p>
-                <ul class="list-disc pl-6 text-gray-700 mb-4">
+                <ul class="list-disc pl-6 text-gray-300 mb-4">
                     <li>📌 Tax laws and rates change frequently</li>
                     <li>📌 Individual circumstances vary greatly</li>
                     <li>📌 Complex tax situations require professional judgment</li>
@@ -89,8 +143,8 @@
                     <li>📌 Technical errors or bugs may occur</li>
                 </ul>
 
-                <h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">2.2 Your Responsibility</h3>
-                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 my-6">
+                <h3 class="text-xl font-semibold text-white mt-6 mb-3">2.2 Your Responsibility</h3>
+                <div class="bg-yellow-500/10 border-l-4 border-yellow-400 p-6 my-6">
                     <p class="text-yellow-900 font-semibold mb-2">
                         YOU are solely responsible for:
                     </p>
@@ -103,11 +157,11 @@
                     </ul>
                 </div>
 
-                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">3. Limitation of Liability</h2>
-                <p class="text-gray-700 leading-relaxed mb-4">
+                <h2 class="text-2xl font-bold text-white mt-8 mb-4">3. Limitation of Liability</h2>
+                <p class="text-gray-300 leading-relaxed mb-4">
                     PakTaxCalc, its developers, and contributors shall <strong>NOT</strong> be held liable for:
                 </p>
-                <ul class="list-disc pl-6 text-gray-700 mb-4">
+                <ul class="list-disc pl-6 text-gray-300 mb-4">
                     <li>❌ Errors or inaccuracies in calculations</li>
                     <li>❌ Tax penalties, fines, or late fees you may incur</li>
                     <li>❌ Legal issues arising from incorrect tax filings</li>
@@ -116,68 +170,68 @@
                     <li>❌ Service interruptions, downtime, or technical issues</li>
                     <li>❌ Actions taken by FBR or other tax authorities</li>
                 </ul>
-                <p class="text-gray-700 leading-relaxed mb-4">
+                <p class="text-gray-300 leading-relaxed mb-4">
                     <strong>You use PakTaxCalc at your own risk.</strong>
                 </p>
 
-                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">4. Educational Purpose Only</h2>
-                <p class="text-gray-700 leading-relaxed mb-4">
+                <h2 class="text-2xl font-bold text-white mt-8 mb-4">4. Educational Purpose Only</h2>
+                <p class="text-gray-300 leading-relaxed mb-4">
                     All content on PakTaxCalc, including:
                 </p>
-                <ul class="list-disc pl-6 text-gray-700 mb-4">
+                <ul class="list-disc pl-6 text-gray-300 mb-4">
                     <li>Tax calculators</li>
                     <li>Blog articles and guides</li>
                     <li>Examples and case studies</li>
                     <li>Tips and suggestions</li>
                 </ul>
-                <p class="text-gray-700 leading-relaxed mb-4">
+                <p class="text-gray-300 leading-relaxed mb-4">
                     ...is provided for <strong>general educational purposes</strong> to help you understand the Pakistani tax system better. It should be used as a <strong>starting point</strong> for your tax planning, not as definitive guidance.
                 </p>
 
-                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">5. External Links</h2>
-                <p class="text-gray-700 leading-relaxed mb-4">
+                <h2 class="text-2xl font-bold text-white mt-8 mb-4">5. External Links</h2>
+                <p class="text-gray-300 leading-relaxed mb-4">
                     Our website may contain links to:
                 </p>
-                <ul class="list-disc pl-6 text-gray-700 mb-4">
+                <ul class="list-disc pl-6 text-gray-300 mb-4">
                     <li>FBR official website (fbr.gov.pk)</li>
                     <li>IRIS portal (iris.fbr.gov.pk)</li>
                     <li>Government notification sites</li>
                     <li>Third-party resources</li>
                 </ul>
-                <p class="text-gray-700 leading-relaxed mb-4">
+                <p class="text-gray-300 leading-relaxed mb-4">
                     We do <strong>NOT</strong> control or endorse the content on external websites. Links are provided for convenience only. Use external resources at your own discretion.
                 </p>
 
-                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">6. No Data Storage Guarantee</h2>
-                <p class="text-gray-700 leading-relaxed mb-4">
+                <h2 class="text-2xl font-bold text-white mt-8 mb-4">6. No Data Storage Guarantee</h2>
+                <p class="text-gray-300 leading-relaxed mb-4">
                     While our calculators perform calculations locally in your browser without storing your data on our servers:
                 </p>
-                <ul class="list-disc pl-6 text-gray-700 mb-4">
+                <ul class="list-disc pl-6 text-gray-300 mb-4">
                     <li>We do NOT guarantee the security of data transmission</li>
                     <li>We recommend NOT entering sensitive personal information (CNIC, bank details, etc.) beyond what's necessary for calculations</li>
                     <li>Save your calculation results externally (screenshot, write down, etc.)</li>
                 </ul>
 
-                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">7. Third-Party Advertisements</h2>
-                <p class="text-gray-700 leading-relaxed mb-4">
+                <h2 class="text-2xl font-bold text-white mt-8 mb-4">7. Third-Party Advertisements</h2>
+                <p class="text-gray-300 leading-relaxed mb-4">
                     We use Google AdSense to display advertisements. We:
                 </p>
-                <ul class="list-disc pl-6 text-gray-700 mb-4">
+                <ul class="list-disc pl-6 text-gray-300 mb-4">
                     <li>Do NOT endorse products or services advertised</li>
                     <li>Are NOT responsible for the accuracy of ad content</li>
                     <li>Do NOT control which ads are displayed</li>
                     <li>Recommend you verify any advertised offers independently</li>
                 </ul>
 
-                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">8. Changes to Disclaimer</h2>
-                <p class="text-gray-700 leading-relaxed mb-4">
+                <h2 class="text-2xl font-bold text-white mt-8 mb-4">8. Changes to Disclaimer</h2>
+                <p class="text-gray-300 leading-relaxed mb-4">
                     We reserve the right to update this disclaimer at any time. The "Last Updated" date indicates when changes were last made. Continued use of the service constitutes acceptance of the updated disclaimer.
                 </p>
 
-                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">9. Recommended Actions</h2>
-                <div class="bg-emerald-50 border-l-4 border-emerald-400 p-6 my-6">
-                    <p class="font-semibold text-emerald-900 mb-3 text-lg">✅ For Accurate Tax Filing, We Recommend:</p>
-                    <ul class="list-disc pl-6 text-emerald-800">
+                <h2 class="text-2xl font-bold text-white mt-8 mb-4">9. Recommended Actions</h2>
+                <div class="bg-emerald-500/10 border-l-4 border-emerald-400 p-6 my-6">
+                    <p class="font-semibold text-emerald-400 mb-3 text-lg">✅ For Accurate Tax Filing, We Recommend:</p>
+                    <ul class="list-disc pl-6 text-gray-300">
                         <li>Using our calculators as an <strong>estimation tool only</strong></li>
                         <li>Consulting the <strong>official FBR website and IRIS portal</strong></li>
                         <li>Hiring a <strong>qualified chartered accountant</strong> for complex situations</li>
@@ -187,27 +241,27 @@
                     </ul>
                 </div>
 
-                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">10. Contact Us</h2>
-                <p class="text-gray-700 leading-relaxed mb-4">
+                <h2 class="text-2xl font-bold text-white mt-8 mb-4">10. Contact Us</h2>
+                <p class="text-gray-300 leading-relaxed mb-4">
                     If you have questions or concerns about this disclaimer:
                 </p>
-                <div class="bg-indigo-50 border-l-4 border-indigo-400 p-6 my-6">
-                    <p class="text-gray-900 mb-2"><strong>PakTaxCalc</strong></p>
-                    <p class="text-gray-700 mb-1">📧 Email: <a href="mailto:abdullahmasood20019@gmail.com" class="text-indigo-600 hover:underline">abdullahmasood20019@gmail.com</a></p>
-                    <p class="text-gray-700 mb-1">🌐 Website: <a href="https://paktaxcalc.com" class="text-indigo-600 hover:underline">paktaxcalc.com</a></p>
+                <div class="bg-emerald-500/10 border-l-4 border-emerald-400 p-6 my-6">
+                    <p class="text-white mb-2"><strong>PakTaxCalc</strong></p>
+                    <p class="text-gray-300 mb-1">📧 Email: <a href="mailto:abdullahmasood20019@gmail.com" class="text-emerald-400 hover:underline">abdullahmasood20019@gmail.com</a></p>
+                    <p class="text-gray-300 mb-1">🌐 Website: <a href="https://paktaxcalc.com" class="text-emerald-400 hover:underline">paktaxcalc.com</a></p>
                 </div>
 
-                <div class="bg-blue-50 border-l-4 border-blue-400 p-6 my-8">
-                    <p class="font-semibold text-blue-900 mb-2 text-xl">📌 Bottom Line</p>
-                    <p class="text-blue-800 text-lg">
+                <div class="bg-blue-500/10 border-l-4 border-blue-400 p-6 my-8">
+                    <p class="font-semibold text-blue-300 mb-2 text-xl">📌 Bottom Line</p>
+                    <p class="text-blue-300 text-lg">
                         PakTaxCalc is a helpful educational tool, but <strong>YOU</strong> remain fully responsible for your tax obligations. Always verify information with official sources and seek professional advice when needed.
                     </p>
                 </div>
 
             </div>
 
-            <div class="mt-12 pt-8 border-t border-gray-200">
-                <a href="index.html" class="inline-flex items-center text-indigo-600 hover:text-indigo-700 font-semibold">
+            <div class="mt-12 pt-8 border-t border-white/10">
+                <a href="index.html" class="inline-flex items-center text-emerald-400 hover:text-emerald-300 font-semibold">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                     </svg>
@@ -226,3 +280,4 @@
 
 </body>
 </html>
+

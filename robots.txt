@@ -10,5 +10,19 @@ Sitemap: https://paktaxcalc.com/sitemap.xml
 User-agent: DotBot
 Disallow: /
 
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+# Allow all other bots
+User-agent: *
+Allow: /
+Disallow: /
+
 # Crawl delay
 Crawl-delay: 1
