@@ -209,38 +209,53 @@
 
 <script>
   // Mobile menu toggle
-  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const mobileMenuIcon = document.getElementById('mobileMenuIcon');
+  (function() {
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
 
-  if (mobileMenuBtn && mobileMenu && mobileMenuIcon) {
-    const setMenuState = (open) => {
-      mobileMenu.style.maxHeight = open ? mobileMenu.scrollHeight + 'px' : '0px';
+    if (!mobileMenuBtn || !mobileMenu) return;
+
+    let isOpen = false;
+
+    function setMenuState(open) {
+      isOpen = open;
+      if (open) {
+        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+        mobileMenuBtn.classList.add('active');
+      } else {
+        mobileMenu.style.maxHeight = '0px';
+        mobileMenuBtn.classList.remove('active');
+      }
       mobileMenu.setAttribute('aria-hidden', open ? 'false' : 'true');
       mobileMenuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      mobileMenuIcon.setAttribute('d', open ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16');
-    };
+    }
 
-    mobileMenuBtn.addEventListener('click', () => {
-      const isOpen = mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== '0px';
+    // Toggle on button click
+    mobileMenuBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
       setMenuState(!isOpen);
     });
 
-    // optional: close when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-        if (mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== '0px') {
-          setMenuState(false);
-        }
-      }
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
+    // Close when clicking outside
+    document.addEventListener('click', function(e) {
+      if (isOpen && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
         setMenuState(false);
       }
     });
-  }
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && isOpen) {
+        setMenuState(false);
+      }
+    });
+
+    // Handle touch events for mobile
+    mobileMenuBtn.addEventListener('touchstart', function(e) {
+      e.preventDefault();
+      setMenuState(!isOpen);
+    }, { passive: false });
+  })();
 </script>
 
     <!-- Hero Section - DARK THEME -->
@@ -1449,7 +1464,7 @@
         let activeCalcTab = null;
 
         function updateCalcCursor(element) {
-            if (!element || !calcTabsCursor) return;
+            if (!element || !calcTabsCursor || !calcTabsContainer) return;
             const rect = element.getBoundingClientRect();
             const parentRect = calcTabsContainer.getBoundingClientRect();
             calcTabsCursor.style.width = rect.width + 'px';
@@ -1458,23 +1473,40 @@
         }
 
         function resetCalcCursor() {
-            if (activeCalcTab) {
+            if (activeCalcTab && calcTabsCursor) {
                 updateCalcCursor(activeCalcTab);
             }
         }
 
-        // Calculator tabs hover effect
+        // Calculator tabs hover/touch effect
         if (calcTabsContainer) {
+            // Mouse events for desktop
             calcTabsContainer.addEventListener('mouseenter', () => {
-                calcTabsCursor.style.opacity = '1';
+                if (calcTabsCursor) calcTabsCursor.style.opacity = '1';
             }, true);
 
             calcTabsContainer.addEventListener('mouseleave', () => {
                 resetCalcCursor();
             });
 
+            // Touch events for mobile
             calcTabsContainer.querySelectorAll('.calc-tab').forEach(tab => {
+                // Mouse hover for desktop
                 tab.addEventListener('mouseenter', () => updateCalcCursor(tab));
+                
+                // Touch events for mobile
+                tab.addEventListener('touchstart', function(e) {
+                    e.preventDefault(); // Prevent default touch behavior
+                    const calcType = this.id.replace('tab-', '');
+                    showCalculator(calcType);
+                }, { passive: false });
+                
+                // Ensure click works as fallback
+                tab.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const calcType = this.id.replace('tab-', '');
+                    showCalculator(calcType);
+                });
             });
         }
 
