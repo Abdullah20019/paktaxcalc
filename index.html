@@ -1465,6 +1465,8 @@
 
         function updateCalcCursor(element) {
             if (!element || !calcTabsCursor || !calcTabsContainer) return;
+            // Skip cursor animation on mobile devices
+            if (window.innerWidth <= 768) return;
             const rect = element.getBoundingClientRect();
             const parentRect = calcTabsContainer.getBoundingClientRect();
             calcTabsCursor.style.width = rect.width + 'px';

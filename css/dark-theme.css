@@ -375,6 +375,17 @@
     opacity: 0;
 }
 
+/* Disable cursor animation on mobile to prevent glitches */
+@media (max-width: 768px) {
+    .calc-tabs-cursor {
+        display: none !important;
+    }
+    
+    .calc-tab.active-tab {
+        background: var(--green-primary);
+    }
+}
+
 .calc-tab {
     position: relative;
     display: flex;
