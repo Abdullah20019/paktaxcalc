@@ -1,28 +1,80 @@
-# Allow all search engines to crawl everything
+# Allow all search engines and SEO tools to crawl everything
 User-agent: *
 Allow: /
 Allow: /blog/
+Allow: /css/
+Allow: /js/
+Allow: /images/
 
 # Sitemap location
 Sitemap: https://paktaxcalc.com/sitemap.xml
 
-# Block only harmful bots
-User-agent: DotBot
-Disallow: /
+# Crawl delay for polite crawling
+Crawl-delay: 1
 
-User-agent: SemrushBot
+# Block only harmful/spam bots (not SEO tools)
+User-agent: DotBot
 Disallow: /
 
 User-agent: MJ12bot
 Disallow: /
 
+# Allow AhrefsBot with crawl delay
 User-agent: AhrefsBot
-Crawl-delay: 10
-
-# Allow all other bots
-User-agent: *
 Allow: /
-Disallow: /
+Crawl-delay: 5
 
-# Crawl delay
-Crawl-delay: 1
+# Allow SemrushBot (SEO tool)
+User-agent: SemrushBot
+Allow: /
+Crawl-delay: 5
+
+# Allow Seobility (SEO audit tool)
+User-agent: SeobilityBot
+Allow: /
+Crawl-delay: 5
+
+# Allow Screaming Frog (SEO tool)
+User-agent: Screaming Frog SEO Spider
+Allow: /
+Crawl-delay: 5
+
+# Allow Sitebulb (SEO tool)
+User-agent: Sitebulb
+Allow: /
+Crawl-delay: 5
+
+# Allow DeepCrawl (SEO tool)
+User-agent: DeepCrawl
+Allow: /
+Crawl-delay: 5
+
+# Allow Googlebots explicitly
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+# Allow Bingbot
+User-agent: Bingbot
+Allow: /
+
+# Allow other major search engines
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Host directive for canonical domain
+Host: https://paktaxcalc.com
