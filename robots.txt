@@ -9,6 +9,9 @@ Allow: /images/
 # Sitemap location
 Sitemap: https://paktaxcalc.com/sitemap.xml
 
+# LLM-TXT for AI/LLM crawlers
+LLM-TXT: https://paktaxcalc.com/llm.txt
+
 # Crawl delay for polite crawling
 Crawl-delay: 1
 
