@@ -10,7 +10,7 @@ Allow: /images/
 Sitemap: https://paktaxcalc.com/sitemap.xml
 
 # LLM-TXT for AI/LLM crawlers
-LLM-TXT: https://paktaxcalc.com/llm.txt
+LLM-TXT: https://paktaxcalc.com/llms.txt
 
 # Crawl delay for polite crawling
 Crawl-delay: 1
@@ -81,3 +81,4 @@ Allow: /
 
 # Host directive for canonical domain
 Host: https://paktaxcalc.com
+

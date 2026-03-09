@@ -1,16 +1,21 @@
 {
-  "cleanUrls": false,
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "paktaxcalc.vercel.app"
-        }
-      ],
-      "destination": "https://paktaxcalc.com/$1",
-      "permanent": true
-    }
-  ]
+    "cleanUrls":  false,
+    "redirects":  [
+                      {
+                          "source":  "/llm.txt",
+                          "destination":  "/llms.txt",
+                          "permanent":  true
+                      },
+                      {
+                          "source":  "/(.*)",
+                          "has":  [
+                                      {
+                                          "type":  "host",
+                                          "value":  "paktaxcalc.vercel.app"
+                                      }
+                                  ],
+                          "destination":  "https://paktaxcalc.com/$1",
+                          "permanent":  true
+                      }
+                  ]
 }
