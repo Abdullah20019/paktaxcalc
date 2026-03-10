@@ -69,13 +69,6 @@
             "@type": "Offer",
             "price": "0",
             "priceCurrency": "PKR"
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "ratingCount": "2847",
-            "bestRating": "5",
-            "worstRating": "1"
         }
     }
     </script>
@@ -230,6 +223,8 @@
       mobileMenuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
     }
 
+    setMenuState(false);
+
     // Toggle on button click
     mobileMenuBtn.addEventListener('click', function(e) {
       e.stopPropagation();
@@ -249,12 +244,6 @@
         setMenuState(false);
       }
     });
-
-    // Handle touch events for mobile
-    mobileMenuBtn.addEventListener('touchstart', function(e) {
-      e.preventDefault();
-      setMenuState(!isOpen);
-    }, { passive: false });
   })();
 </script>
 
@@ -1849,21 +1838,6 @@
             document.querySelectorAll('.animate-on-scroll').forEach(el => {
                 observer.observe(el);
             });
-        });
-
-        // ========== MOBILE MENU TOGGLE ==========
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuBtn = document.getElementById('mobileMenuBtn');
-            const mobileMenu = document.getElementById('mobileMenu');
-            
-            if (menuBtn && mobileMenu) {
-                menuBtn.addEventListener('click', function() {
-                    this.classList.toggle('active');
-                    mobileMenu.classList.toggle('hidden');
-                    const isExpanded = this.classList.contains('active');
-                    this.setAttribute('aria-expanded', isExpanded);
-                });
-            }
         });
 
         // ========== SLIDE TABS NAVIGATION ==========
