@@ -4,15 +4,71 @@
   <!-- Homepage -->
   <url>
     <loc>https://paktaxcalc.com/</loc>
-    <lastmod>2026-03-04</lastmod>
+    <lastmod>2026-03-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://paktaxcalc.com/calculators.html</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://paktaxcalc.com/pta-tax-calculator-pakistan.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://paktaxcalc.com/business-tax-calculator-pakistan.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://paktaxcalc.com/zakat-calculator-pakistan.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://paktaxcalc.com/agricultural-tax-calculator-pakistan.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://paktaxcalc.com/sales-tax-calculator-pakistan.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://paktaxcalc.com/property-tax-calculator-pakistan.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://paktaxcalc.com/pension-calculator-pakistan.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- About Page -->
   <url>
     <loc>https://paktaxcalc.com/about.html</loc>
-    <lastmod>2026-03-04</lastmod>
+    <lastmod>2026-03-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -20,7 +76,7 @@
   <!-- Contact Page -->
   <url>
     <loc>https://paktaxcalc.com/contact.html</loc>
-    <lastmod>2026-03-04</lastmod>
+    <lastmod>2026-03-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -52,7 +108,7 @@
   <!-- Blog Homepage -->
   <url>
     <loc>https://paktaxcalc.com/blog/</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-03-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -130,7 +186,7 @@
 
   <url>
     <loc>https://paktaxcalc.com/blog/fbr-portal-guide-pakistan.html</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-03-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
