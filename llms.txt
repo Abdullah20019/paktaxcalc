@@ -14,10 +14,14 @@ Important notes:
 ## Calculators
 - [Salary Tax Calculator](https://paktaxcalc.com/#calculators): Estimate salary tax, deductions, and annual take-home using Pakistan salary tax rules.
 - [PTA Tax Calculator](https://paktaxcalc.com/pta-tax-calculator-pakistan.html): Estimate mobile import and registration taxes for phones in Pakistan.
+- [Freelancer Tax Calculator](https://paktaxcalc.com/freelancer-tax-calculator-pakistan.html): Estimate freelance income tax for local profit or qualifying IT export withholding scenarios.
 - [Property Tax Calculator](https://paktaxcalc.com/property-tax-calculator-pakistan.html): Estimate buyer or seller withholding tax on Pakistan property transactions.
 - [Business Tax Calculator](https://paktaxcalc.com/business-tax-calculator-pakistan.html): Estimate Pakistan business or non-salaried income tax liability.
 - [Agricultural Tax Calculator](https://paktaxcalc.com/agricultural-tax-calculator-pakistan.html): Estimate agricultural income tax using Pakistan-focused thresholds and rates.
 - [Sales Tax Calculator](https://paktaxcalc.com/sales-tax-calculator-pakistan.html): Calculate sales tax on a base amount using a selected rate.
+- [Vehicle Token Tax Calculator](https://paktaxcalc.com/vehicle-token-tax-calculator-pakistan.html): Estimate current motor vehicle token-tax collection by engine bracket, collection mode, and ATL status.
+- [Mobile Load Tax Calculator](https://paktaxcalc.com/mobile-load-tax-calculator-pakistan.html): Estimate prepaid mobile load tax effect and effective usable balance after recharge.
+- [Cash Withdrawal Tax Calculator](https://paktaxcalc.com/cash-withdrawal-tax-calculator-pakistan.html): Estimate current bank cash withdrawal tax for non-ATL users once the daily threshold is crossed.
 - [Zakat Calculator](https://paktaxcalc.com/zakat-calculator-pakistan.html): Estimate zakat on eligible net wealth above the selected nisab threshold.
 - [Pension Calculator](https://paktaxcalc.com/pension-calculator-pakistan.html): Estimate pension-related amounts for common Pakistan pension scenarios.
 
