@@ -112,15 +112,26 @@
 <main>
   <section class="container mx-auto px-4 py-10">
     <div class="max-w-4xl mx-auto calc-form-card">
-      <h2 class="text-xl font-bold text-white mb-6">Zakat Estimator</h2>
+      <div class="calc-panel-head">
+        <div>
+          <span class="calc-kicker">Obligation Check</span>
+          <h2 class="text-xl font-bold text-white mt-3 mb-2">Zakat Estimator</h2>
+          <p class="calc-help-text">Bring your main zakatable assets and short-term liabilities into one place so the 2.5% obligation is easier to calculate calmly and consistently.</p>
+        </div>
+      </div>
+      <div class="calc-micro-grid">
+        <div class="calc-stat-card"><div class="calc-stat-label">Use For</div><div class="calc-stat-value">Annual zakat planning</div></div>
+        <div class="calc-stat-card"><div class="calc-stat-label">Calculation</div><div class="calc-stat-value">Net wealth vs nisab</div></div>
+        <div class="calc-stat-card"><div class="calc-stat-label">Result</div><div class="calc-stat-value">2.5% if above threshold</div></div>
+      </div>
       <div class="grid md:grid-cols-2 gap-6">
         <div class="calc-input-group mb-0">
           <label class="calc-label">Cash and Bank Savings (PKR)</label>
-          <input type="number" id="zakatCash" class="calc-input" placeholder="e.g., 500000" oninput="calculateZakat()">
+          <input type="number" id="zakatCash" class="calc-input" placeholder="e.g., 500000" oninput="calculateZakat()"><p class="calc-inline-note">Include accessible cash, current accounts, and savings you hold in your own name.</p>
         </div>
         <div class="calc-input-group mb-0">
           <label class="calc-label">Gold Value (PKR)</label>
-          <input type="number" id="zakatGold" class="calc-input" placeholder="e.g., 300000" oninput="calculateZakat()">
+          <input type="number" id="zakatGold" class="calc-input" placeholder="e.g., 300000" oninput="calculateZakat()"><p class="calc-inline-note">Use the current market value of gold you consider zakatable under your practice.</p>
         </div>
         <div class="calc-input-group mb-0">
           <label class="calc-label">Silver Value (PKR)</label>
@@ -128,15 +139,15 @@
         </div>
         <div class="calc-input-group mb-0">
           <label class="calc-label">Receivables / Business Cash (PKR)</label>
-          <input type="number" id="zakatReceivables" class="calc-input" placeholder="e.g., 80000" oninput="calculateZakat()">
+          <input type="number" id="zakatReceivables" class="calc-input" placeholder="e.g., 80000" oninput="calculateZakat()"><p class="calc-inline-note">Use this for recoverable money that is realistically expected back or liquid business cash you treat as zakatable.</p>
         </div>
         <div class="calc-input-group mb-0">
           <label class="calc-label">Short-Term Liabilities (PKR)</label>
-          <input type="number" id="zakatLiabilities" class="calc-input" placeholder="e.g., 100000" oninput="calculateZakat()">
+          <input type="number" id="zakatLiabilities" class="calc-input" placeholder="e.g., 100000" oninput="calculateZakat()"><p class="calc-inline-note">Keep this focused on short-term liabilities you intend to offset now, not every long-dated obligation.</p>
         </div>
         <div class="calc-input-group mb-0">
           <label class="calc-label">Nisab Threshold (PKR)</label>
-          <input type="number" id="zakatNisab" class="calc-input" value="179689" oninput="calculateZakat()">
+          <input type="number" id="zakatNisab" class="calc-input" value="179689" oninput="calculateZakat()"><p class="calc-inline-note">You can adjust this if you follow a different nisab basis or want to update it with current market pricing.</p>
         </div>
       </div>
       <button onclick="calculateZakat()" class="w-full mt-6 btn-green">Calculate Zakat</button>
@@ -156,8 +167,9 @@
           </div>
         </div>
       </div>
-      <div class="bg-amber-500/10 p-4 rounded-lg border-l-4 border-amber-500 mt-6">
-        <p class="text-sm text-gray-300"><strong class="text-amber-400">Note:</strong> This zakat calculator Pakistan page is a practical estimator. If you follow a specific fiqh position or need a detailed ruling for unusual assets, review that guidance separately.</p>
+      <div class="calc-breakdown-list"><div class="calc-breakdown-item"><div><strong>Use for calm review</strong><span>This layout is meant to reduce guesswork when you need to total several asset types at once.</span></div><div class="calc-breakdown-value">Clarity</div></div><div class="calc-breakdown-item"><div><strong>Adjust where needed</strong><span>If you follow a specific fiqh position or have unusual assets, treat this as a practical estimate rather than a final ruling.</span></div><div class="calc-breakdown-value">Review</div></div></div>
+      <div class="calc-note-card">
+        <p class="calc-note-copy"><strong class="text-amber-400">Note:</strong> This zakat calculator Pakistan page is a practical estimator. If you follow a specific fiqh position or need a detailed ruling for unusual assets, review that guidance separately.</p>
       </div>
     </div>
   </section>

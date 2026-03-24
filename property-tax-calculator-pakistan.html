@@ -112,11 +112,32 @@
 <main>
   <section class="container mx-auto px-4 py-10">
     <div class="max-w-4xl mx-auto calc-form-card">
-      <h2 class="text-xl font-bold text-white mb-6">Property Transaction Tax Estimator</h2>
+      <div class="calc-panel-head">
+        <div>
+          <span class="calc-kicker">Deal Cost View</span>
+          <h2 class="text-xl font-bold text-white mt-3 mb-2">Property Transaction Tax Estimator</h2>
+          <p class="calc-help-text">Model purchase or sale withholding quickly so you can compare quoted price, filer status, and extra transaction charges in one place.</p>
+        </div>
+      </div>
+      <div class="calc-micro-grid">
+        <div class="calc-stat-card">
+          <div class="calc-stat-label">Tracks</div>
+          <div class="calc-stat-value">236K / 236C style rates</div>
+        </div>
+        <div class="calc-stat-card">
+          <div class="calc-stat-label">Best For</div>
+          <div class="calc-stat-value">Buyer vs seller planning</div>
+        </div>
+        <div class="calc-stat-card">
+          <div class="calc-stat-label">Check Closely</div>
+          <div class="calc-stat-value">Filer status impact</div>
+        </div>
+      </div>
       <div class="grid md:grid-cols-2 gap-6">
         <div class="calc-input-group mb-0">
           <label class="calc-label">Property Value (PKR)</label>
           <input type="number" id="propertyValue" class="calc-input" placeholder="e.g., 15000000" oninput="calculatePropertyTax()">
+          <p class="calc-inline-note">Use the transaction value you want to model. It is often worth testing a negotiated value and your maximum acceptable value side by side.</p>
         </div>
         <div class="calc-input-group mb-0">
           <label class="calc-label">Transaction Type</label>
@@ -124,6 +145,7 @@
             <option value="buy">Purchase</option>
             <option value="sell">Sale</option>
           </select>
+          <p class="calc-inline-note">Purchase and sale use different withholding treatment, so switch this before comparing the total burden.</p>
         </div>
         <div class="calc-input-group mb-0">
           <label class="calc-label">Taxpayer Status</label>
@@ -131,10 +153,12 @@
             <option value="filer">Filer</option>
             <option value="nonfiler">Non-Filer</option>
           </select>
+          <p class="calc-inline-note">This field has an outsized impact on property tax cost. Always sanity-check your ATL status before finalizing numbers.</p>
         </div>
         <div class="calc-input-group mb-0">
           <label class="calc-label">Additional Transfer / Admin Charges (%)</label>
           <input type="number" id="propertyCharges" class="calc-input" value="0.5" oninput="calculatePropertyTax()">
+          <p class="calc-inline-note">Use this for society transfer fees, admin costs, or your own planning cushion beyond withholding tax.</p>
         </div>
       </div>
       <button onclick="calculatePropertyTax()" class="w-full mt-6 btn-green">Calculate Property Tax</button>
@@ -154,8 +178,24 @@
           </div>
         </div>
       </div>
-      <div class="bg-amber-500/10 p-4 rounded-lg border-l-4 border-amber-500 mt-6">
-        <p class="text-sm text-gray-300"><strong class="text-amber-400">Note:</strong> This property tax calculator Pakistan page provides an estimate for planning only. Actual rates can vary with official valuation, transaction type, and current tax treatment.</p>
+      <div class="calc-breakdown-list">
+        <div class="calc-breakdown-item">
+          <div>
+            <strong>Use before negotiation closes</strong>
+            <span>This planner is strongest before the deal feels emotionally fixed, when you still have room to renegotiate or step back.</span>
+          </div>
+          <div class="calc-breakdown-value">Timing</div>
+        </div>
+        <div class="calc-breakdown-item">
+          <div>
+            <strong>Not a transfer deed substitute</strong>
+            <span>Official valuation basis, authority treatment, and on-ground transfer charges can still differ from this planning estimate.</span>
+          </div>
+          <div class="calc-breakdown-value">Estimate</div>
+        </div>
+      </div>
+      <div class="calc-note-card">
+        <p class="calc-note-copy"><strong class="text-amber-400">Note:</strong> This property tax calculator Pakistan page provides an estimate for planning only. Actual rates can vary with official valuation, transaction type, and current tax treatment.</p>
       </div>
     </div>
   </section>

@@ -111,31 +111,43 @@
 <main>
   <section class="container mx-auto px-4 py-10">
     <div class="max-w-4xl mx-auto calc-form-card">
+      <div class="calc-panel-head">
+        <div>
+          <span class="calc-kicker">Farm Tax Planner</span>
+          <h2 class="text-xl font-bold text-white mt-3 mb-2">Agricultural Tax Estimator</h2>
+          <p class="calc-help-text">Choose the method that best matches your situation, then estimate tax using either land area or annual net agricultural income.</p>
+        </div>
+      </div>
+      <div class="calc-micro-grid">
+        <div class="calc-stat-card"><div class="calc-stat-label">Modes</div><div class="calc-stat-value">Land-based or income-based</div></div>
+        <div class="calc-stat-card"><div class="calc-stat-label">Useful For</div><div class="calc-stat-value">Scenario comparison</div></div>
+        <div class="calc-stat-card"><div class="calc-stat-label">Limit</div><div class="calc-stat-value">Planning, not province-specific filing</div></div>
+      </div>
       <div class="space-y-5">
         <div class="calc-input-group">
           <label class="calc-label">Calculation Method</label>
           <select id="agriMethod" class="calc-select" onchange="toggleAgriMethod()">
             <option value="land">Based on Land Area</option>
             <option value="income">Based on Net Income</option>
-          </select>
+          </select><p class="calc-inline-note">Switch methods if you want to test how a land-based estimate compares with an income-based view of the same farm operation.</p>
         </div>
         <div id="agriLandInputs">
           <div class="calc-input-group">
             <label class="calc-label">Total Land Area (Acres)</label>
-            <input type="number" id="agriLand" class="calc-input" oninput="calculateAgriTax()">
+            <input type="number" id="agriLand" class="calc-input" oninput="calculateAgriTax()"><p class="calc-inline-note">Enter the total acreage you want to assess under the land-based method.</p>
           </div>
           <div class="calc-input-group">
             <label class="calc-label">Land Type</label>
             <select id="agriLandType" class="calc-select" onchange="calculateAgriTax()">
               <option value="irrigated">Irrigated</option>
               <option value="barani">Barani</option>
-            </select>
+            </select><p class="calc-inline-note">Land type affects the estimate, so choose the classification that best reflects your actual land condition.</p>
           </div>
         </div>
         <div id="agriIncomeInputs" class="hidden">
           <div class="calc-input-group">
             <label class="calc-label">Net Agricultural Income (PKR / Year)</label>
-            <input type="number" id="agriIncome" class="calc-input" oninput="calculateAgriTax()">
+            <input type="number" id="agriIncome" class="calc-input" oninput="calculateAgriTax()"><p class="calc-inline-note">Use net annual agricultural income after the farm’s relevant operating costs, not gross produce value.</p>
           </div>
         </div>
       </div>
@@ -145,8 +157,9 @@
           <span class="font-bold text-3xl text-emerald-400" id="agri-taxAmount">Rs. 0</span>
         </div>
       </div>
-      <div class="bg-amber-500/10 p-4 rounded-lg border-l-4 border-amber-500 mt-6">
-        <p class="text-sm text-gray-300"><strong class="text-amber-400">Note:</strong> This is a planning estimate for agricultural tax, not a province-specific final assessment.</p>
+      <div class="calc-breakdown-list"><div class="calc-breakdown-item"><div><strong>Use for comparison</strong><span>This is most helpful when you want to see how farm scale or annual income changes the likely tax picture.</span></div><div class="calc-breakdown-value">Compare</div></div><div class="calc-breakdown-item"><div><strong>Province rules still matter</strong><span>Actual agricultural taxation can depend on province-specific law and official treatment beyond this site estimate.</span></div><div class="calc-breakdown-value">Review</div></div></div>
+      <div class="calc-note-card">
+        <p class="calc-note-copy"><strong class="text-amber-400">Note:</strong> This is a planning estimate for agricultural tax, not a province-specific final assessment.</p>
       </div>
     </div>
   </section>

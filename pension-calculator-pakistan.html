@@ -74,15 +74,37 @@
 <main>
   <section class="container mx-auto px-4 py-10">
     <div class="max-w-4xl mx-auto calc-form-card">
-      <h2 class="text-xl font-bold text-white mb-6">Pension Estimate Calculator</h2>
+      <div class="calc-panel-head">
+        <div>
+          <span class="calc-kicker">Retirement Snapshot</span>
+          <h2 class="text-xl font-bold text-white mt-3 mb-2">Pension Estimate Calculator</h2>
+          <p class="calc-help-text">Test likely retirement income, lump-sum commutation, and gratuity so the pension number feels easier to budget around before formal processing begins.</p>
+        </div>
+      </div>
+      <div class="calc-micro-grid">
+        <div class="calc-stat-card">
+          <div class="calc-stat-label">Includes</div>
+          <div class="calc-stat-value">Monthly and annual view</div>
+        </div>
+        <div class="calc-stat-card">
+          <div class="calc-stat-label">Modes</div>
+          <div class="calc-stat-value">Civil, military, EOBI</div>
+        </div>
+        <div class="calc-stat-card">
+          <div class="calc-stat-label">Helpful For</div>
+          <div class="calc-stat-value">Retirement planning conversations</div>
+        </div>
+      </div>
       <div class="space-y-5">
         <div class="calc-input-group">
           <label class="calc-label">Last Drawn Basic Pay (PKR)</label>
           <input type="number" id="pensionBasicPay" class="calc-input" oninput="calculatePension()">
+          <p class="calc-inline-note">Use the most realistic final basic pay assumption you have, especially if increments or revisions may still happen.</p>
         </div>
         <div class="calc-input-group">
           <label class="calc-label">Years of Service</label>
           <input type="number" id="pensionYears" class="calc-input" oninput="calculatePension()">
+          <p class="calc-inline-note">Service years have a major effect on public-sector pension estimation, so this field is worth checking carefully.</p>
         </div>
         <div class="calc-input-group">
           <label class="calc-label">Service Type</label>
@@ -91,6 +113,7 @@
             <option value="military">Military</option>
             <option value="eobi">EOBI</option>
           </select>
+          <p class="calc-inline-note">Switch service type if you want to compare a public-sector style estimate against an EOBI-style outcome.</p>
         </div>
       </div>
       <div id="pensionResults" class="mt-6 space-y-4">
@@ -113,8 +136,24 @@
           </div>
         </div>
       </div>
-      <div class="bg-amber-500/10 p-4 rounded-lg border-l-4 border-amber-500 mt-6">
-        <p class="text-sm text-gray-300"><strong class="text-amber-400">Note:</strong> This page gives a retirement planning estimate. Civil and military figures use a service-based pension estimate, while EOBI uses a contribution-years estimate with the current Rs. 11,500 minimum pension floor.</p>
+      <div class="calc-breakdown-list">
+        <div class="calc-breakdown-item">
+          <div>
+            <strong>Use for household planning</strong>
+            <span>Monthly pension helps families think through bills, medicine, support obligations, and whether commutation is worth considering.</span>
+          </div>
+          <div class="calc-breakdown-value">Monthly</div>
+        </div>
+        <div class="calc-breakdown-item">
+          <div>
+            <strong>Expect official variation</strong>
+            <span>Final treatment can still depend on service verification, official record handling, and the authority processing retirement benefits.</span>
+          </div>
+          <div class="calc-breakdown-value">Final review</div>
+        </div>
+      </div>
+      <div class="calc-note-card">
+        <p class="calc-note-copy"><strong class="text-amber-400">Note:</strong> This page gives a retirement planning estimate. Civil and military figures use a service-based pension estimate, while EOBI uses a contribution-years estimate with the current Rs. 11,500 minimum pension floor.</p>
       </div>
     </div>
   </section>

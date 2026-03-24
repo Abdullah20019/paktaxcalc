@@ -111,12 +111,32 @@
 <main>
   <section class="container mx-auto px-4 py-10">
     <div class="max-w-4xl mx-auto calc-form-card">
-      <h2 class="text-xl font-bold text-white mb-6">PTA Mobile Import Tax Calculator</h2>
+      <div class="calc-panel-head">
+        <div>
+          <span class="calc-kicker">Device Cost Planner</span>
+          <h2 class="text-xl font-bold text-white mt-3 mb-2">PTA Mobile Import Tax Calculator</h2>
+          <p class="calc-help-text">Check device cost, compare CNIC vs passport registration, and pressure-test imported phone deals before you commit.</p>
+        </div>
+      </div>
+      <div class="calc-micro-grid">
+        <div class="calc-stat-card">
+          <div class="calc-stat-label">Estimate Type</div>
+          <div class="calc-stat-value">DIRBS band-based</div>
+        </div>
+        <div class="calc-stat-card">
+          <div class="calc-stat-label">Compare</div>
+          <div class="calc-stat-value">CNIC vs Passport</div>
+        </div>
+        <div class="calc-stat-card">
+          <div class="calc-stat-label">Watch</div>
+          <div class="calc-stat-value">USD to PKR rate</div>
+        </div>
+      </div>
       <div class="grid md:grid-cols-2 gap-6">
-        <div class="calc-input-group mb-0"><label class="calc-label">Mobile Brand</label><select id="ptaBrand" class="calc-select"><option value="apple">Apple iPhone</option><option value="samsung">Samsung</option><option value="xiaomi">Xiaomi</option><option value="oppo">Oppo</option><option value="vivo">Vivo</option><option value="huawei">Huawei</option><option value="other">Other</option></select></div>
-        <div class="calc-input-group mb-0"><label class="calc-label">Mobile Price (USD)</label><input type="number" id="ptaPrice" placeholder="e.g., 500" class="calc-input" oninput="calculatePTATax()"></div>
-        <div class="calc-input-group mb-0"><label class="calc-label">Registration Type</label><select id="ptaRegType" class="calc-select" onchange="calculatePTATax()"><option value="cnic">CNIC</option><option value="passport">Passport</option></select></div>
-        <div class="calc-input-group mb-0"><label class="calc-label">USD to PKR Rate</label><input type="number" id="ptaUsdRate" value="278" class="calc-input" oninput="calculatePTATax()"></div>
+        <div class="calc-input-group mb-0"><label class="calc-label">Mobile Brand</label><select id="ptaBrand" class="calc-select"><option value="apple">Apple iPhone</option><option value="samsung">Samsung</option><option value="xiaomi">Xiaomi</option><option value="oppo">Oppo</option><option value="vivo">Vivo</option><option value="huawei">Huawei</option><option value="other">Other</option></select><p class="calc-inline-note">Brand is here for shopping context. The duty estimate is primarily driven by device value and registration route.</p></div>
+        <div class="calc-input-group mb-0"><label class="calc-label">Mobile Price (USD)</label><input type="number" id="ptaPrice" placeholder="e.g., 500" class="calc-input" oninput="calculatePTATax()"><p class="calc-inline-note">Use the device price you actually expect to pay, not just a marketing list price.</p></div>
+        <div class="calc-input-group mb-0"><label class="calc-label">Registration Type</label><select id="ptaRegType" class="calc-select" onchange="calculatePTATax()"><option value="cnic">CNIC</option><option value="passport">Passport</option></select><p class="calc-inline-note">Switch between CNIC and passport if both routes are realistic for your case.</p></div>
+        <div class="calc-input-group mb-0"><label class="calc-label">USD to PKR Rate</label><input type="number" id="ptaUsdRate" value="278" class="calc-input" oninput="calculatePTATax()"><p class="calc-inline-note">A small exchange-rate change can materially shift the total landed cost.</p></div>
       </div>
       <button onclick="calculatePTATax()" class="w-full mt-6 btn-green">Calculate PTA Tax</button>
       <div id="ptaResults" class="mt-6 space-y-4 hidden">
@@ -125,7 +145,23 @@
           <div class="flex justify-between items-center"><span class="text-gray-400">PTA Tax Amount:</span><span class="font-bold text-xl text-red-400" id="pta-taxAmount">Rs. 0</span></div>
           <div class="flex justify-between items-center"><span class="text-gray-300">Total Cost:</span><span class="font-bold text-xl text-emerald-400" id="pta-totalCost">Rs. 0</span></div>
         </div></div>
-        <div class="bg-amber-500/10 p-4 rounded-lg border-l-4 border-amber-500"><p class="text-sm text-gray-300"><strong class="text-amber-400">Note:</strong> This is a quick estimate only. Confirm the exact amount through the official IMEI and DIRBS process.</p></div>
+        <div class="calc-breakdown-list">
+          <div class="calc-breakdown-item">
+            <div>
+              <strong>Use before buying</strong>
+              <span>This estimate is most helpful when you are comparing imported-phone options early, before you feel locked into one device.</span>
+            </div>
+            <div class="calc-breakdown-value">Planning</div>
+          </div>
+          <div class="calc-breakdown-item">
+            <div>
+              <strong>Still verify IMEI status</strong>
+              <span>DIRBS treatment, prior clearance, or model-specific handling can still change the exact payable amount.</span>
+            </div>
+            <div class="calc-breakdown-value">Verify</div>
+          </div>
+        </div>
+        <div class="calc-note-card"><p class="calc-note-copy"><strong class="text-amber-400">Note:</strong> This is a practical estimate only. Confirm the exact amount through the official IMEI and DIRBS process before treating the result as final.</p></div>
       </div>
     </div>
   </section>
