@@ -377,11 +377,11 @@
                         <h4 class="font-semibold text-gray-300 mb-3">Deductions (Optional)</h4>
                         <div class="flex items-center mb-3">
                             <input type="checkbox" id="eobi" class="w-5 h-5 accent-emerald-500 rounded" onchange="calculateSalaryTax()">
-                            <label for="eobi" class="ml-3 text-sm text-gray-400">EOBI (1%, max Rs. 200/month)</label>
+                            <label for="eobi" class="ml-3 text-sm text-gray-400">EOBI employee contribution (1% of minimum wage)</label>
                         </div>
                         <div class="flex items-center mb-3">
                             <input type="checkbox" id="socialSecurity" class="w-5 h-5 accent-emerald-500 rounded" onchange="calculateSalaryTax()">
-                            <label for="socialSecurity" class="ml-3 text-sm text-gray-400">Social Security (6%)</label>
+                            <label for="socialSecurity" class="ml-3 text-sm text-gray-400">Social Security (employer-side contribution, not deducted from take-home)</label>
                         </div>
                         <div>
                             <label class="block text-gray-400 mb-2 text-sm">Provident Fund (%)</label>
@@ -1232,6 +1232,10 @@
 
         // ========== TAX CALCULATION FUNCTIONS (Your existing ones remain unchanged) ==========
         
+        const CURRENT_MINIMUM_WAGE = 37000;
+        const CURRENT_EOBI_EMPLOYEE_CONTRIBUTION = Math.round(CURRENT_MINIMUM_WAGE * 0.01);
+        const CURRENT_EOBI_MINIMUM_PENSION = 11500;
+
         // Salary Tax Calculator
         function calculateSalaryTax() {
             const monthlySalary = parseFloat(document.getElementById('monthlySalary').value) || 0;
@@ -1244,8 +1248,8 @@
             
             // Deductions
             let deductions = 0;
-            if (eobi) deductions += 200 * 12; // Max EOBI
-            if (socialSecurity) deductions += (monthlySalary * 0.06) * 12;
+            if (eobi) deductions += CURRENT_EOBI_EMPLOYEE_CONTRIBUTION * 12;
+            if (socialSecurity) deductions += 0;
             if (providentFund > 0) deductions += (monthlySalary * providentFund / 100) * 12;
 
             const taxableIncome = grossAnnual - deductions;
@@ -1264,6 +1268,10 @@
                 } else {
                     tax = 616000 + (taxableIncome - 4100000) * 0.35;
                 }
+            }
+
+            if (taxableIncome > 10000000) {
+                tax += tax * 0.09;
             }
 
             const monthlyTax = tax / 12;
@@ -1285,13 +1293,37 @@
             const regType = document.getElementById('ptaRegType').value;
 
             const pricePkr = price * usdRate;
-            let taxRate = 0.18; // Default 18%
+            let taxAmount = 0;
 
             if (regType === 'passport') {
-                taxRate = 0.25; // 25% for passport
+                if (price <= 30) {
+                    taxAmount = 430;
+                } else if (price <= 100) {
+                    taxAmount = 3200;
+                } else if (price <= 200) {
+                    taxAmount = 9580;
+                } else if (price <= 350) {
+                    taxAmount = 12200 + (pricePkr * 0.17);
+                } else if (price <= 500) {
+                    taxAmount = 17800 + (pricePkr * 0.17);
+                } else {
+                    taxAmount = 27600 + (pricePkr * 0.17);
+                }
+            } else {
+                if (price <= 30) {
+                    taxAmount = 550;
+                } else if (price <= 100) {
+                    taxAmount = 4323;
+                } else if (price <= 200) {
+                    taxAmount = 11561;
+                } else if (price <= 350) {
+                    taxAmount = 14661 + (pricePkr * 0.17);
+                } else if (price <= 500) {
+                    taxAmount = 23420 + (pricePkr * 0.17);
+                } else {
+                    taxAmount = 37007 + (pricePkr * 0.17);
+                }
             }
-
-            const taxAmount = pricePkr * taxRate;
             const totalCost = pricePkr + taxAmount;
 
             document.getElementById('pta-pricePkr').textContent = 'Rs. ' + formatNumber(Math.round(pricePkr));
@@ -1308,18 +1340,17 @@
             const taxableIncome = income - expenses;
             let tax = 0;
 
-            // Progressive tax calculation (individual estimate)
             if (taxableIncome > 600000) {
                 if (taxableIncome <= 1200000) {
-                    tax = (taxableIncome - 600000) * 0.01;
-                } else if (taxableIncome <= 2200000) {
-                    tax = 6000 + (taxableIncome - 1200000) * 0.11;
+                    tax = (taxableIncome - 600000) * 0.15;
+                } else if (taxableIncome <= 1600000) {
+                    tax = 90000 + (taxableIncome - 1200000) * 0.20;
                 } else if (taxableIncome <= 3200000) {
-                    tax = 116000 + (taxableIncome - 2200000) * 0.23;
-                } else if (taxableIncome <= 4100000) {
-                    tax = 346000 + (taxableIncome - 3200000) * 0.30;
+                    tax = 170000 + (taxableIncome - 1600000) * 0.30;
+                } else if (taxableIncome <= 5600000) {
+                    tax = 650000 + (taxableIncome - 3200000) * 0.40;
                 } else {
-                    tax = 616000 + (taxableIncome - 4100000) * 0.35;
+                    tax = 1610000 + (taxableIncome - 5600000) * 0.45;
                 }
             }
 
@@ -1341,8 +1372,8 @@
             const debts = parseFloat(document.getElementById('zakatDebts').value) || 0;
 
             const totalWealth = cash + gold + silver + investments - debts;
-            const nisab = 503529; // As of Ramadan 2026
-            const zakatAmount = totalWealth * 0.025;
+            const nisab = 179689;
+            const zakatAmount = totalWealth >= nisab ? totalWealth * 0.025 : 0;
 
             document.getElementById('zakat-totalWealth').textContent = 'Rs. ' + formatNumber(Math.round(totalWealth));
             document.getElementById('zakat-amount').textContent = 'Rs. ' + formatNumber(Math.round(zakatAmount));
@@ -1376,14 +1407,30 @@
                 const land = parseFloat(document.getElementById('agriLand').value) || 0;
                 const landType = document.getElementById('agriLandType').value;
                 
-                if (landType === 'irrigated') {
-                    tax = land * 450; // Rs. 450 per acre
+                if (land <= 12.5) {
+                    tax = 0;
+                } else if (land <= 25) {
+                    tax = land * 300;
+                } else if (land <= 50) {
+                    tax = land * 450;
                 } else {
-                    tax = land * 300; // Rs. 300 per acre for barani
+                    tax = land * 600;
+                }
+
+                if (landType === 'barani') {
+                    tax *= 0.5;
                 }
             } else {
                 const income = parseFloat(document.getElementById('agriIncome').value) || 0;
-                tax = income * 0.05; // 5% flat rate
+                if (income <= 400000) {
+                    tax = 0;
+                } else if (income <= 800000) {
+                    tax = (income - 400000) * 0.05;
+                } else if (income <= 1200000) {
+                    tax = 20000 + (income - 800000) * 0.10;
+                } else {
+                    tax = 60000 + (income - 1200000) * 0.15;
+                }
             }
 
             document.getElementById('agri-taxAmount').textContent = 'Rs. ' + formatNumber(Math.round(tax));
@@ -1414,13 +1461,27 @@
             const value = parseFloat(document.getElementById('propertyValue').value) || 0;
             const type = document.getElementById('propertyType').value;
 
-            let annualTaxRate = 0.002; // 0.2% for residential
-            if (type === 'commercial') annualTaxRate = 0.005; // 0.5%
-            if (type === 'plot') annualTaxRate = 0.001; // 0.1%
+            let annualTax = 0;
+            let cgtTax = 0;
+            let stampDuty = 0;
 
-            const annualTax = value * annualTaxRate;
-            const cgtTax = value * 0.01; // 1% CGT
-            const stampDuty = value * 0.03; // 3% stamp duty
+            if (type === 'buy') {
+                if (value <= 50000000) {
+                    annualTax = value * 0.015;
+                } else if (value <= 100000000) {
+                    annualTax = value * 0.02;
+                } else {
+                    annualTax = value * 0.025;
+                }
+            } else {
+                if (value <= 50000000) {
+                    annualTax = value * 0.045;
+                } else if (value <= 100000000) {
+                    annualTax = value * 0.05;
+                } else {
+                    annualTax = value * 0.055;
+                }
+            }
 
             document.getElementById('property-annualTax').textContent = 'Rs. ' + formatNumber(Math.round(annualTax));
             document.getElementById('property-cgtTax').textContent = 'Rs. ' + formatNumber(Math.round(cgtTax));
@@ -1433,14 +1494,20 @@
             const years = parseFloat(document.getElementById('pensionYears').value) || 0;
             const type = document.getElementById('pensionType').value;
 
-            let pensionRate = 0.7; // 70% for civil service
-            if (type === 'military') pensionRate = 0.7;
-            if (type === 'eobi') pensionRate = 0.5;
+            let monthlyPension = 0;
+            let commutation = 0;
+            let gratuity = 0;
 
-            const monthlyPension = basicPay * pensionRate;
+            if (type === 'eobi') {
+                monthlyPension = Math.max(CURRENT_EOBI_MINIMUM_PENSION, (CURRENT_MINIMUM_WAGE * years) / 50);
+            } else {
+                const pensionPercent = Math.min(years * 2.33, 70);
+                monthlyPension = (basicPay * pensionPercent) / 100;
+                commutation = (monthlyPension * 0.35) * 12 * 9.5;
+                gratuity = basicPay * Math.min(years, 30) * 0.5;
+            }
+
             const annualPension = monthlyPension * 12;
-            const commutation = monthlyPension * 35; // 35 months commutation
-            const gratuity = basicPay * years * 0.5;
 
             document.getElementById('pension-monthly').textContent = 'Rs. ' + formatNumber(Math.round(monthlyPension));
             document.getElementById('pension-annual').textContent = 'Rs. ' + formatNumber(Math.round(annualPension));

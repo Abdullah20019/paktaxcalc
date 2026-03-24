@@ -20,7 +20,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="css/dark-theme.css">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"ts this pension calculator Pakistan page a final official pension determination?","acceptedAnswer":{"@type":"Answer","text":"No. tt is a planning estimate. Final pension, commutation and gratuity depend on service rules, official records, and the treatment applied by the relevant authority or department."}},{"@type":"Question","name":"Why does service type matter in the calculator?","acceptedAnswer":{"@type":"Answer","text":"Service type matters because civil service, military service, and EOBt-style pension treatment can differ. The calculator uses that input to create a more realistic first estimate."}},{"@type":"Question","name":"Can t use this pension calculator before retirement paperwork starts?","acceptedAnswer":{"@type":"Answer","text":"Yes. That is one of the most useful times to use it. A planning estimate helps with budgeting, family discussion, and understanding likely retirement income before formal processing begins."}},{"@type":"Question","name":"What should t read after using this calculator?","acceptedAnswer":{"@type":"Answer","text":"The best next reads are the Pakistan income tax guide, tax return filing guide, and any retirement-related exemptions or wealth planning guides that apply to your situation."}}]}
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this pension calculator Pakistan page a final official pension determination?","acceptedAnswer":{"@type":"Answer","text":"No. It is a planning estimate. Final pension, commutation and gratuity depend on service rules, official records, and the treatment applied by the relevant authority or department."}},{"@type":"Question","name":"Why does service type matter in the calculator?","acceptedAnswer":{"@type":"Answer","text":"Service type matters because civil service, military service, and EOBI-style pension treatment can differ. The calculator uses that input to create a more realistic first estimate."}},{"@type":"Question","name":"Can I use this pension calculator before retirement paperwork starts?","acceptedAnswer":{"@type":"Answer","text":"Yes. That is one of the most useful times to use it. A planning estimate helps with budgeting, family discussion, and understanding likely retirement income before formal processing begins."}},{"@type":"Question","name":"What should I read after using this calculator?","acceptedAnswer":{"@type":"Answer","text":"The best next reads are the Pakistan income tax guide, tax return filing guide, and any retirement-related exemptions or wealth planning guides that apply to your situation."}}]}
   </script>
 </head>
 <body class="bg-[#0a0a0a] min-h-screen text-white">
@@ -43,7 +43,7 @@
           <a href="contact.html" class="slide-tab" data-index="4">Contact</a>
         </div>
       </div>
-      <a href="blog/income-tax-guide-2026.html" class="hidden md:block btn-green text-sm">tncome Tax Guide</a>
+    <a href="blog/income-tax-guide-2026.html" class="hidden md:block btn-green text-sm">Income Tax Guide</a>
       <button id="mobileMenuBtn" class="md:hidden hamburger" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
     <div id="mobileMenu" class="md:hidden mobile-menu mt-4 rounded-xl overflow-hidden max-h-0 transition-all duration-300">
@@ -89,7 +89,7 @@
           <select id="pensionType" class="calc-select" onchange="calculatePension()">
             <option value="civil">Civil Service</option>
             <option value="military">Military</option>
-            <option value="eobi">EOBt</option>
+            <option value="eobi">EOBI</option>
           </select>
         </div>
       </div>
@@ -114,7 +114,7 @@
         </div>
       </div>
       <div class="bg-amber-500/10 p-4 rounded-lg border-l-4 border-amber-500 mt-6">
-        <p class="text-sm text-gray-300"><strong class="text-amber-400">Note:</strong> This page gives a retirement planning estimate. Final pension, commutation and gratuity depend on official service records and applicable rules.</p>
+        <p class="text-sm text-gray-300"><strong class="text-amber-400">Note:</strong> This page gives a retirement planning estimate. Civil and military figures use a service-based pension estimate, while EOBI uses a contribution-years estimate with the current Rs. 11,500 minimum pension floor.</p>
       </div>
     </div>
   </section>
@@ -142,7 +142,7 @@
       <article class="calc-form-card">
         <h2 class="text-2xl font-bold text-white mb-4">Why Service Type Still Matters</h2>
         <div class="space-y-3 text-gray-300 leading-relaxed">
-          <p>Retirement treatment can differ by service category, which is why this page asks for civil, military, or EOBt-style pension context. Even when the calculator remains simple, that input helps shape a more realistic planning result than a one-size-fits-all formula.</p>
+          <p>Retirement treatment can differ by service category, which is why this page asks for civil, military, or EOBI-style pension context. Even when the calculator remains simple, that input helps shape a more realistic planning result than a one-size-fits-all formula.</p>
           <p>This is especially useful for families comparing more than one retirement path, or for users who are trying to understand whether their likely pension pattern feels closer to a public-sector or contributory style of retirement income.</p>
         </div>
       </article>
@@ -154,14 +154,14 @@
       <article class="calc-form-card">
         <h2 class="text-2xl font-bold text-white mb-4">Worked Example 1: Civil Service Retirement Planning</h2>
         <div class="space-y-4 text-gray-300 leading-relaxed">
-          <p>tmagine a civil servant nearing retirement with a last drawn basic pay of Rs. 120,000 and a long service history. Before any official paperwork is finalized, the family wants to know whether expected pension income will comfortably cover monthly living costs and whether commutation could help clear remaining liabilities.</p>
-          <p>That is exactly where this page helps. tnstead of waiting for the formal process to conclude, the user can estimate a likely range and begin practical conversations about savings, expenses, and retirement timing earlier.</p>
+          <p>Imagine a civil servant nearing retirement with a last drawn basic pay of Rs. 120,000 and a long service history. Before any official paperwork is finalized, the family wants to know whether expected pension income will comfortably cover monthly living costs and whether commutation could help clear remaining liabilities.</p>
+          <p>That is exactly where this page helps. Instead of waiting for the formal process to conclude, the user can estimate a likely range and begin practical conversations about savings, expenses, and retirement timing earlier.</p>
         </div>
       </article>
       <article class="calc-form-card">
-        <h2 class="text-2xl font-bold text-white mb-4">Worked Example 2: EOBt-Style Planning for a Modest tncome Household</h2>
+        <h2 class="text-2xl font-bold text-white mb-4">Worked Example 2: EOBI-Style Planning for a Modest Income Household</h2>
         <div class="space-y-4 text-gray-300 leading-relaxed">
-          <p>Now imagine someone using the calculator mainly to understand a smaller pension base under an EOBt-style scenario. tn that case, the monthly pension figure becomes especially important because the family may need to compare it carefully against rent, medicines, utilities, and daily living expenses.</p>
+          <p>Now imagine someone using the calculator mainly to understand a smaller pension base under an EOBI-style scenario. In that case, the monthly pension figure becomes especially important because the family may need to compare it carefully against rent, medicines, utilities, and daily living expenses.</p>
           <p>This kind of example shows why retirement estimates are about more than curiosity. A pension number affects real decisions about budget pressure, support from children, and whether another source of part-time income may still be needed.</p>
         </div>
       </article>
@@ -194,7 +194,7 @@
       <h2 class="text-3xl font-bold text-white mb-6">Who Should Use This Pension Calculator Pakistan Page</h2>
       <div class="space-y-4 text-gray-300 leading-relaxed">
         <p>This <strong class="text-white">pension calculator Pakistan</strong> page is designed for users who want a practical retirement estimate before the formal process is complete. That includes public-sector employees close to retirement, families trying to understand the likely post-retirement monthly income, workers comparing different service paths, and even younger employees who want to start planning before the retirement horizon feels urgent.</p>
-        <p>tt is especially useful when the user already has some idea of service years and final salary but still cannot translate those figures into a meaningful household conversation. A calculator bridges that gap. tt turns retirement from an abstract future event into numbers that can be budgeted, discussed, and stress-tested more realistically.</p>
+          <p>It is especially useful when the user already has some idea of service years and final salary but still cannot translate those figures into a meaningful household conversation. A calculator bridges that gap. It turns retirement from an abstract future event into numbers that can be budgeted, discussed, and stress-tested more realistically.</p>
         <p>The page also helps adult children supporting parents, spouses involved in household planning, and users deciding whether pension alone will be enough or whether additional savings and investments should be strengthened before retirement begins.</p>
       </div>
     </article>
@@ -207,13 +207,13 @@
         <div class="space-y-4 text-gray-300 leading-relaxed">
           <p>The most useful way to read the result is not to ask whether it is exact to the rupee. The better question is what decisions the estimate should influence now. tf the projected monthly pension looks tighter than expected, that may affect how aggressively you save over the next few years. tf the commutation amount appears meaningful, that may change how you think about clearing debt, setting aside emergency reserves, or covering early retirement costs.</p>
           <p>This is why a pension estimate matters before the paperwork stage. tt gives you time to respond. Retirement planning becomes much less stressful when there is still enough time to adjust savings, reduce liabilities, review household expenses, or align expectations with family members.</p>
-          <p>Seen this way, the page is not just a calculator. tt is a decision-support tool for retirement planning in Pakistan.</p>
+          <p>Seen this way, the page is not just a calculator. It is a decision-support tool for retirement planning in Pakistan.</p>
         </div>
       </article>
       <article class="calc-form-card">
         <h2 class="text-2xl font-bold text-white mb-4">Why Early Pension Planning Matters More Than Perfect Accuracy</h2>
         <div class="space-y-4 text-gray-300 leading-relaxed">
-          <p>Many users delay pension planning because they believe the final number cannot be known until the end. That is partly true, but it leads to the wrong behavior. The practical value of a pension calculator is not that it removes every uncertainty. tt is that it gives you a reasonable planning range while there is still room to act.</p>
+          <p>Many users delay pension planning because they believe the final number cannot be known until the end. That is partly true, but it leads to the wrong behavior. The practical value of a pension calculator is not that it removes every uncertainty. It is that it gives you a reasonable planning range while there is still room to act.</p>
           <p>Households rarely need perfect retirement certainty years in advance. They need a dependable enough estimate to make better savings, spending, housing, and support decisions. This page delivers that kind of value by keeping the structure simple and focused on the main outputs people care about most.</p>
         </div>
       </article>
@@ -236,14 +236,14 @@
       <article class="calc-form-card">
         <h2 class="text-2xl font-bold text-white mb-4">What This Calculator Covers Well</h2>
         <div class="space-y-4 text-gray-300 leading-relaxed">
-          <p>This page works best as a planning tool for expected monthly pension, annualized retirement income, commutation impact, and gratuity-style thinking. tt is especially useful when the user wants to compare how service years or final pay assumptions change the overall outcome.</p>
+          <p>This page works best as a planning tool for expected monthly pension, annualized retirement income, commutation impact, and gratuity-style thinking. It is especially useful when the user wants to compare how service years or final pay assumptions change the overall outcome.</p>
           <p>That makes it strong for household budgeting, early retirement conversations, and financial expectation-setting. tn other words, it performs well at the stage where a user is trying to make retirement feel concrete.</p>
         </div>
       </article>
       <article class="calc-form-card">
         <h2 class="text-2xl font-bold text-white mb-4">Where Final Review Still Matters</h2>
         <div class="space-y-4 text-gray-300 leading-relaxed">
-          <p>Formal pension treatment can still depend on service verification, departmental rules, final-pay treatment, commutation terms, and the exact official process. That is why this page stays honest about being an estimate. tt is a strong planning layer, not a final pension order.</p>
+          <p>Formal pension treatment can still depend on service verification, departmental rules, final-pay treatment, commutation terms, and the exact official process. That is why this page stays honest about being an estimate. It is a strong planning layer, not a final pension order.</p>
           <p>For users, that honesty is useful. tf the estimate changes your retirement expectations significantly, that is a signal to review records early instead of waiting and hoping the final outcome will somehow be fine.</p>
         </div>
       </article>
@@ -255,7 +255,7 @@
       <h2 class="text-3xl font-bold text-white mb-6">Why This Page Matches Real Pension Search tntent</h2>
       <div class="space-y-4 text-gray-300 leading-relaxed">
         <p>People searching for a <strong class="text-white">pension calculator Pakistan</strong> usually want more than a formula. They want a believable estimate, a short explanation of what the numbers mean, and guidance on what to think about next. That is why this page keeps the calculator near the top, uses worked examples to make the outputs easier to understand, and then connects the result to broader retirement and tax guides.</p>
-        <p>This structure is good for users because it reduces confusion. tt is also good for SEO because it serves the actual search intent behind the keyword rather than creating a thin page that only displays a few inputs and a number.</p>
+          <p>This structure is good for users because it reduces confusion. It is also good for SEO because it serves the actual search intent behind the keyword rather than creating a thin page that only displays a few inputs and a number.</p>
         <p>The result is a stronger landing page: useful immediately, readable without jargon, and connected to the next decisions users are likely to make.</p>
       </div>
     </article>
@@ -298,7 +298,7 @@
       <h2 class="text-3xl font-bold text-white mb-6">Related Guides for Retirement and Tax Planning</h2>
       <div class="grid md:grid-cols-4 gap-4">
         <a href="blog/income-tax-guide-2026.html" class="calc-card block">
-          <h3 class="calc-card-title">tncome Tax Guide</h3>
+          <h3 class="calc-card-title">Income Tax Guide</h3>
           <p class="calc-card-desc">Useful if you want the wider Pakistan tax context around retirement income.</p>
         </a>
         <a href="blog/file-tax-return-pakistan.html" class="calc-card block">
@@ -325,15 +325,15 @@
       </div>
       <div class="space-y-4">
         <details class="faq-item p-6">
-          <summary class="font-semibold text-lg cursor-pointer text-white flex justify-between items-center">ts this pension calculator Pakistan page a final official pension determination?</summary>
-          <p class="mt-4 text-gray-400 leading-relaxed">No. tt is a planning estimate only. Final pension, commutation and gratuity depend on official records and the rules that apply to your service history.</p>
+          <summary class="font-semibold text-lg cursor-pointer text-white flex justify-between items-center">Is this pension calculator Pakistan page a final official pension determination?</summary>
+          <p class="mt-4 text-gray-400 leading-relaxed">No. It is a planning estimate only. Final pension, commutation and gratuity depend on official records and the rules that apply to your service history.</p>
         </details>
         <details class="faq-item p-6">
           <summary class="font-semibold text-lg cursor-pointer text-white flex justify-between items-center">Why does service type matter here?</summary>
-          <p class="mt-4 text-gray-400 leading-relaxed">Because pension treatment can differ across civil, military, and EOBt-style scenarios. The service-type input helps produce a more realistic estimate.</p>
+          <p class="mt-4 text-gray-400 leading-relaxed">Because pension treatment can differ across civil, military, and EOBI-style scenarios. The service-type input helps produce a more realistic estimate.</p>
         </details>
         <details class="faq-item p-6">
-          <summary class="font-semibold text-lg cursor-pointer text-white flex justify-between items-center">Can t use this calculator before retirement paperwork starts?</summary>
+          <summary class="font-semibold text-lg cursor-pointer text-white flex justify-between items-center">Can I use this calculator before retirement paperwork starts?</summary>
           <p class="mt-4 text-gray-400 leading-relaxed">Yes. That is one of the best times to use it because it helps you prepare your household budget before formal retirement processing begins.</p>
         </details>
         <details class="faq-item p-6">
@@ -341,7 +341,7 @@
           <p class="mt-4 text-gray-400 leading-relaxed">Because retirement planning is not only about monthly pension. One-time retirement amounts often shape debt repayment, family support, and emergency planning.</p>
         </details>
         <details class="faq-item p-6">
-          <summary class="font-semibold text-lg cursor-pointer text-white flex justify-between items-center">What should t read next on PakTaxCalc?</summary>
+          <summary class="font-semibold text-lg cursor-pointer text-white flex justify-between items-center">What should I read next on PakTaxCalc?</summary>
           <p class="mt-4 text-gray-400 leading-relaxed">The best next reads are the <a href="blog/income-tax-guide-2026.html" class="text-emerald-400 hover:text-emerald-300 font-semibold">income tax guide</a>, <a href="blog/file-tax-return-pakistan.html" class="text-emerald-400 hover:text-emerald-300 font-semibold">tax return filing guide</a>, and <a href="blog/wealth-statement-pakistan-2026.html" class="text-emerald-400 hover:text-emerald-300 font-semibold">wealth statement guide</a>.</p>
         </details>
       </div>
@@ -395,8 +395,8 @@
 
 <script>
   (function(){
-    const mobileMenuBtn=document.getElementBytd('mobileMenuBtn');
-    const mobileMenu=document.getElementBytd('mobileMenu');
+    const mobileMenuBtn=document.getElementById('mobileMenuBtn');
+    const mobileMenu=document.getElementById('mobileMenu');
     if(!mobileMenuBtn||!mobileMenu)return;
     let isOpen=false;
     function setMenuState(open){
@@ -423,24 +423,23 @@
   }
 
   function calculatePension(){
-    const basicPay=parseFloat(document.getElementBytd('pensionBasicPay').value)||0;
-    const years=parseFloat(document.getElementBytd('pensionYears').value)||0;
-    const type=document.getElementBytd('pensionType').value;
-    let pensionRate=0.7;
-    if(type==='eobi') pensionRate=0.5;
-    const monthlyPension=basicPay*pensionRate;
+    const basicPay=parseFloat(document.getElementById('pensionBasicPay').value)||0;
+    const years=parseFloat(document.getElementById('pensionYears').value)||0;
+    const type=document.getElementById('pensionType').value;
+    let monthlyPension=0;
+    let commutation=0;
+    let gratuity=0;
+    if(type==='eobi'){monthlyPension=Math.max(11500,(37000*years)/50);}else{const pensionPercent=Math.min(years*2.33,70);monthlyPension=(basicPay*pensionPercent)/100;commutation=(monthlyPension*0.35)*12*9.5;gratuity=basicPay*Math.min(years,30)*0.5;}
     const annualPension=monthlyPension*12;
-    const commutation=monthlyPension*35;
-    const gratuity=basicPay*years*0.5;
-    document.getElementBytd('pension-monthly').textContent='Rs. '+formatNumber(Math.round(monthlyPension));
-    document.getElementBytd('pension-annual').textContent='Rs. '+formatNumber(Math.round(annualPension));
-    document.getElementBytd('pension-commutation').textContent='Rs. '+formatNumber(Math.round(commutation));
-    document.getElementBytd('pension-gratuity').textContent='Rs. '+formatNumber(Math.round(gratuity));
+    document.getElementById('pension-monthly').textContent='Rs. '+formatNumber(Math.round(monthlyPension));
+    document.getElementById('pension-annual').textContent='Rs. '+formatNumber(Math.round(annualPension));
+    document.getElementById('pension-commutation').textContent='Rs. '+formatNumber(Math.round(commutation));
+    document.getElementById('pension-gratuity').textContent='Rs. '+formatNumber(Math.round(gratuity));
   }
 
   document.addEventListener('DOMContentLoaded',function(){
-    const slideTabs=document.getElementBytd('slideTabs');
-    const cursor=document.getElementBytd('slideCursor');
+    const slideTabs=document.getElementById('slideTabs');
+    const cursor=document.getElementById('slideCursor');
     const tabs=document.querySelectorAll('.slide-tab');
     if(slideTabs&&cursor&&tabs.length>0){
       function updateCursor(element){

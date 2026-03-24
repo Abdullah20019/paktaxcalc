@@ -4,6 +4,9 @@
 // ==========================================
 
 let salaryChart = null;
+const CURRENT_MINIMUM_WAGE = 37000;
+const CURRENT_EOBI_EMPLOYEE_CONTRIBUTION = Math.round(CURRENT_MINIMUM_WAGE * 0.01);
+const CURRENT_EOBI_MINIMUM_PENSION = 11500;
 
 // ==========================================
 // UTILITY FUNCTIONS
@@ -183,12 +186,11 @@ function calculateDeductions(monthlySalary, options) {
     };
     
     if (options.includeEOBI) {
-        deductions.eobi = Math.min(monthlySalary * 0.01, 200);
+        deductions.eobi = CURRENT_EOBI_EMPLOYEE_CONTRIBUTION;
     }
     
     if (options.includeSocialSecurity) {
-        let rate = (options.province === 'sindh' || options.province === 'punjab') ? 0.06 : 0.05;
-        deductions.socialSecurity = monthlySalary * rate;
+        deductions.socialSecurity = 0;
     }
     
     if (options.providentFundPercent > 0) {
@@ -299,29 +301,38 @@ function calculatePTATax() {
     let taxRate = 0;
     
     // Tax calculation based on registration type and price
+    let taxAmount = 0;
+
     if (regType === 'passport') {
-        if (pricePKR <= 30000) {
-            taxRate = 0.10;
-        } else if (pricePKR <= 60000) {
-            taxRate = 0.15;
-        } else if (pricePKR <= 100000) {
-            taxRate = 0.20;
+        if (price <= 30) {
+            taxAmount = 430;
+        } else if (price <= 100) {
+            taxAmount = 3200;
+        } else if (price <= 200) {
+            taxAmount = 9580;
+        } else if (price <= 350) {
+            taxAmount = 12200 + (pricePKR * 0.17);
+        } else if (price <= 500) {
+            taxAmount = 17800 + (pricePKR * 0.17);
         } else {
-            taxRate = 0.25;
+            taxAmount = 27600 + (pricePKR * 0.17);
         }
     } else {
-        if (pricePKR <= 50000) {
-            taxRate = 0.15;
-        } else if (pricePKR <= 100000) {
-            taxRate = 0.20;
-        } else if (pricePKR <= 200000) {
-            taxRate = 0.25;
+        if (price <= 30) {
+            taxAmount = 550;
+        } else if (price <= 100) {
+            taxAmount = 4323;
+        } else if (price <= 200) {
+            taxAmount = 11561;
+        } else if (price <= 350) {
+            taxAmount = 14661 + (pricePKR * 0.17);
+        } else if (price <= 500) {
+            taxAmount = 23420 + (pricePKR * 0.17);
         } else {
-            taxRate = 0.30;
+            taxAmount = 37007 + (pricePKR * 0.17);
         }
     }
-    
-    let taxAmount = pricePKR * taxRate;
+
     let totalCost = pricePKR + taxAmount;
     
     // Show results
@@ -348,10 +359,18 @@ function calculateBusinessTax() {
             taxAmount = calculateTax(taxableIncome);
             break;
         case 'aop':
-            if (taxableIncome <= 400000) {
+            if (taxableIncome <= 600000) {
                 taxAmount = 0;
+            } else if (taxableIncome <= 1200000) {
+                taxAmount = (taxableIncome - 600000) * 0.15;
+            } else if (taxableIncome <= 1600000) {
+                taxAmount = 90000 + (taxableIncome - 1200000) * 0.20;
+            } else if (taxableIncome <= 3200000) {
+                taxAmount = 170000 + (taxableIncome - 1600000) * 0.30;
+            } else if (taxableIncome <= 5600000) {
+                taxAmount = 650000 + (taxableIncome - 3200000) * 0.40;
             } else {
-                taxAmount = taxableIncome * 0.25;
+                taxAmount = 1610000 + (taxableIncome - 5600000) * 0.45;
             }
             break;
         case 'company':
@@ -381,7 +400,7 @@ function calculateZakat() {
     let debts = parseFloat(document.getElementById('zakatDebts').value) || 0;
     
     let totalWealth = cash + gold + silver + investments - debts;
-    let nisab = 503529;
+    let nisab = 179689;
     let zakatAmount = 0;
     let message = '';
     
@@ -498,23 +517,27 @@ function calculatePropertyTax() {
     let propertyType = document.getElementById('propertyType').value;
     let city = document.getElementById('propertyCity').value;
     
-    let annualTaxRate = 0;
-    
-    switch(city) {
-        case 'lahore':
-        case 'islamabad':
-            annualTaxRate = propertyType === 'commercial' ? 0.008 : 0.003;
-            break;
-        case 'karachi':
-            annualTaxRate = propertyType === 'commercial' ? 0.01 : 0.004;
-            break;
-        default:
-            annualTaxRate = propertyType === 'commercial' ? 0.006 : 0.0025;
+    let annualTax = 0;
+    let cgt = 0;
+    let stampDuty = 0;
+
+    if (propertyType === 'buy') {
+        if (value <= 50000000) {
+            annualTax = value * 0.015;
+        } else if (value <= 100000000) {
+            annualTax = value * 0.02;
+        } else {
+            annualTax = value * 0.025;
+        }
+    } else {
+        if (value <= 50000000) {
+            annualTax = value * 0.045;
+        } else if (value <= 100000000) {
+            annualTax = value * 0.05;
+        } else {
+            annualTax = value * 0.055;
+        }
     }
-    
-    let annualTax = value * annualTaxRate;
-    let cgt = value * 0.10;
-    let stampDuty = value * 0.02;
     
     document.getElementById('property-annualTax').textContent = 'Rs. ' + formatNumber(Math.round(annualTax));
     document.getElementById('property-cgtTax').textContent = 'Rs. ' + formatNumber(Math.round(cgt));
@@ -538,9 +561,9 @@ function calculatePension() {
         let pensionPercent = Math.min(years * 2.33, 70);
         monthlyPension = (basicPay * pensionPercent) / 100;
         commutation = (monthlyPension * 0.35) * 12 * 9.5;
-        gratuity = basicPay * years;
+        gratuity = basicPay * Math.min(years, 30) * 0.5;
     } else {
-        monthlyPension = years >= 15 ? 8500 : 0;
+        monthlyPension = Math.max(CURRENT_EOBI_MINIMUM_PENSION, (CURRENT_MINIMUM_WAGE * years) / 50);
         commutation = 0;
         gratuity = 0;
     }
