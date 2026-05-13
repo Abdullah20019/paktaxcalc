@@ -79,6 +79,6 @@ Allow: /
 User-agent: YandexBot
 Allow: /
 
-# Host directive for canonical domain
-Host: https://paktaxcalc.com
+# Host directive for canonical domain (mainly used by Yandex)
+Host: paktaxcalc.com
 
