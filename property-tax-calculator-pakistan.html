@@ -29,15 +29,15 @@
         "name": "Is this property tax calculator Pakistan page exact for registration?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. It is a practical estimate for planning. Final property tax and related charges can differ based on official valuation, transaction type, filer status, and current tax treatment."
+          "text": "No. It is a practical estimate for planning. Final property tax and related charges can differ based on official valuation, transaction type, and current tax treatment."
         }
       },
       {
         "@type": "Question",
-        "name": "Why does filer status matter in a property transaction?",
+        "name": "Which property withholding rates does this page use?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Property transactions in Pakistan often carry different tax treatment for filers and non-filers, which can change the total cost significantly."
+          "text": "For this FY 2026-27 update, the calculator uses the Finance Bill 2026 table rates: 1.25% for purchase under section 236K and 2.75% for sale or transfer under section 236C."
         }
       },
       {
@@ -124,7 +124,7 @@
         <div>
           <span class="calc-kicker">Deal Cost View</span>
           <h2 class="text-xl font-bold text-white mt-3 mb-2">Property Transaction Tax Estimator</h2>
-          <p class="calc-help-text">Model purchase or sale withholding quickly so you can compare quoted price, filer status, and extra transaction charges in one place.</p>
+          <p class="calc-help-text">Model purchase or sale withholding quickly so you can compare quoted price, Finance Bill table rates, and extra transaction charges in one place.</p>
         </div>
       </div>
       <div class="calc-micro-grid">
@@ -137,8 +137,8 @@
           <div class="calc-stat-value">Buyer vs seller planning</div>
         </div>
         <div class="calc-stat-card">
-          <div class="calc-stat-label">Check Closely</div>
-          <div class="calc-stat-value">Filer status impact</div>
+          <div class="calc-stat-label">FY 2026-27 Rates</div>
+          <div class="calc-stat-value">1.25% buy / 2.75% sale</div>
         </div>
       </div>
       <div class="grid md:grid-cols-2 gap-6">
@@ -156,12 +156,9 @@
           <p class="calc-inline-note">Purchase and sale use different withholding treatment, so switch this before comparing the total burden.</p>
         </div>
         <div class="calc-input-group mb-0">
-          <label class="calc-label">Taxpayer Status</label>
-          <select id="propertyStatus" class="calc-select" onchange="calculatePropertyTax()">
-            <option value="filer">Filer</option>
-            <option value="nonfiler">Non-Filer</option>
-          </select>
-          <p class="calc-inline-note">This field has an outsized impact on property tax cost. Always sanity-check your ATL status before finalizing numbers.</p>
+          <label class="calc-label">Finance Bill 2026 Rate Basis</label>
+          <div class="calc-input flex items-center text-white">Purchase 1.25% / Sale 2.75%</div>
+          <p class="calc-inline-note">This page uses the Finance Bill table as the controlling source for the current planning estimate. If later FBR guidance changes implementation, update the estimate again.</p>
         </div>
         <div class="calc-input-group mb-0">
           <label class="calc-label">Additional Transfer / Admin Charges (%)</label>
@@ -203,7 +200,7 @@
         </div>
       </div>
       <div class="calc-note-card">
-        <p class="calc-note-copy"><strong class="text-amber-400">Note:</strong> This property tax calculator Pakistan page provides an estimate for planning only. Actual rates can vary with official valuation, transaction type, and current tax treatment.</p>
+        <p class="calc-note-copy"><strong class="text-amber-400">Note:</strong> This property tax calculator Pakistan page uses the Finance Bill 2026 table rates for sections 236K and 236C as the controlling source for this estimate. Actual treatment can still vary with official valuation, transaction type, and later FBR notifications.</p>
       </div>
     </div>
   </section>
@@ -222,10 +219,10 @@
   <section class="container mx-auto px-4 pb-10">
     <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-6">
       <article class="calc-form-card">
-        <h2 class="text-2xl font-bold text-white mb-4">Filer and Non-Filer Impact</h2>
+        <h2 class="text-2xl font-bold text-white mb-4">Finance Bill 2026 Rate Basis</h2>
         <div class="space-y-3 text-gray-300 leading-relaxed">
-          <p>Property tax discussions in Pakistan often come back to filer status. The difference between filer and non-filer treatment can change the transaction cost enough to affect whether the deal still feels worth it.</p>
-          <p>That is why this page should be used alongside the <a href="blog/filer-vs-non-filer-pakistan.html" class="text-emerald-400 hover:text-emerald-300 font-semibold">filer vs non-filer guide</a>. If you are close to becoming a filer, the tax savings on a major transaction can be more meaningful than many people expect.</p>
+          <p>For this FY 2026-27 refresh, PakTaxCalc uses the Finance Bill 2026 table as the controlling source for property withholding estimates.</p>
+          <p>The calculator applies 1.25% for purchase under section 236K and 2.75% for sale or transfer under section 236C. If FBR later clarifies implementation through final enacted wording or notifications, this page should be refreshed again.</p>
         </div>
       </article>
       <article class="calc-form-card">
@@ -241,10 +238,10 @@
   <section class="container mx-auto px-4 pb-10">
     <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-6">
       <article class="calc-form-card">
-        <h2 class="text-2xl font-bold text-white mb-4">Worked Example 1: Buyer Comparing Filer and Non-Filer Cost</h2>
+        <h2 class="text-2xl font-bold text-white mb-4">Worked Example 1: Buyer Estimating Purchase Cost</h2>
         <div class="space-y-4 text-gray-300 leading-relaxed">
-          <p>Suppose a buyer is considering a property valued at Rs. 12,000,000. The sticker price may feel manageable, but the real cash requirement changes once property-related tax and transfer charges are added. If that same buyer is a non-filer instead of a filer, the difference can become large enough to affect affordability immediately.</p>
-          <p>This is one of the strongest reasons to estimate tax before committing to the deal. The tax difference is not a side note. It can become one of the biggest moving parts in the purchase decision.</p>
+          <p>Suppose a buyer is considering a property valued at Rs. 12,000,000. The sticker price may feel manageable, but the real cash requirement changes once property-related tax and transfer charges are added.</p>
+          <p>At the Finance Bill 2026 purchase rate used here, 1.25% withholding would be Rs. 150,000 before any additional transfer or admin charges. That is why the estimate belongs in the budget before the deal is emotionally fixed.</p>
         </div>
       </article>
       <article class="calc-form-card">
@@ -261,7 +258,7 @@
     <article class="max-w-6xl mx-auto calc-form-card">
       <h2 class="text-3xl font-bold text-white mb-6">Common Property Tax Mistakes This Page Helps Prevent</h2>
       <div class="space-y-4 text-gray-300 leading-relaxed">
-        <p>The first mistake is looking only at the agreed price and ignoring tax until the paperwork stage. The second is relying on old rate screenshots or casual verbal advice without checking current treatment. The third is ignoring filer status even when it has a major effect on total transaction cost.</p>
+        <p>The first mistake is looking only at the agreed price and ignoring tax until the paperwork stage. The second is relying on old rate screenshots or casual verbal advice without checking current treatment. The third is forgetting that Finance Bill, enacted law, valuation, and later notifications can all affect the final payable amount.</p>
         <p>Another common mistake is treating a property purchase as if the listed value and the final cash requirement are the same thing. They are not. Once tax, charges, and additional compliance costs appear, the total can move quickly. This page helps because it forces those items into the conversation early.</p>
         <p>If you are planning a purchase soon, the best related reads after this page are <a href="blog/how-to-become-filer-in-pakistan.html" class="text-emerald-400 hover:text-emerald-300 font-semibold">how to become filer in Pakistan</a> and the <a href="blog/income-tax-guide-2026.html" class="text-emerald-400 hover:text-emerald-300 font-semibold">income tax guide</a>. They help connect the property transaction to the wider tax picture.</p>
       </div>
@@ -274,7 +271,7 @@
       <div class="space-y-4 text-gray-300 leading-relaxed">
         <p>This <strong class="text-white">property tax calculator Pakistan</strong> page is useful for serious buyers comparing multiple options, sellers planning their likely net outcome, investors testing whether a transaction still makes financial sense, and family decision-makers who need to understand the true cash requirement before property commitments become emotional.</p>
         <p>It is also useful for people who are still early in the process. Many property mistakes happen because tax is treated as a paperwork issue instead of a budgeting issue. A planning calculator helps much earlier than that. It lets the user ask the right question before the deal feels locked in.</p>
-        <p>This page is especially relevant for anyone whose filer status is not yet settled. In Pakistan, the filer versus non-filer difference can be meaningful enough to change the real affordability of a purchase or the attractiveness of a sale.</p>
+        <p>This page is especially relevant for anyone who wants a current-rate planning number before speaking with a dealer, registrar, or adviser. It keeps the rough transaction burden visible before negotiation momentum takes over.</p>
       </div>
     </article>
   </section>
@@ -284,7 +281,7 @@
       <article class="calc-form-card">
         <h2 class="text-2xl font-bold text-white mb-4">How to Use the Estimate Before Negotiation</h2>
         <div class="space-y-4 text-gray-300 leading-relaxed">
-          <p>One of the best ways to use this calculator is before you make or accept a serious number. If you are a buyer, enter the expected property value, choose purchase mode, test your filer status, and add basic charges. Then ask whether the total cost still fits your cash plan.</p>
+          <p>One of the best ways to use this calculator is before you make or accept a serious number. If you are a buyer, enter the expected property value, choose purchase mode, and add basic charges. Then ask whether the total cost still fits your cash plan.</p>
           <p>If you are a seller, the page helps shift attention from asking price to net outcome. That is the number that really matters. A high sale figure can still feel disappointing once taxes, charges, and timing issues are considered.</p>
           <p>In both situations, the estimate improves bargaining quality. When both sides understand the real cost structure better, price discussions become more grounded and less emotional.</p>
         </div>
@@ -293,7 +290,7 @@
         <h2 class="text-2xl font-bold text-white mb-4">Why Buyers Need a Margin for Uncertainty</h2>
         <div class="space-y-4 text-gray-300 leading-relaxed">
           <p>Property transactions carry more moving parts than many first-time buyers expect. Official treatment, valuation basis, documentation quality, transaction type, and current tax position can all affect the final amount. That is why smart buyers do not plan to the rupee. They build a margin above the estimate.</p>
-          <p>This page is designed for that kind of planning. It gives you a working number and helps you understand the effect of filer status and additional charges, but it also teaches the right habit: never assume the bare minimum cash requirement is the true requirement.</p>
+          <p>This page is designed for that kind of planning. It gives you a working number and helps you understand the effect of Finance Bill table rates and additional charges, but it also teaches the right habit: never assume the bare minimum cash requirement is the true requirement.</p>
           <p>From a user-intent perspective, this is exactly what people searching for a property tax calculator usually want. They are not only asking for tax math. They are asking whether they can handle the deal financially.</p>
         </div>
       </article>
@@ -302,11 +299,11 @@
 
   <section class="container mx-auto px-4 pb-10">
     <article class="max-w-6xl mx-auto calc-form-card">
-      <h2 class="text-3xl font-bold text-white mb-6">How Filer Status Changes Property Planning</h2>
+        <h2 class="text-3xl font-bold text-white mb-6">How Current Rates Change Property Planning</h2>
       <div class="space-y-4 text-gray-300 leading-relaxed">
-        <p>On smaller purchases, some people treat filer status as a background issue. On property transactions, that is often a mistake. The tax difference between filer and non-filer treatment can become large enough to change whether a purchase still feels efficient or whether a seller can accept a certain price comfortably.</p>
-        <p>That is why this page connects back to the <a href="blog/filer-vs-non-filer-pakistan.html" class="text-emerald-400 hover:text-emerald-300 font-semibold">filer vs non-filer guide</a> and the <a href="blog/how-to-become-filer-in-pakistan.html" class="text-emerald-400 hover:text-emerald-300 font-semibold">become a filer guide</a>. For some users, the biggest value of this calculator is not the estimate itself. It is the realization that becoming a filer before a transaction may create real savings.</p>
-        <p>That makes the calculator more actionable. Instead of only showing a tax burden, it helps users see a practical next step that can improve the transaction outcome.</p>
+        <p>On smaller purchases, some people treat withholding as a background issue. On property transactions, that is often a mistake. Even a low single-digit rate can become a large rupee amount when the property value is high.</p>
+        <p>That is why this page connects back to the <a href="blog/withholding-tax-pakistan.html" class="text-emerald-400 hover:text-emerald-300 font-semibold">withholding tax guide</a> and the <a href="blog/capital-gains-tax-pakistan.html" class="text-emerald-400 hover:text-emerald-300 font-semibold">capital gains tax guide</a>. For some users, the biggest value of this calculator is not the estimate itself. It is the habit of checking official-rate assumptions before a transaction.</p>
+        <p>That makes the calculator more actionable. Instead of only showing a tax burden, it helps users see which source and rate assumption the estimate depends on.</p>
       </div>
     </article>
   </section>
@@ -316,7 +313,7 @@
       <h2 class="text-3xl font-bold text-white mb-6">Why Total Cost Awareness Improves Property Decisions</h2>
       <div class="space-y-4 text-gray-300 leading-relaxed">
         <p>Strong property decisions usually begin with affordability, not emotion. That is exactly why this page matters. Smart buyers do not only ask whether they like the plot, apartment, or house. They ask whether the total transaction cost still works once tax and transfer-related costs are added.</p>
-        <p>One useful habit is to calculate three scenarios: the current asking value, the likely negotiated value, and the highest number you would realistically accept if the negotiation moves against you. That instantly shows whether the deal still fits your liquidity and whether filer status changes the outcome enough to justify timing decisions.</p>
+        <p>One useful habit is to calculate three scenarios: the current asking value, the likely negotiated value, and the highest number you would realistically accept if the negotiation moves against you. That instantly shows whether the deal still fits your liquidity after withholding and extra charges are included.</p>
         <p>The same logic works for investors. An investment property does not only need a good purchase story. It also needs a transaction structure that still makes sense after the tax burden is considered. That is where a planning calculator earns its place.</p>
       </div>
     </article>
@@ -332,7 +329,7 @@
         </a>
         <a href="blog/filer-vs-non-filer-pakistan.html" class="calc-card block">
           <h3 class="calc-card-title">Filer vs Non-Filer</h3>
-          <p class="calc-card-desc">See why property tax often changes sharply by taxpayer status.</p>
+          <p class="calc-card-desc">Useful background for broader ATL and transaction treatment.</p>
         </a>
         <a href="blog/how-to-become-filer-in-pakistan.html" class="calc-card block">
           <h3 class="calc-card-title">How to Become Filer</h3>
@@ -358,8 +355,8 @@
           <p class="mt-4 text-gray-400 leading-relaxed">No. It is a planning estimate only. Actual tax can vary with valuation basis, official treatment, and current rates.</p>
         </details>
         <details class="faq-item p-6">
-          <summary class="font-semibold text-lg cursor-pointer text-white flex justify-between items-center">Why does filer status matter so much here?</summary>
-          <p class="mt-4 text-gray-400 leading-relaxed">Because property transactions often involve different tax treatment for filers and non-filers. Read the <a href="blog/filer-vs-non-filer-pakistan.html" class="text-emerald-400 hover:text-emerald-300 font-semibold">filer vs non-filer guide</a> for the broader picture.</p>
+          <summary class="font-semibold text-lg cursor-pointer text-white flex justify-between items-center">Which rates does this calculator use?</summary>
+          <p class="mt-4 text-gray-400 leading-relaxed">It uses 1.25% for purchase under section 236K and 2.75% for sale or transfer under section 236C, based on the Finance Bill 2026 table used for this FY 2026-27 refresh.</p>
         </details>
         <details class="faq-item p-6">
           <summary class="font-semibold text-lg cursor-pointer text-white flex justify-between items-center">Should I estimate tax before negotiating price?</summary>
@@ -417,7 +414,7 @@
     </div>
     <div class="border-t border-gray-800 pt-8 text-center">
       <p class="text-sm text-gray-500">&copy; 2026 PakTaxCalc. All rights reserved. Made with care in Pakistan</p>
-      <p class="text-xs text-gray-600 mt-2">Tax rates updated as per FBR Pakistan FY 2025-2026</p>
+      <p class="text-xs text-gray-600 mt-2">Tax rates updated as per FBR Pakistan FY 2026-2027</p>
     </div>
   </div>
 </footer>
@@ -425,7 +422,7 @@
 <script>
   (function(){const mobileMenuBtn=document.getElementById('mobileMenuBtn');const mobileMenu=document.getElementById('mobileMenu');if(!mobileMenuBtn||!mobileMenu)return;let isOpen=false;function setMenuState(open){isOpen=open;if(open){mobileMenu.style.maxHeight=mobileMenu.scrollHeight+'px';mobileMenuBtn.classList.add('active');}else{mobileMenu.style.maxHeight='0px';mobileMenuBtn.classList.remove('active');}mobileMenu.setAttribute('aria-hidden',open?'false':'true');mobileMenuBtn.setAttribute('aria-expanded',open?'true':'false');}setMenuState(false);mobileMenuBtn.addEventListener('click',function(e){e.stopPropagation();setMenuState(!isOpen);});document.addEventListener('click',function(e){if(isOpen&&!mobileMenu.contains(e.target)&&!mobileMenuBtn.contains(e.target)){setMenuState(false);}});})();
   function formatNumber(num){return num.toLocaleString('en-PK',{minimumFractionDigits:0,maximumFractionDigits:0});}
-  function calculatePropertyTax(){const value=parseFloat(document.getElementById('propertyValue').value)||0;const type=document.getElementById('propertyType').value;const status=document.getElementById('propertyStatus').value;const chargesRate=(parseFloat(document.getElementById('propertyCharges').value)||0)/100;let taxRate=0;if(type==='buy'){if(value<=50000000){taxRate=status==='filer'?0.015:0.105;}else if(value<=100000000){taxRate=status==='filer'?0.02:0.145;}else{taxRate=status==='filer'?0.025:0.185;}}else{if(value<=50000000){taxRate=status==='filer'?0.045:0.115;}else if(value<=100000000){taxRate=status==='filer'?0.05:0.115;}else{taxRate=status==='filer'?0.055:0.115;}}const taxAmount=value*taxRate;const extraCharges=value*chargesRate;const totalCost=type==='buy'?value+taxAmount+extraCharges:taxAmount+extraCharges;document.getElementById('property-taxAmount').textContent='Rs. '+formatNumber(Math.round(taxAmount));document.getElementById('property-extraCharges').textContent='Rs. '+formatNumber(Math.round(extraCharges));document.getElementById('property-totalCost').textContent='Rs. '+formatNumber(Math.round(totalCost));document.getElementById('propertyResults').classList.remove('hidden');}
+  function calculatePropertyTax(){const value=parseFloat(document.getElementById('propertyValue').value)||0;const type=document.getElementById('propertyType').value;const chargesRate=(parseFloat(document.getElementById('propertyCharges').value)||0)/100;const taxRate=type==='buy'?0.0125:0.0275;const taxAmount=value*taxRate;const extraCharges=value*chargesRate;const totalCost=type==='buy'?value+taxAmount+extraCharges:taxAmount+extraCharges;document.getElementById('property-taxAmount').textContent='Rs. '+formatNumber(Math.round(taxAmount));document.getElementById('property-extraCharges').textContent='Rs. '+formatNumber(Math.round(extraCharges));document.getElementById('property-totalCost').textContent='Rs. '+formatNumber(Math.round(totalCost));document.getElementById('propertyResults').classList.remove('hidden');}
   document.addEventListener('DOMContentLoaded',function(){const slideTabs=document.getElementById('slideTabs');const cursor=document.getElementById('slideCursor');const tabs=document.querySelectorAll('.slide-tab');if(slideTabs&&cursor&&tabs.length>0){function updateCursor(element){const rect=element.getBoundingClientRect();const parentRect=slideTabs.getBoundingClientRect();cursor.style.width=rect.width+'px';cursor.style.transform=`translateX(${rect.left-parentRect.left}px)`;cursor.style.opacity='1';}const activeTab=document.querySelector('.slide-tab.active');if(activeTab){setTimeout(()=>updateCursor(activeTab),100);}tabs.forEach(tab=>tab.addEventListener('mouseenter',function(){updateCursor(this);}));slideTabs.addEventListener('mouseleave',function(){const active=document.querySelector('.slide-tab.active');if(active){updateCursor(active);}});tabs.forEach(tab=>tab.addEventListener('click',function(){tabs.forEach(t=>t.classList.remove('active'));this.classList.add('active');updateCursor(this);}));window.addEventListener('resize',function(){const active=document.querySelector('.slide-tab.active');if(active){updateCursor(active);}});}});
 </script>
 </body>

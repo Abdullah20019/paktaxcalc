@@ -435,7 +435,7 @@
     </div>
     <div class="border-t border-gray-800 pt-8 text-center">
       <p class="text-sm text-gray-500">&copy; 2026 PakTaxCalc. All rights reserved. Made with care in Pakistan</p>
-      <p class="text-xs text-gray-600 mt-2">Tax rates updated as per FBR Pakistan FY 2025-2026</p>
+      <p class="text-xs text-gray-600 mt-2">Tax rates updated as per FBR Pakistan FY 2026-2027</p>
     </div>
   </div>
 </footer>
@@ -476,7 +476,7 @@
     let monthlyPension=0;
     let commutation=0;
     let gratuity=0;
-    if(type==='eobi'){monthlyPension=Math.max(11500,(37000*years)/50);}else{const pensionPercent=Math.min(years*2.33,70);monthlyPension=(basicPay*pensionPercent)/100;commutation=(monthlyPension*0.35)*12*9.5;gratuity=basicPay*Math.min(years,30)*0.5;}
+    if(type==='eobi'){monthlyPension=Math.max(11500,(40700*years)/50);}else{const pensionPercent=Math.min(years*2.33,70);monthlyPension=(basicPay*pensionPercent)/100;commutation=(monthlyPension*0.35)*12*9.5;gratuity=basicPay*Math.min(years,30)*0.5;}
     const annualPension=monthlyPension*12;
     document.getElementById('pension-monthly').textContent='Rs. '+formatNumber(Math.round(monthlyPension));
     document.getElementById('pension-annual').textContent='Rs. '+formatNumber(Math.round(annualPension));

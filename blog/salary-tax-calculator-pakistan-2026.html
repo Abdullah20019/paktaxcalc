@@ -478,9 +478,11 @@
                         <li><strong class="text-white">Up to Rs. 600,000:</strong> Rs. 0 tax</li>
                         <li><strong class="text-white">Rs. 600,001 to Rs. 1,200,000:</strong> 1% of amount above Rs. 600,000</li>
                         <li><strong class="text-white">Rs. 1,200,001 to Rs. 2,200,000:</strong> Rs. 6,000 + 11% of amount above Rs. 1,200,000</li>
-                        <li><strong class="text-white">Rs. 2,200,001 to Rs. 3,200,000:</strong> Rs. 116,000 + 23% of amount above Rs. 2,200,000</li>
-                        <li><strong class="text-white">Rs. 3,200,001 to Rs. 4,100,000:</strong> Rs. 346,000 + 30% of amount above Rs. 3,200,000</li>
-                        <li><strong class="text-white">Above Rs. 4,100,000:</strong> Rs. 616,000 + 35% of amount above Rs. 4,100,000</li>
+                        <li><strong class="text-white">Rs. 2,200,001 to Rs. 3,200,000:</strong> Rs. 116,000 + 20% of amount above Rs. 2,200,000</li>
+                        <li><strong class="text-white">Rs. 3,200,001 to Rs. 4,100,000:</strong> Rs. 316,000 + 25% of amount above Rs. 3,200,000</li>
+                        <li><strong class="text-white">Rs. 4,100,001 to Rs. 5,600,000:</strong> Rs. 541,000 + 29% of amount above Rs. 4,100,000</li>
+                        <li><strong class="text-white">Rs. 5,600,001 to Rs. 7,000,000:</strong> Rs. 976,000 + 32% of amount above Rs. 5,600,000</li>
+                        <li><strong class="text-white">Above Rs. 7,000,000:</strong> Rs. 1,424,000 + 35% of amount above Rs. 7,000,000</li>
                     </ul>
                 </div>
 
@@ -651,7 +653,7 @@
                 </div>
 
                 <p class="text-sm text-gray-500 italic mt-8">
-                    <strong>Disclaimer:</strong> This guide is for educational purposes and follows the salary slab approach used on PakTaxCalc for FY 2025-2026. Tax treatment can vary depending on payroll structure, deductions, and individual circumstances. Review the latest official rules or consult a tax professional for final advice.
+                    <strong>Disclaimer:</strong> This guide is for educational purposes and follows the salary slab approach used on PakTaxCalc for FY 2026-2027 / Tax Year 2027. Tax treatment can vary depending on payroll structure, deductions, and individual circumstances. Review the latest official rules or consult a tax professional for final advice.
                 </p>
             </div>
 
@@ -671,7 +673,7 @@
                         </svg>
                     </a>
                     <a href="fbr-salary-tax-slabs-2025-26.html" class="group flex items-center p-4 bg-[#1a1a1a] rounded-xl border border-white/10 hover:border-emerald-500/50 transition-all duration-300">
-                        <span class="flex-1 text-gray-300 group-hover:text-white transition-colors">FBR Salary Tax Slabs 2025-26</span>
+                        <span class="flex-1 text-gray-300 group-hover:text-white transition-colors">FBR Salary Tax Slabs 2026-27</span>
                         <svg class="w-5 h-5 text-emerald-400 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                         </svg>
@@ -722,7 +724,7 @@
             <p class="text-gray-500 text-sm mb-6">Pakistan's most trusted tax calculator platform.</p>
             <div class="border-t border-white/10 pt-6">
                 <p class="text-sm text-gray-500">&copy; 2026 PakTaxCalc. All rights reserved. Made in Pakistan.</p>
-                <p class="text-xs text-gray-600 mt-2">Tax rates updated as per FBR Pakistan FY 2025-2026</p>
+                <p class="text-xs text-gray-600 mt-2">Tax rates updated as per FBR Pakistan FY 2026-2027</p>
             </div>
         </div>
     </footer>
@@ -735,8 +737,23 @@
             });
         }
 
-        const CURRENT_MINIMUM_WAGE = 37000;
+        const CURRENT_MINIMUM_WAGE = 40700;
         const CURRENT_EOBI_EMPLOYEE_CONTRIBUTION = Math.round(CURRENT_MINIMUM_WAGE * 0.01);
+        const SALARY_TAX_SLABS_2027 = [
+            { limit: 600000, base: 0, rate: 0, floor: 0 },
+            { limit: 1200000, base: 0, rate: 0.01, floor: 600000 },
+            { limit: 2200000, base: 6000, rate: 0.11, floor: 1200000 },
+            { limit: 3200000, base: 116000, rate: 0.20, floor: 2200000 },
+            { limit: 4100000, base: 316000, rate: 0.25, floor: 3200000 },
+            { limit: 5600000, base: 541000, rate: 0.29, floor: 4100000 },
+            { limit: 7000000, base: 976000, rate: 0.32, floor: 5600000 },
+            { limit: Infinity, base: 1424000, rate: 0.35, floor: 7000000 }
+        ];
+
+        function calculateSalaryTaxAmount(taxableIncome) {
+            const slab = SALARY_TAX_SLABS_2027.find((item) => taxableIncome <= item.limit);
+            return slab.base + Math.max(0, taxableIncome - slab.floor) * slab.rate;
+        }
 
         function calculateSalaryTax() {
             const monthlySalary = parseFloat(document.getElementById('monthlySalary').value) || 0;
@@ -754,24 +771,7 @@
 
             const taxableIncome = grossAnnual - deductions;
 
-            let tax = 0;
-            if (taxableIncome > 600000) {
-                if (taxableIncome <= 1200000) {
-                    tax = (taxableIncome - 600000) * 0.01;
-                } else if (taxableIncome <= 2200000) {
-                    tax = 6000 + (taxableIncome - 1200000) * 0.11;
-                } else if (taxableIncome <= 3200000) {
-                    tax = 116000 + (taxableIncome - 2200000) * 0.23;
-                } else if (taxableIncome <= 4100000) {
-                    tax = 346000 + (taxableIncome - 3200000) * 0.30;
-                } else {
-                    tax = 616000 + (taxableIncome - 4100000) * 0.35;
-                }
-            }
-
-            if (taxableIncome > 10000000) {
-                tax += tax * 0.09;
-            }
+            const tax = calculateSalaryTaxAmount(taxableIncome);
 
             const monthlyTax = tax / 12;
             const netMonthlySalary = monthlySalary - monthlyTax - (deductions / 12);

@@ -4,9 +4,19 @@
 // ==========================================
 
 let salaryChart = null;
-const CURRENT_MINIMUM_WAGE = 37000;
+const CURRENT_MINIMUM_WAGE = 40700;
 const CURRENT_EOBI_EMPLOYEE_CONTRIBUTION = Math.round(CURRENT_MINIMUM_WAGE * 0.01);
 const CURRENT_EOBI_MINIMUM_PENSION = 11500;
+const SALARY_TAX_SLABS_2027 = [
+    { threshold: 600000, baseTax: 0, baseIncome: 0, rate: 0 },
+    { threshold: 1200000, baseTax: 0, baseIncome: 600000, rate: 0.01 },
+    { threshold: 2200000, baseTax: 6000, baseIncome: 1200000, rate: 0.11 },
+    { threshold: 3200000, baseTax: 116000, baseIncome: 2200000, rate: 0.20 },
+    { threshold: 4100000, baseTax: 316000, baseIncome: 3200000, rate: 0.25 },
+    { threshold: 5600000, baseTax: 541000, baseIncome: 4100000, rate: 0.29 },
+    { threshold: 7000000, baseTax: 976000, baseIncome: 5600000, rate: 0.32 },
+    { threshold: Infinity, baseTax: 1424000, baseIncome: 7000000, rate: 0.35 }
+];
 
 // ==========================================
 // UTILITY FUNCTIONS
@@ -70,27 +80,8 @@ function showCalculator(calcType) {
 // ==========================================
 
 function calculateTax(annualIncome) {
-    let tax = 0;
-    
-    if (annualIncome <= 600000) {
-        tax = 0;
-    } else if (annualIncome <= 1200000) {
-        tax = (annualIncome - 600000) * 0.01;
-    } else if (annualIncome <= 2200000) {
-        tax = 6000 + (annualIncome - 1200000) * 0.11;
-    } else if (annualIncome <= 3200000) {
-        tax = 116000 + (annualIncome - 2200000) * 0.23;
-    } else if (annualIncome <= 4100000) {
-        tax = 346000 + (annualIncome - 3200000) * 0.30;
-    } else {
-        tax = 616000 + (annualIncome - 4100000) * 0.35;
-    }
-    
-    // Surcharge for income above 10 million
-    if (annualIncome > 10000000) {
-        tax += tax * 0.09;
-    }
-    
+    const slab = SALARY_TAX_SLABS_2027.find(item => annualIncome <= item.threshold);
+    const tax = slab.baseTax + Math.max(0, annualIncome - slab.baseIncome) * slab.rate;
     return Math.round(tax);
 }
 
@@ -104,9 +95,11 @@ function generateTaxBreakdown(annualIncome) {
         { limit: 600000, rate: 0, name: 'First Rs. 600,000' },
         { limit: 600000, rate: 0.01, name: 'Next Rs. 600,000 (Rs. 600K - 1.2M)' },
         { limit: 1000000, rate: 0.11, name: 'Next Rs. 1,000,000 (Rs. 1.2M - 2.2M)' },
-        { limit: 1000000, rate: 0.23, name: 'Next Rs. 1,000,000 (Rs. 2.2M - 3.2M)' },
-        { limit: 900000, rate: 0.30, name: 'Next Rs. 900,000 (Rs. 3.2M - 4.1M)' },
-        { limit: Infinity, rate: 0.35, name: 'Above Rs. 4.1M' }
+        { limit: 1000000, rate: 0.20, name: 'Next Rs. 1,000,000 (Rs. 2.2M - 3.2M)' },
+        { limit: 900000, rate: 0.25, name: 'Next Rs. 900,000 (Rs. 3.2M - 4.1M)' },
+        { limit: 1500000, rate: 0.29, name: 'Next Rs. 1,500,000 (Rs. 4.1M - 5.6M)' },
+        { limit: 1400000, rate: 0.32, name: 'Next Rs. 1,400,000 (Rs. 5.6M - 7M)' },
+        { limit: Infinity, rate: 0.35, name: 'Above Rs. 7M' }
     ];
     
     for (let slab of slabs) {
@@ -521,23 +514,7 @@ function calculatePropertyTax() {
     let cgt = 0;
     let stampDuty = 0;
 
-    if (propertyType === 'buy') {
-        if (value <= 50000000) {
-            annualTax = value * 0.015;
-        } else if (value <= 100000000) {
-            annualTax = value * 0.02;
-        } else {
-            annualTax = value * 0.025;
-        }
-    } else {
-        if (value <= 50000000) {
-            annualTax = value * 0.045;
-        } else if (value <= 100000000) {
-            annualTax = value * 0.05;
-        } else {
-            annualTax = value * 0.055;
-        }
-    }
+    annualTax = propertyType === 'buy' ? value * 0.0125 : value * 0.0275;
     
     document.getElementById('property-annualTax').textContent = 'Rs. ' + formatNumber(Math.round(annualTax));
     document.getElementById('property-cgtTax').textContent = 'Rs. ' + formatNumber(Math.round(cgt));
