@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salary Increase Calculator Pakistan 2026-27 | BPS & Tax</title>
-    <meta name="description" content="Calculate your salary increase in Pakistan for 2026-27. Compare Federal BPS-2026 pay, 7% relief, conveyance, DRA and private salary raises after tax.">
+    <title>Salary Increase Calculator Pakistan 2026-27 | BPS-2026</title>
+    <meta name="description" content="Calculate Federal BPS-2026 salary increase in Pakistan. Check revised basic pay, 7% ARA, optional DRA and 50% higher conveyance allowance.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://paktaxcalc.com/salary-increase-calculator-pakistan.html">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Salary Increase Calculator Pakistan 2026-27">
-    <meta property="og:description" content="Compare Federal BPS-2026 or general salary increases and see the estimated effect on tax and take-home pay.">
+    <meta property="og:description" content="Enter your BPS grade and current basic pay to estimate revised BPS-2026 basic, ARA, DRA and conveyance benefit.">
     <meta property="og:url" content="https://paktaxcalc.com/salary-increase-calculator-pakistan.html">
     <meta property="og:image" content="https://paktaxcalc.com/images/paktaxcalc-logo.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Salary Increase Calculator Pakistan 2026-27">
-    <meta name="twitter:description" content="Estimate revised salary, tax and take-home pay under FY 2026-27 rules.">
+    <meta name="twitter:description" content="A simple Federal BPS-2026 salary increase calculator for Pakistan.">
     <meta name="twitter:image" content="https://paktaxcalc.com/images/paktaxcalc-logo.png">
     <link rel="icon" type="image/png" href="/images/paktaxcalc-logo.png">
     <link rel="apple-touch-icon" href="/images/paktaxcalc-logo.png">
@@ -29,7 +29,7 @@
           "@id": "https://paktaxcalc.com/salary-increase-calculator-pakistan.html#webpage",
           "url": "https://paktaxcalc.com/salary-increase-calculator-pakistan.html",
           "name": "Salary Increase Calculator Pakistan 2026-27",
-          "description": "Compare Federal BPS-2026 and general salary increases with estimated tax and take-home pay.",
+          "description": "Estimate Federal BPS-2026 revised basic pay, ARA-2026, optional DRA-2026 and conveyance allowance benefit.",
           "dateModified": "2026-07-24",
           "mainEntity": {"@id": "https://paktaxcalc.com/salary-increase-calculator-pakistan.html#calculator"}
         },
@@ -42,7 +42,7 @@
           "operatingSystem": "Any",
           "isAccessibleForFree": true,
           "offers": {"@type": "Offer", "price": "0", "priceCurrency": "PKR"},
-          "description": "A free calculator for Federal Government BPS-2026 pay revisions and general salary increases in Pakistan."
+          "description": "A free calculator for Federal Government BPS-2026 pay revisions in Pakistan."
         },
         {
           "@type": "BreadcrumbList",
@@ -63,7 +63,7 @@
             {
               "@type": "Question",
               "name": "How does point-to-point BPS-2026 fixation work?",
-              "acceptedAnswer": {"@type": "Answer", "text": "An existing employee is placed at the corresponding stage above the minimum in the revised BPS-2026 scale. The calculator uses the selected BPS and number of increments above minimum to compare old and revised basic pay."}
+              "acceptedAnswer": {"@type": "Answer", "text": "An existing employee is placed at the corresponding stage above the minimum in the revised BPS-2026 scale. The calculator maps the entered running basic pay to the nearest official BPS-2022 stage and uses the corresponding BPS-2026 stage."}
             },
             {
               "@type": "Question",
@@ -72,8 +72,8 @@
             },
             {
               "@type": "Question",
-              "name": "Can private employees use this salary increase calculator?",
-              "acceptedAnswer": {"@type": "Answer", "text": "Yes. General and private employees can use the separate general salary raise mode to compare a percentage or fixed increase under Tax Year 2027 salary tax slabs."}
+              "name": "Who should include DRA-2026 in the calculation?",
+              "acceptedAnswer": {"@type": "Answer", "text": "DRA-2026 should only be included by eligible employees who already receive Disparity Reduction Allowance. The calculation uses 15% of the employee's actual basic pay as on 30 June 2022."}
             }
           ]
         }
@@ -103,6 +103,17 @@
         .bps-table tbody tr:hover { background: rgba(16,185,129,.045); }
         .switch-row { border: 1px solid rgba(255,255,255,.09); border-radius: .8rem; background: rgba(255,255,255,.025); padding: .9rem 1rem; }
         .error-box { border: 1px solid rgba(248,113,113,.35); background: rgba(127,29,29,.2); color: #fecaca; }
+        .simple-panel { border: 1px solid rgba(255,255,255,.11); border-radius: 1.5rem; background: linear-gradient(145deg,#171a18,#0e100f); box-shadow: 0 24px 70px rgba(0,0,0,.28); }
+        .benefit-card { min-height: 88px; border-radius: 1rem; background: rgba(255,255,255,.025); transition: border-color .2s ease, background-color .2s ease, transform .2s ease; }
+        .benefit-card:hover { transform: translateY(-2px); }
+        .benefit-card.dra-selected { background: rgba(59,130,246,.09); border-color: rgba(96,165,250,.8); }
+        .benefit-icon { width: 42px; height: 42px; border-radius: .8rem; display: grid; place-items: center; flex: 0 0 auto; }
+        .simple-input { min-height: 54px; border: 1px solid rgba(255,255,255,.14); border-radius: .9rem; background: #0b0e0c; color: #fff; padding: 0 1rem; width: 100%; outline: none; font-size: 1rem; }
+        .simple-input:focus { border-color: #f59e0b; box-shadow: 0 0 0 3px rgba(245,158,11,.12); }
+        .simple-cta { min-height: 52px; border-radius: .9rem; background: linear-gradient(90deg,#d97706,#f59e0b); color: #fff; font-weight: 800; transition: transform .2s ease, filter .2s ease; }
+        .simple-cta:hover { filter: brightness(1.08); transform: translateY(-1px); }
+        .simple-reset { min-height: 52px; border: 1px solid rgba(255,255,255,.12); border-radius: .9rem; background: rgba(255,255,255,.04); color: #d4d4d8; font-weight: 700; }
+        .simple-reset:hover { border-color: rgba(255,255,255,.25); color: #fff; }
         @media (max-width: 640px) { .result-value { font-size: 1.05rem; } }
     </style>
 </head>
@@ -141,12 +152,96 @@
             <div class="max-w-4xl">
                 <span class="inline-flex items-center px-4 py-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-300 text-sm mb-6">Updated for the 21 July 2026 federal pay notifications</span>
                 <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-tight mb-5">Salary Increase Calculator <span class="text-emerald-400">Pakistan 2026-27</span></h1>
-                <p class="text-lg md:text-xl text-gray-400 leading-relaxed max-w-3xl">Compare Federal BPS-2026 pay fixation or a general salary raise, then see how the increase changes estimated tax and take-home salary.</p>
+                <p class="text-lg md:text-xl text-gray-400 leading-relaxed max-w-3xl">Select your BPS grade and enter your current running basic pay to see the revised BPS-2026 basic, allowances and estimated monthly benefit.</p>
             </div>
         </div>
     </section>
 
     <section class="container mx-auto px-4 py-10 md:py-14">
+        <div class="max-w-5xl mx-auto simple-panel p-5 md:p-8">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="w-1 h-8 rounded-full bg-amber-500"></span>
+                <div>
+                    <p class="text-xs font-black uppercase tracking-[0.18em] text-amber-400">Employee Details</p>
+                    <h2 class="text-xl md:text-2xl font-bold text-white mt-1">Federal Salary Increase</h2>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-3 mb-7">
+                <div class="benefit-card border border-emerald-400/60 p-4 flex items-center gap-3">
+                    <span class="benefit-icon bg-emerald-500/10 text-emerald-400" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V5h16v14H4Z"/><path d="m7 15 3-4 3 2 4-6"/></svg>
+                    </span>
+                    <div><p class="text-[11px] uppercase tracking-wider font-bold text-gray-400">ARA 2026</p><p class="font-black text-emerald-400">7% on New Basic</p></div>
+                </div>
+                <label id="simpleDraCard" class="benefit-card border border-blue-400/60 p-4 flex items-center gap-3 cursor-pointer">
+                    <input id="simpleDraEligible" type="checkbox" class="sr-only">
+                    <span class="benefit-icon bg-blue-500/10 text-blue-400" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M5 7h14M6 7l-3 6h6L6 7Zm12 0-3 6h6l-3-6Z"/><path d="M8 21h8"/></svg>
+                    </span>
+                    <div class="flex-1"><p class="text-[11px] uppercase tracking-wider font-bold text-gray-400">DRA 2026 <span class="text-blue-300">(optional)</span></p><p class="font-black text-blue-400">15% of June 2022 Basic</p></div>
+                    <span id="simpleDraState" class="text-xs text-gray-500">Off</span>
+                </label>
+                <div class="benefit-card border border-amber-400/60 p-4 flex items-center gap-3">
+                    <span class="benefit-icon bg-amber-500/10 text-amber-400" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h13v9H3zM16 10h3l2 3v3h-5z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+                    </span>
+                    <div><p class="text-[11px] uppercase tracking-wider font-bold text-gray-400">Conveyance</p><p class="font-black text-amber-400">50% Extra</p></div>
+                </div>
+            </div>
+
+            <div id="simpleError" class="error-box rounded-xl p-4 mb-5 hidden" role="alert"></div>
+            <div class="space-y-5">
+                <div>
+                    <label class="field-label uppercase tracking-wider" for="simpleBps">BPS Grade</label>
+                    <select id="simpleBps" class="simple-input"></select>
+                </div>
+                <div>
+                    <label class="field-label uppercase tracking-wider" for="simpleCurrentBasic">Current Running Basic Pay (as on 30.06.2026)</label>
+                    <div class="relative">
+                        <input id="simpleCurrentBasic" type="number" min="0" step="1" class="simple-input pr-16" placeholder="e.g. 32,640">
+                        <span class="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-bold text-amber-400">PKR</span>
+                    </div>
+                    <p class="field-help">Enter basic pay before BPS-2026 point-to-point fixation.</p>
+                </div>
+                <div id="simpleDraInputWrap" class="hidden">
+                    <label class="field-label uppercase tracking-wider" for="simpleBasic2022">Basic Pay as on 30.06.2022</label>
+                    <div class="relative">
+                        <input id="simpleBasic2022" type="number" min="0" step="1" class="simple-input pr-16" placeholder="Enter the amount from your payroll record">
+                        <span class="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-bold text-blue-400">PKR</span>
+                    </div>
+                    <p class="field-help">Required only for employees already eligible for DRA.</p>
+                </div>
+                <div class="grid sm:grid-cols-2 gap-3 pt-1">
+                    <button type="button" id="simpleCalculate" class="simple-cta">Calculate Salary Increase</button>
+                    <button type="button" id="simpleReset" class="simple-reset">Reset</button>
+                </div>
+            </div>
+
+            <div id="simpleResults" class="mt-8 hidden" aria-live="polite">
+                <div class="border-t border-white/10 pt-7">
+                    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-5">
+                        <div><p class="text-xs uppercase tracking-wider text-emerald-400 font-bold">Estimated Result</p><h3 class="text-2xl font-bold mt-1">Your BPS-2026 Revision</h3></div>
+                        <p id="simpleStageNote" class="text-xs text-gray-500 max-w-md"></p>
+                    </div>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                        <div class="result-card"><p class="result-label">Current basic pay</p><p id="simpleOldBasic" class="result-value">Rs. 0</p></div>
+                        <div class="result-card"><p class="result-label">Revised BPS-2026 basic</p><p id="simpleNewBasic" class="result-value text-emerald-400">Rs. 0</p></div>
+                        <div class="result-card"><p class="result-label">Basic pay difference</p><p id="simpleBasicIncrease" class="result-value">Rs. 0</p></div>
+                        <div class="result-card"><p class="result-label">ARA-2026 at 7%</p><p id="simpleAra" class="result-value">Rs. 0</p></div>
+                        <div class="result-card"><p class="result-label">DRA-2026</p><p id="simpleDra" class="result-value">Rs. 0</p></div>
+                        <div class="result-card"><p class="result-label">Conveyance increase</p><p id="simpleConveyance" class="result-value">Rs. 0</p></div>
+                    </div>
+                    <div class="result-card result-primary mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                        <div><p class="result-label">Indicative monthly budget benefit</p><p class="text-xs text-gray-500">Before discontinued ARA and employee-specific payroll adjustments</p></div>
+                        <p id="simpleTotal" class="text-3xl font-black text-emerald-400">Rs. 0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-4 py-10 md:py-14 hidden" aria-hidden="true">
         <div class="max-w-6xl mx-auto">
             <div class="grid sm:grid-cols-2 gap-3 mb-6" role="tablist" aria-label="Salary increase calculator mode">
                 <button type="button" id="federalModeButton" class="mode-button active rounded-2xl p-5 text-left" role="tab" aria-selected="true" aria-controls="federalMode">
@@ -373,8 +468,8 @@
             <article class="panel p-6 md:p-8">
                 <h2 class="text-2xl font-bold mb-4">How the Federal Salary Increase Is Calculated</h2>
                 <div class="space-y-4 text-gray-300 leading-relaxed">
-                    <p>The selected BPS stage determines old and revised basic pay. The calculator then removes the discontinued ARA amount entered from the June payslip and adds the revised basic-pay difference, 7% ARA-2026, conveyance increase and any eligibility-based adjustments.</p>
-                    <p>The June tax estimate annualizes June gross pay under the previous salary slabs. The July estimate annualizes revised gross pay under FY 2026-27 / Tax Year 2027 slabs. It is a comparison tool, not a payroll order.</p>
+                    <p>The calculator matches your current running basic pay to the nearest official stage in the selected BPS-2022 scale. It then uses the corresponding point in BPS-2026 to estimate your revised basic pay.</p>
+                    <p>The result separately shows the basic-pay difference, 7% ARA-2026 and the revised conveyance amount. DRA-2026 is included only when you select it and enter your actual basic pay as on 30 June 2022.</p>
                 </div>
             </article>
             <article class="panel p-6 md:p-8">
@@ -392,12 +487,12 @@
             <h2 class="text-2xl md:text-3xl font-bold mb-6">Worked Salary Increase Examples</h2>
             <div class="grid md:grid-cols-2 gap-6 text-gray-300 leading-relaxed">
                 <div>
-                    <h3 class="text-lg font-bold text-white mb-2">General salary: Rs. 100,000 to Rs. 110,000</h3>
-                    <p>With no bonus or other deductions, annual tax increases from approximately Rs. 6,000 to Rs. 19,200 under Tax Year 2027 slabs. The Rs. 10,000 gross monthly raise therefore produces an estimated Rs. 8,900 monthly take-home increase.</p>
+                    <h3 class="text-lg font-bold text-white mb-2">Enter the running basic pay</h3>
+                    <p>Choose your BPS grade and enter the basic pay shown on your June 2026 payslip. The tool automatically finds the nearest official stage, so you do not need to count increments manually.</p>
                 </div>
                 <div>
-                    <h3 class="text-lg font-bold text-white mb-2">Federal BPS employee</h3>
-                    <p>Select the BPS and exact increments above minimum, then enter June gross and the ARA amounts that cease. The result shows each verified July addition separately, including revised basic, 7% relief and conveyance.</p>
+                    <h3 class="text-lg font-bold text-white mb-2">Read the result carefully</h3>
+                    <p>The highlighted total is an indicative monthly budget benefit. It does not subtract ARA-2022 or ARA-2025 that cease after the pay-scale revision, and it does not include department-specific allowances, deductions or income tax.</p>
                 </div>
             </div>
         </div>
@@ -622,6 +717,86 @@ function setMode(mode) {
     document.getElementById('generalModeButton').setAttribute('aria-selected', String(!federal));
 }
 
+function initializeSimpleCalculator() {
+    const select = document.getElementById('simpleBps');
+    Object.keys(BPS_DATA).forEach(bps => {
+        const option = document.createElement('option');
+        option.value = bps;
+        option.textContent = 'BPS-' + String(bps).padStart(2,'0');
+        if (bps === '9') option.selected = true;
+        select.appendChild(option);
+    });
+}
+function setSimpleError(message) {
+    const box = document.getElementById('simpleError');
+    box.textContent = message;
+    box.classList.toggle('hidden', !message);
+}
+function toggleSimpleDra() {
+    const checked = document.getElementById('simpleDraEligible').checked;
+    document.getElementById('simpleDraInputWrap').classList.toggle('hidden', !checked);
+    document.getElementById('simpleDraCard').classList.toggle('dra-selected', checked);
+    document.getElementById('simpleDraState').textContent = checked ? 'On' : 'Off';
+}
+function calculateSimpleSalaryIncrease() {
+    const bps = Number(document.getElementById('simpleBps').value);
+    const currentBasic = numberValue('simpleCurrentBasic');
+    const data = BPS_DATA[bps];
+    const draEligible = document.getElementById('simpleDraEligible').checked;
+    const basicAsOf2022 = numberValue('simpleBasic2022');
+
+    if (currentBasic <= 0) {
+        setSimpleError('Enter your current running basic pay as on 30 June 2026.');
+        document.getElementById('simpleCurrentBasic').focus();
+        return;
+    }
+    if (currentBasic < data[0] || currentBasic > data[2]) {
+        setSimpleError('For BPS-' + bps + ', enter a running basic between ' + money(data[0]) + ' and ' + money(data[2]) + '.');
+        document.getElementById('simpleCurrentBasic').focus();
+        return;
+    }
+    if (draEligible && basicAsOf2022 <= 0) {
+        setSimpleError('Enter your basic pay as on 30 June 2022 to include DRA-2026.');
+        document.getElementById('simpleBasic2022').focus();
+        return;
+    }
+    setSimpleError('');
+
+    const stage = Math.max(0, Math.min(data[3], Math.round((currentBasic - data[0]) / data[1])));
+    const matchedOldBasic = data[0] + stage * data[1];
+    const newBasic = data[4] + stage * data[5];
+    const basicIncrease = newBasic - currentBasic;
+    const ara = newBasic * .07;
+    const dra = draEligible ? basicAsOf2022 * .15 : 0;
+    const [oldConveyance,newConveyance] = conveyanceForBps(bps);
+    const conveyanceIncrease = newConveyance - oldConveyance;
+    const total = basicIncrease + ara + dra + conveyanceIncrease;
+    const stageDifference = Math.abs(matchedOldBasic - currentBasic);
+
+    document.getElementById('simpleOldBasic').textContent = money(currentBasic);
+    document.getElementById('simpleNewBasic').textContent = money(newBasic);
+    document.getElementById('simpleBasicIncrease').textContent = money(basicIncrease);
+    document.getElementById('simpleAra').textContent = money(ara);
+    document.getElementById('simpleDra').textContent = money(dra);
+    document.getElementById('simpleConveyance').textContent = money(conveyanceIncrease);
+    document.getElementById('simpleTotal').textContent = money(total);
+    document.getElementById('simpleStageNote').textContent = stageDifference > 1
+        ? 'Mapped to the nearest official BPS-2022 stage: ' + money(matchedOldBasic) + ' (' + stage + ' increments above minimum).'
+        : 'Exact official stage matched: ' + stage + ' increments above minimum.';
+    document.getElementById('simpleResults').classList.remove('hidden');
+    document.getElementById('simpleResults').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function resetSimpleCalculator() {
+    document.getElementById('simpleBps').value = '9';
+    document.getElementById('simpleCurrentBasic').value = '';
+    document.getElementById('simpleBasic2022').value = '';
+    document.getElementById('simpleDraEligible').checked = false;
+    toggleSimpleDra();
+    setSimpleError('');
+    document.getElementById('simpleResults').classList.add('hidden');
+    document.getElementById('simpleCurrentBasic').focus();
+}
+
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
 mobileMenuBtn.addEventListener('click', () => {
@@ -636,7 +811,12 @@ document.getElementById('draEligible').addEventListener('change', event => docum
 document.getElementById('increaseType').addEventListener('change', updateIncreaseLabel);
 document.getElementById('calculateFederal').addEventListener('click', calculateFederal);
 document.getElementById('calculateGeneral').addEventListener('click', calculateGeneral);
+document.getElementById('simpleDraEligible').addEventListener('change', toggleSimpleDra);
+document.getElementById('simpleCalculate').addEventListener('click', calculateSimpleSalaryIncrease);
+document.getElementById('simpleReset').addEventListener('click', resetSimpleCalculator);
 initializeBps();
+initializeSimpleCalculator();
+toggleSimpleDra();
 calculateGeneral();
 </script>
 </body>
