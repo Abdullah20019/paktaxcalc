@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Increase Calculator Pakistan 2026-27 | BPS & Tax</title>
+    <meta name="description" content="Calculate your salary increase in Pakistan for 2026-27. Compare Federal BPS-2026 pay, 7% relief, conveyance, DRA and private salary raises after tax.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://paktaxcalc.com/salary-increase-calculator-pakistan.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Salary Increase Calculator Pakistan 2026-27">
+    <meta property="og:description" content="Compare Federal BPS-2026 or general salary increases and see the estimated effect on tax and take-home pay.">
+    <meta property="og:url" content="https://paktaxcalc.com/salary-increase-calculator-pakistan.html">
+    <meta property="og:image" content="https://paktaxcalc.com/images/paktaxcalc-logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Salary Increase Calculator Pakistan 2026-27">
+    <meta name="twitter:description" content="Estimate revised salary, tax and take-home pay under FY 2026-27 rules.">
+    <meta name="twitter:image" content="https://paktaxcalc.com/images/paktaxcalc-logo.png">
+    <link rel="icon" type="image/png" href="/images/paktaxcalc-logo.png">
+    <link rel="apple-touch-icon" href="/images/paktaxcalc-logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/dark-theme.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://paktaxcalc.com/salary-increase-calculator-pakistan.html#webpage",
+          "url": "https://paktaxcalc.com/salary-increase-calculator-pakistan.html",
+          "name": "Salary Increase Calculator Pakistan 2026-27",
+          "description": "Compare Federal BPS-2026 and general salary increases with estimated tax and take-home pay.",
+          "dateModified": "2026-07-24",
+          "mainEntity": {"@id": "https://paktaxcalc.com/salary-increase-calculator-pakistan.html#calculator"}
+        },
+        {
+          "@type": "WebApplication",
+          "@id": "https://paktaxcalc.com/salary-increase-calculator-pakistan.html#calculator",
+          "name": "Salary Increase Calculator Pakistan 2026-27",
+          "url": "https://paktaxcalc.com/salary-increase-calculator-pakistan.html",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Any",
+          "isAccessibleForFree": true,
+          "offers": {"@type": "Offer", "price": "0", "priceCurrency": "PKR"},
+          "description": "A free calculator for Federal Government BPS-2026 pay revisions and general salary increases in Pakistan."
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://paktaxcalc.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://paktaxcalc.com/calculators.html"},
+            {"@type": "ListItem", "position": 3, "name": "Salary Increase Calculator", "item": "https://paktaxcalc.com/salary-increase-calculator-pakistan.html"}
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What salary increase applies to Federal Government employees in 2026?",
+              "acceptedAnswer": {"@type": "Answer", "text": "The federal package includes point-to-point fixation in BPS-2026, a 7% Ad-hoc Relief Allowance-2026 on running BPS-2026 basic pay, revised conveyance allowance and eligibility-based changes such as DRA-2026."}
+            },
+            {
+              "@type": "Question",
+              "name": "How does point-to-point BPS-2026 fixation work?",
+              "acceptedAnswer": {"@type": "Answer", "text": "An existing employee is placed at the corresponding stage above the minimum in the revised BPS-2026 scale. The calculator uses the selected BPS and number of increments above minimum to compare old and revised basic pay."}
+            },
+            {
+              "@type": "Question",
+              "name": "Is the 7% Ad-hoc Relief Allowance-2026 taxable?",
+              "acceptedAnswer": {"@type": "Answer", "text": "Yes. The Finance Division notification states that Ad-hoc Relief Allowance-2026 is subject to income tax."}
+            },
+            {
+              "@type": "Question",
+              "name": "Can private employees use this salary increase calculator?",
+              "acceptedAnswer": {"@type": "Answer", "text": "Yes. General and private employees can use the separate general salary raise mode to compare a percentage or fixed increase under Tax Year 2027 salary tax slabs."}
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+    <style>
+        body { background: #070908; color: #f4f4f5; }
+        .hero-grid { background-image: linear-gradient(rgba(16,185,129,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(16,185,129,.055) 1px,transparent 1px); background-size: 34px 34px; }
+        .mode-button { border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.035); color: #a1a1aa; }
+        .mode-button.active { border-color: rgba(52,211,153,.7); background: rgba(16,185,129,.14); color: #6ee7b7; box-shadow: inset 0 0 0 1px rgba(52,211,153,.15); }
+        .field-label { display: block; margin-bottom: .5rem; color: #e4e4e7; font-size: .875rem; font-weight: 600; }
+        .field-help { margin-top: .45rem; color: #71717a; font-size: .75rem; line-height: 1.45; }
+        .input-dark { width: 100%; border: 1px solid rgba(255,255,255,.12); border-radius: .75rem; background: #101311; color: #fff; padding: .85rem 1rem; outline: none; transition: .2s ease; }
+        .input-dark:focus { border-color: #34d399; box-shadow: 0 0 0 3px rgba(52,211,153,.1); }
+        .panel { border: 1px solid rgba(255,255,255,.1); border-radius: 1.25rem; background: linear-gradient(145deg,rgba(24,27,25,.96),rgba(12,14,13,.98)); box-shadow: 0 18px 60px rgba(0,0,0,.23); }
+        .result-card { border: 1px solid rgba(255,255,255,.09); border-radius: 1rem; background: rgba(255,255,255,.035); padding: 1rem; }
+        .result-label { color: #a1a1aa; font-size: .75rem; margin-bottom: .35rem; }
+        .result-value { color: #fff; font-size: 1.3rem; font-weight: 800; }
+        .result-primary { border-color: rgba(52,211,153,.35); background: linear-gradient(135deg,rgba(16,185,129,.13),rgba(16,185,129,.035)); }
+        .source-link { border: 1px solid rgba(52,211,153,.2); background: rgba(16,185,129,.055); }
+        .table-wrap { overflow-x: auto; border: 1px solid rgba(255,255,255,.1); border-radius: 1rem; }
+        .bps-table th { background: #111512; color: #6ee7b7; font-size: .72rem; text-transform: uppercase; letter-spacing: .04em; }
+        .bps-table th,.bps-table td { padding: .7rem .8rem; border-bottom: 1px solid rgba(255,255,255,.07); text-align: right; white-space: nowrap; }
+        .bps-table th:first-child,.bps-table td:first-child { text-align: left; }
+        .bps-table tr:last-child td { border-bottom: 0; }
+        .bps-table tbody tr:hover { background: rgba(16,185,129,.045); }
+        .switch-row { border: 1px solid rgba(255,255,255,.09); border-radius: .8rem; background: rgba(255,255,255,.025); padding: .9rem 1rem; }
+        .error-box { border: 1px solid rgba(248,113,113,.35); background: rgba(127,29,29,.2); color: #fecaca; }
+        @media (max-width: 640px) { .result-value { font-size: 1.05rem; } }
+    </style>
+</head>
+<body>
+<header class="dark-header fixed w-full top-0 z-50">
+    <nav class="container mx-auto px-4 py-4">
+        <div class="flex justify-between items-center">
+            <a href="/" class="flex items-center space-x-3 group">
+                <img src="/images/paktaxcalc-logo.png" alt="PakTaxCalc logo" class="w-10 h-10 rounded-xl object-cover shadow-lg">
+                <div class="text-2xl font-bold tracking-tight">Pak<span class="text-emerald-400">Tax</span>Calc</div>
+            </a>
+            <div class="hidden md:flex items-center gap-7 text-sm text-gray-300">
+                <a href="/" class="hover:text-emerald-400">Home</a>
+                <a href="/calculators.html" class="text-emerald-400">Calculators</a>
+                <a href="/blog/" class="hover:text-emerald-400">Tax Guides</a>
+                <a href="/about.html" class="hover:text-emerald-400">About</a>
+            </div>
+            <a href="/#calculators" class="hidden md:block btn-green text-sm">Salary Tax Calculator</a>
+            <button id="mobileMenuBtn" class="md:hidden hamburger" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+        </div>
+        <div id="mobileMenu" class="md:hidden mobile-menu mt-4 rounded-xl overflow-hidden max-h-0 transition-all duration-300">
+            <div class="flex flex-col p-4 space-y-2">
+                <a href="/" class="py-3 px-4 rounded-lg hover:bg-white/5">Home</a>
+                <a href="/calculators.html" class="py-3 px-4 rounded-lg bg-white/10 text-emerald-400">Calculators</a>
+                <a href="/blog/" class="py-3 px-4 rounded-lg hover:bg-white/5">Tax Guides</a>
+                <a href="/about.html" class="py-3 px-4 rounded-lg hover:bg-white/5">About</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="pt-20">
+    <section class="hero-grid relative overflow-hidden border-b border-white/10">
+        <div class="absolute -top-20 left-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl"></div>
+        <div class="container mx-auto px-4 py-14 md:py-20 relative">
+            <div class="max-w-4xl">
+                <span class="inline-flex items-center px-4 py-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-300 text-sm mb-6">Updated for the 21 July 2026 federal pay notifications</span>
+                <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-tight mb-5">Salary Increase Calculator <span class="text-emerald-400">Pakistan 2026-27</span></h1>
+                <p class="text-lg md:text-xl text-gray-400 leading-relaxed max-w-3xl">Compare Federal BPS-2026 pay fixation or a general salary raise, then see how the increase changes estimated tax and take-home salary.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-4 py-10 md:py-14">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid sm:grid-cols-2 gap-3 mb-6" role="tablist" aria-label="Salary increase calculator mode">
+                <button type="button" id="federalModeButton" class="mode-button active rounded-2xl p-5 text-left" role="tab" aria-selected="true" aria-controls="federalMode">
+                    <span class="block text-xs uppercase tracking-wider mb-2">Official pay revision</span>
+                    <strong class="block text-lg text-white">Federal Government BPS-2026</strong>
+                    <span class="block text-sm mt-1">Point-to-point basic pay and allowance comparison</span>
+                </button>
+                <button type="button" id="generalModeButton" class="mode-button rounded-2xl p-5 text-left" role="tab" aria-selected="false" aria-controls="generalMode">
+                    <span class="block text-xs uppercase tracking-wider mb-2">Any employer</span>
+                    <strong class="block text-lg text-white">General / Private Salary Raise</strong>
+                    <span class="block text-sm mt-1">Percentage or fixed increase after Tax Year 2027 tax</span>
+                </button>
+            </div>
+
+            <div id="federalMode" class="panel p-5 md:p-8" role="tabpanel" aria-labelledby="federalModeButton">
+                <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-7">
+                    <div>
+                        <p class="text-emerald-400 text-sm font-bold uppercase tracking-wider mb-2">Federal employee mode</p>
+                        <h2 class="text-2xl md:text-3xl font-bold">Compare June and July 2026 Pay</h2>
+                    </div>
+                    <p class="text-sm text-gray-500 max-w-xl">Use your June payslip for gross pay and discontinued allowance amounts. This avoids guessing employee-specific historical allowances.</p>
+                </div>
+
+                <div id="federalError" class="error-box rounded-xl p-4 mb-5 hidden" role="alert"></div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <div>
+                        <label class="field-label" for="bps">Basic Pay Scale</label>
+                        <select id="bps" class="input-dark"></select>
+                    </div>
+                    <div>
+                        <label class="field-label" for="bpsStage">Position in Pay Scale</label>
+                        <select id="bpsStage" class="input-dark"></select>
+                        <p class="field-help">Select the increments already earned above the minimum on 30 June 2026.</p>
+                    </div>
+                    <div>
+                        <label class="field-label" for="juneGross">June 2026 Gross Salary</label>
+                        <input id="juneGross" type="number" min="0" step="1" class="input-dark" placeholder="e.g., 85000">
+                        <p class="field-help">Gross pay before income tax and other deductions.</p>
+                    </div>
+                    <div>
+                        <label class="field-label" for="discontinuedAra">ARA-2022 and ARA-2025 Ceasing</label>
+                        <input id="discontinuedAra" type="number" min="0" step="1" class="input-dark" value="0">
+                        <p class="field-help">Enter the combined monthly amount shown on your June payslip.</p>
+                    </div>
+                    <div>
+                        <label class="field-label" for="unchangedAllowances">Other Unchanged Allowances</label>
+                        <input id="unchangedAllowances" type="number" min="0" step="1" class="input-dark" value="0">
+                        <p class="field-help">Shown in the breakdown for transparency; already included in June gross.</p>
+                    </div>
+                    <div>
+                        <label class="field-label" for="recurringDeductions">Recurring Monthly Deductions</label>
+                        <input id="recurringDeductions" type="number" min="0" step="1" class="input-dark" value="0">
+                        <p class="field-help">GPF, benevolent fund and similar deductions, excluding income tax.</p>
+                    </div>
+                    <div>
+                        <label class="field-label" for="otherJulyAdjustment">Other July Adjustment</label>
+                        <input id="otherJulyAdjustment" type="number" step="1" class="input-dark" value="0">
+                        <p class="field-help">Add or subtract another verified monthly payroll change.</p>
+                    </div>
+                    <div class="md:col-span-2">
+                        <div class="switch-row flex gap-3 items-start">
+                            <input id="draEligible" type="checkbox" class="mt-1 w-5 h-5 accent-emerald-500">
+                            <div class="flex-1">
+                                <label for="draEligible" class="text-sm font-semibold text-white">Eligible for DRA-2026</label>
+                                <p class="field-help !mt-1">Only select this if you already receive Disparity Reduction Allowance.</p>
+                                <div id="draInputWrap" class="mt-3 hidden">
+                                    <label class="field-label" for="basicAsOf2022">Basic Pay as on 30 June 2022</label>
+                                    <input id="basicAsOf2022" type="number" min="0" step="1" class="input-dark" placeholder="Amount from payroll record">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="switch-row h-full flex gap-3 items-start">
+                            <input id="disabledEmployee" type="checkbox" class="mt-1 w-5 h-5 accent-emerald-500">
+                            <div>
+                                <label for="disabledEmployee" class="text-sm font-semibold text-white">Disabled employee special conveyance</label>
+                                <p class="field-help !mt-1">Applies the verified increase from Rs. 6,000 to Rs. 10,000.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" id="calculateFederal" class="btn-green w-full mt-7 py-4 text-base">Calculate Federal Salary Increase</button>
+
+                <div id="federalResults" class="mt-8 hidden" aria-live="polite">
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="result-card"><p class="result-label">Old basic pay</p><p id="fOldBasic" class="result-value">Rs. 0</p></div>
+                        <div class="result-card"><p class="result-label">BPS-2026 basic pay</p><p id="fNewBasic" class="result-value text-emerald-400">Rs. 0</p></div>
+                        <div class="result-card"><p class="result-label">Basic pay increase</p><p id="fBasicIncrease" class="result-value">Rs. 0</p></div>
+                        <div class="result-card"><p class="result-label">ARA-2026 at 7%</p><p id="fRelief" class="result-value">Rs. 0</p></div>
+                        <div class="result-card"><p class="result-label">June estimated tax / month</p><p id="fOldTax" class="result-value">Rs. 0</p></div>
+                        <div class="result-card"><p class="result-label">July estimated tax / month</p><p id="fNewTax" class="result-value">Rs. 0</p></div>
+                        <div class="result-card"><p class="result-label">June take-home estimate</p><p id="fOldNet" class="result-value">Rs. 0</p></div>
+                        <div class="result-card"><p class="result-label">July take-home estimate</p><p id="fNewNet" class="result-value">Rs. 0</p></div>
+                        <div class="result-card result-primary sm:col-span-2"><p class="result-label">Monthly gross increase</p><p id="fGrossIncrease" class="text-3xl font-black text-emerald-400">Rs. 0</p><p id="fGrossPercent" class="text-sm text-gray-400 mt-1">0%</p></div>
+                        <div class="result-card result-primary sm:col-span-2"><p class="result-label">Monthly take-home increase</p><p id="fNetIncrease" class="text-3xl font-black text-emerald-400">Rs. 0</p><p id="fRetained" class="text-sm text-gray-400 mt-1">0% of gross increase retained</p></div>
+                    </div>
+                    <div class="mt-5 grid md:grid-cols-2 gap-4">
+                        <div class="result-card">
+                            <h3 class="font-bold text-white mb-3">July Revision Breakdown</h3>
+                            <div id="fBreakdown" class="space-y-2 text-sm text-gray-300"></div>
+                        </div>
+                        <div class="result-card">
+                            <h3 class="font-bold text-white mb-3">Annualized Comparison</h3>
+                            <div id="fAnnual" class="space-y-2 text-sm text-gray-300"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="generalMode" class="panel p-5 md:p-8 hidden" role="tabpanel" aria-labelledby="generalModeButton">
+                <div class="mb-7">
+                    <p class="text-emerald-400 text-sm font-bold uppercase tracking-wider mb-2">General employee mode</p>
+                    <h2 class="text-2xl md:text-3xl font-bold">Compare a Private or General Salary Raise</h2>
+                    <p class="text-sm text-gray-500 mt-2">Both scenarios use FY 2026-27 / Tax Year 2027 salary slabs so the result isolates the effect of the raise.</p>
+                </div>
+                <div id="generalError" class="error-box rounded-xl p-4 mb-5 hidden" role="alert"></div>
+                <div class="grid md:grid-cols-2 gap-5">
+                    <div>
+                        <label class="field-label" for="currentSalary">Current Monthly Gross Salary</label>
+                        <input id="currentSalary" type="number" min="0" step="1" class="input-dark" value="100000">
+                    </div>
+                    <div>
+                        <label class="field-label" for="increaseType">Increase Method</label>
+                        <select id="increaseType" class="input-dark">
+                            <option value="percentage">Percentage increase</option>
+                            <option value="fixed">Fixed monthly amount</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label id="increaseValueLabel" class="field-label" for="increaseValue">Salary Increase (%)</label>
+                        <input id="increaseValue" type="number" min="0" step="0.01" class="input-dark" value="10">
+                    </div>
+                    <div>
+                        <label class="field-label" for="annualBonus">Annual Bonus / Variable Pay</label>
+                        <input id="annualBonus" type="number" min="0" step="1" class="input-dark" value="0">
+                        <p class="field-help">Included in tax for both scenarios.</p>
+                    </div>
+                    <div>
+                        <label class="field-label" for="generalDeductions">Recurring Monthly Deductions</label>
+                        <input id="generalDeductions" type="number" min="0" step="1" class="input-dark" value="0">
+                        <p class="field-help">Provident fund, EOBI and other recurring deductions, excluding tax.</p>
+                    </div>
+                </div>
+                <button type="button" id="calculateGeneral" class="btn-green w-full mt-7 py-4 text-base">Calculate Salary Raise After Tax</button>
+
+                <div id="generalResults" class="mt-8 hidden" aria-live="polite">
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="result-card"><p class="result-label">Current monthly salary</p><p id="gOldSalary" class="result-value">Rs. 0</p></div>
+                        <div class="result-card"><p class="result-label">New monthly salary</p><p id="gNewSalary" class="result-value text-emerald-400">Rs. 0</p></div>
+                        <div class="result-card"><p class="result-label">Current annual tax</p><p id="gOldTax" class="result-value">Rs. 0</p></div>
+                        <div class="result-card"><p class="result-label">New annual tax</p><p id="gNewTax" class="result-value">Rs. 0</p></div>
+                        <div class="result-card"><p class="result-label">Current take-home / month</p><p id="gOldNet" class="result-value">Rs. 0</p></div>
+                        <div class="result-card"><p class="result-label">New take-home / month</p><p id="gNewNet" class="result-value">Rs. 0</p></div>
+                        <div class="result-card result-primary"><p class="result-label">Gross monthly increase</p><p id="gGrossIncrease" class="text-2xl font-black text-emerald-400">Rs. 0</p><p id="gGrossPercent" class="text-sm text-gray-400 mt-1">0%</p></div>
+                        <div class="result-card result-primary"><p class="result-label">Take-home increase</p><p id="gNetIncrease" class="text-2xl font-black text-emerald-400">Rs. 0</p><p id="gRetained" class="text-sm text-gray-400 mt-1">0% retained</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-4 pb-12">
+        <div class="max-w-6xl mx-auto grid lg:grid-cols-3 gap-5">
+            <a class="source-link rounded-2xl p-5 block hover:border-emerald-400/60 transition-colors" href="https://finance.gov.pk/circulars/REVISION_OF_BASIC_PAY_SCALES_2026.pdf" target="_blank" rel="noopener noreferrer">
+                <p class="text-xs text-emerald-400 font-bold uppercase tracking-wider mb-2">Official source</p>
+                <h2 class="font-bold text-white">BPS-2026 Pay Scales</h2>
+                <p class="text-sm text-gray-400 mt-2">Point-to-point fixation, 7% ARA-2026 and revised pay-scale table.</p>
+            </a>
+            <a class="source-link rounded-2xl p-5 block hover:border-emerald-400/60 transition-colors" href="https://finance.gov.pk/circulars/REVISION_IN_THE_RATES_OF_CONVEYANCE_ALLOWANCE_BPS_1_22.pdf" target="_blank" rel="noopener noreferrer">
+                <p class="text-xs text-emerald-400 font-bold uppercase tracking-wider mb-2">Official source</p>
+                <h2 class="font-bold text-white">Conveyance Allowance</h2>
+                <p class="text-sm text-gray-400 mt-2">Revised federal monthly conveyance rates effective 1 July 2026.</p>
+            </a>
+            <a class="source-link rounded-2xl p-5 block hover:border-emerald-400/60 transition-colors" href="https://finance.gov.pk/circulars/GRANT_OF_DISPARITY_REDUCTION_ALLOWANCE_2026.pdf" target="_blank" rel="noopener noreferrer">
+                <p class="text-xs text-emerald-400 font-bold uppercase tracking-wider mb-2">Official source</p>
+                <h2 class="font-bold text-white">DRA-2026 Notification</h2>
+                <p class="text-sm text-gray-400 mt-2">15% of basic pay as on 30 June 2022 for eligible recipients.</p>
+            </a>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-4 pb-12">
+        <div class="max-w-6xl mx-auto panel p-5 md:p-8">
+            <div class="max-w-3xl mb-7">
+                <p class="text-emerald-400 text-sm font-bold uppercase tracking-wider mb-2">Official comparison data</p>
+                <h2 class="text-2xl md:text-3xl font-bold">BPS-2022 to BPS-2026 Pay Scale Table</h2>
+                <p class="text-gray-400 mt-3">The calculator fixes pay at the same number of increments above minimum. BPS-2026 replaced BPS-2022 for covered federal civil employees from 1 July 2026.</p>
+            </div>
+            <div class="table-wrap">
+                <table class="bps-table w-full text-sm text-gray-300">
+                    <thead><tr><th>BPS</th><th>Stages</th><th>2022 Min</th><th>2022 Increment</th><th>2022 Max</th><th>2026 Min</th><th>2026 Increment</th><th>2026 Max</th></tr></thead>
+                    <tbody>
+                        <tr><td>1</td><td>30</td><td>13,550</td><td>430</td><td>26,450</td><td>16,280</td><td>520</td><td>31,880</td></tr>
+                        <tr><td>2</td><td>30</td><td>13,820</td><td>490</td><td>28,520</td><td>16,600</td><td>590</td><td>34,300</td></tr>
+                        <tr><td>3</td><td>30</td><td>14,260</td><td>580</td><td>31,660</td><td>17,130</td><td>700</td><td>38,130</td></tr>
+                        <tr><td>4</td><td>30</td><td>14,690</td><td>660</td><td>34,490</td><td>17,650</td><td>800</td><td>41,650</td></tr>
+                        <tr><td>5</td><td>30</td><td>15,230</td><td>750</td><td>37,730</td><td>18,300</td><td>910</td><td>45,600</td></tr>
+                        <tr><td>6</td><td>30</td><td>15,760</td><td>840</td><td>40,960</td><td>18,930</td><td>1,010</td><td>49,230</td></tr>
+                        <tr><td>7</td><td>30</td><td>16,310</td><td>910</td><td>43,610</td><td>19,590</td><td>1,100</td><td>52,590</td></tr>
+                        <tr><td>8</td><td>30</td><td>16,890</td><td>1,000</td><td>46,890</td><td>20,290</td><td>1,210</td><td>56,590</td></tr>
+                        <tr><td>9</td><td>30</td><td>17,470</td><td>1,090</td><td>50,170</td><td>20,990</td><td>1,310</td><td>60,290</td></tr>
+                        <tr><td>10</td><td>30</td><td>18,050</td><td>1,190</td><td>53,750</td><td>21,680</td><td>1,430</td><td>64,580</td></tr>
+                        <tr><td>11</td><td>30</td><td>18,650</td><td>1,310</td><td>57,950</td><td>22,410</td><td>1,580</td><td>69,810</td></tr>
+                        <tr><td>12</td><td>30</td><td>19,770</td><td>1,430</td><td>62,670</td><td>23,750</td><td>1,720</td><td>75,350</td></tr>
+                        <tr><td>13</td><td>30</td><td>21,160</td><td>1,560</td><td>67,960</td><td>25,420</td><td>1,880</td><td>81,820</td></tr>
+                        <tr><td>14</td><td>30</td><td>22,530</td><td>1,740</td><td>74,730</td><td>27,060</td><td>2,090</td><td>89,760</td></tr>
+                        <tr><td>15</td><td>30</td><td>23,920</td><td>1,980</td><td>83,320</td><td>28,730</td><td>2,380</td><td>100,130</td></tr>
+                        <tr><td>16</td><td>30</td><td>28,070</td><td>2,260</td><td>95,870</td><td>33,720</td><td>2,720</td><td>115,320</td></tr>
+                        <tr><td>17</td><td>20</td><td>45,070</td><td>3,420</td><td>113,470</td><td>54,140</td><td>4,110</td><td>136,340</td></tr>
+                        <tr><td>18</td><td>20</td><td>56,880</td><td>4,260</td><td>142,080</td><td>68,330</td><td>5,120</td><td>170,730</td></tr>
+                        <tr><td>19</td><td>20</td><td>87,840</td><td>4,530</td><td>178,440</td><td>105,510</td><td>5,450</td><td>214,510</td></tr>
+                        <tr><td>20</td><td>14</td><td>102,470</td><td>6,690</td><td>196,130</td><td>123,090</td><td>8,040</td><td>235,650</td></tr>
+                        <tr><td>21</td><td>14</td><td>113,790</td><td>7,420</td><td>217,670</td><td>136,680</td><td>8,920</td><td>261,560</td></tr>
+                        <tr><td>22</td><td>14</td><td>122,190</td><td>8,710</td><td>244,130</td><td>146,770</td><td>10,470</td><td>293,350</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-4 pb-12">
+        <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-5">
+            <article class="panel p-6 md:p-8">
+                <h2 class="text-2xl font-bold mb-4">How the Federal Salary Increase Is Calculated</h2>
+                <div class="space-y-4 text-gray-300 leading-relaxed">
+                    <p>The selected BPS stage determines old and revised basic pay. The calculator then removes the discontinued ARA amount entered from the June payslip and adds the revised basic-pay difference, 7% ARA-2026, conveyance increase and any eligibility-based adjustments.</p>
+                    <p>The June tax estimate annualizes June gross pay under the previous salary slabs. The July estimate annualizes revised gross pay under FY 2026-27 / Tax Year 2027 slabs. It is a comparison tool, not a payroll order.</p>
+                </div>
+            </article>
+            <article class="panel p-6 md:p-8">
+                <h2 class="text-2xl font-bold mb-4">Federal and Provincial Employees</h2>
+                <div class="space-y-4 text-gray-300 leading-relaxed">
+                    <p>The BPS-2026 mode is based on federal Finance Division notifications for covered federal civil employees. Provincial governments, autonomous bodies, armed forces payroll and special cadres may issue separate implementation instructions.</p>
+                    <p>Check the revised figure against your departmental payroll, AGPR record and applicable notification before making a financial decision.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-4 pb-12">
+        <div class="max-w-6xl mx-auto panel p-6 md:p-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6">Worked Salary Increase Examples</h2>
+            <div class="grid md:grid-cols-2 gap-6 text-gray-300 leading-relaxed">
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-2">General salary: Rs. 100,000 to Rs. 110,000</h3>
+                    <p>With no bonus or other deductions, annual tax increases from approximately Rs. 6,000 to Rs. 19,200 under Tax Year 2027 slabs. The Rs. 10,000 gross monthly raise therefore produces an estimated Rs. 8,900 monthly take-home increase.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-2">Federal BPS employee</h3>
+                    <p>Select the BPS and exact increments above minimum, then enter June gross and the ARA amounts that cease. The result shows each verified July addition separately, including revised basic, 7% relief and conveyance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-4 pb-16">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-2xl font-bold mb-5">Continue Your Salary Calculation</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <a href="/#calculators" class="result-card hover:border-emerald-500/50 transition-colors"><h3 class="font-bold text-white">Salary Tax Calculator</h3><p class="text-sm text-gray-400 mt-2">Check annual and monthly salary tax.</p></a>
+                <a href="/salary-after-tax-calculator-pakistan.html" class="result-card hover:border-emerald-500/50 transition-colors"><h3 class="font-bold text-white">Salary After Tax</h3><p class="text-sm text-gray-400 mt-2">Estimate complete take-home pay.</p></a>
+                <a href="/salary-slip-tax-calculator-pakistan.html" class="result-card hover:border-emerald-500/50 transition-colors"><h3 class="font-bold text-white">Salary Slip Tax</h3><p class="text-sm text-gray-400 mt-2">Understand individual payroll lines.</p></a>
+                <a href="/blog/government-employee-salary-tax-pakistan.html" class="result-card hover:border-emerald-500/50 transition-colors"><h3 class="font-bold text-white">Government Salary Guide</h3><p class="text-sm text-gray-400 mt-2">Read the government employee tax guide.</p></a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-[#090b0a] border-t border-white/10 py-12">
+    <div class="container mx-auto px-4 text-center">
+        <div class="flex items-center justify-center gap-2 mb-4"><img src="/images/paktaxcalc-logo.png" alt="PakTaxCalc logo" class="w-8 h-8 rounded-lg"><h2 class="text-xl font-bold">Pak<span class="text-emerald-400">Tax</span>Calc</h2></div>
+        <p class="text-gray-500 text-sm mb-5">Free salary planning tools for Pakistan.</p>
+        <p class="text-xs text-gray-600">Estimates only. Verify government pay with your payroll office and tax treatment with FBR guidance.</p>
+        <p class="text-sm text-gray-600 mt-4">&copy; 2026 PakTaxCalc. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+const BPS_DATA = {
+    1:[13550,430,26450,30,16280,520,31880],2:[13820,490,28520,30,16600,590,34300],
+    3:[14260,580,31660,30,17130,700,38130],4:[14690,660,34490,30,17650,800,41650],
+    5:[15230,750,37730,30,18300,910,45600],6:[15760,840,40960,30,18930,1010,49230],
+    7:[16310,910,43610,30,19590,1100,52590],8:[16890,1000,46890,30,20290,1210,56590],
+    9:[17470,1090,50170,30,20990,1310,60290],10:[18050,1190,53750,30,21680,1430,64580],
+    11:[18650,1310,57950,30,22410,1580,69810],12:[19770,1430,62670,30,23750,1720,75350],
+    13:[21160,1560,67960,30,25420,1880,81820],14:[22530,1740,74730,30,27060,2090,89760],
+    15:[23920,1980,83320,30,28730,2380,100130],16:[28070,2260,95870,30,33720,2720,115320],
+    17:[45070,3420,113470,20,54140,4110,136340],18:[56880,4260,142080,20,68330,5120,170730],
+    19:[87840,4530,178440,20,105510,5450,214510],20:[102470,6690,196130,14,123090,8040,235650],
+    21:[113790,7420,217670,14,136680,8920,261560],22:[122190,8710,244130,14,146770,10470,293350]
+};
+const TAX_2026 = [
+    {max:600000,base:0,floor:0,rate:0},{max:1200000,base:0,floor:600000,rate:.01},
+    {max:2200000,base:6000,floor:1200000,rate:.11},{max:3200000,base:116000,floor:2200000,rate:.23},
+    {max:4100000,base:346000,floor:3200000,rate:.30},{max:Infinity,base:616000,floor:4100000,rate:.35}
+];
+const TAX_2027 = [
+    {max:600000,base:0,floor:0,rate:0},{max:1200000,base:0,floor:600000,rate:.01},
+    {max:2200000,base:6000,floor:1200000,rate:.11},{max:3200000,base:116000,floor:2200000,rate:.20},
+    {max:4100000,base:316000,floor:3200000,rate:.25},{max:5600000,base:541000,floor:4100000,rate:.29},
+    {max:7000000,base:976000,floor:5600000,rate:.32},{max:Infinity,base:1424000,floor:7000000,rate:.35}
+];
+
+function money(value) {
+    const rounded = Math.round(Number(value) || 0);
+    const sign = rounded < 0 ? '-' : '';
+    return sign + 'Rs. ' + Math.abs(rounded).toLocaleString('en-PK');
+}
+function numberValue(id) { return Number(document.getElementById(id).value) || 0; }
+function taxFromSlabs(income, slabs, surcharge) {
+    const safeIncome = Math.max(0, income);
+    const slab = slabs.find(item => safeIncome <= item.max);
+    let tax = slab.base + Math.max(0, safeIncome - slab.floor) * slab.rate;
+    if (surcharge && safeIncome > 10000000) tax *= 1.09;
+    return Math.max(0, tax);
+}
+function line(label, value, emphasize) {
+    return '<div class="flex justify-between gap-4 border-b border-white/5 pb-2"><span>' + label + '</span><strong class="' + (emphasize ? 'text-emerald-400' : 'text-white') + '">' + value + '</strong></div>';
+}
+function setError(id, message) {
+    const box = document.getElementById(id);
+    box.textContent = message;
+    box.classList.toggle('hidden', !message);
+}
+function conveyanceForBps(bps) {
+    if (bps <= 4) return [1785,2678];
+    if (bps <= 10) return [1932,2898];
+    if (bps <= 15) return [2856,4284];
+    return [5000,7500];
+}
+function initializeBps() {
+    const select = document.getElementById('bps');
+    Object.keys(BPS_DATA).forEach(bps => {
+        const option = document.createElement('option');
+        option.value = bps;
+        option.textContent = 'BPS-' + bps;
+        if (bps === '16') option.selected = true;
+        select.appendChild(option);
+    });
+    updateStages();
+}
+function updateStages() {
+    const bps = Number(document.getElementById('bps').value);
+    const stages = BPS_DATA[bps][3];
+    const select = document.getElementById('bpsStage');
+    const previous = Math.min(Number(select.value) || 0, stages);
+    select.innerHTML = '';
+    for (let i = 0; i <= stages; i++) {
+        const option = document.createElement('option');
+        option.value = i;
+        option.textContent = i === 0 ? 'Minimum (0 increments)' : i + (i === 1 ? ' increment above minimum' : ' increments above minimum');
+        if (i === previous) option.selected = true;
+        select.appendChild(option);
+    }
+}
+function calculateFederal() {
+    const bps = Number(document.getElementById('bps').value);
+    const stage = Number(document.getElementById('bpsStage').value);
+    const data = BPS_DATA[bps];
+    const oldBasic = Math.min(data[2], data[0] + stage * data[1]);
+    const newBasic = Math.min(data[6], data[4] + stage * data[5]);
+    const [oldConveyance,newConveyance] = conveyanceForBps(bps);
+    const juneGrossInput = numberValue('juneGross');
+    const discontinued = numberValue('discontinuedAra');
+    const unchanged = numberValue('unchangedAllowances');
+    const deductions = numberValue('recurringDeductions');
+    const otherAdjustment = numberValue('otherJulyAdjustment');
+    const disabled = document.getElementById('disabledEmployee').checked;
+    const draEligible = document.getElementById('draEligible').checked;
+    const basicAsOf2022 = numberValue('basicAsOf2022');
+    const modeledJuneGross = oldBasic + oldConveyance + discontinued + unchanged + (disabled ? 6000 : 0);
+    const juneGross = juneGrossInput || modeledJuneGross;
+
+    if (juneGross <= 0) return setError('federalError','Enter your June 2026 gross salary.');
+    if (draEligible && basicAsOf2022 <= 0) return setError('federalError','Enter basic pay as on 30 June 2022 to calculate DRA-2026.');
+    if (deductions > juneGross) return setError('federalError','Recurring deductions cannot exceed June gross salary.');
+    setError('federalError','');
+
+    const basicIncrease = newBasic - oldBasic;
+    const relief = newBasic * .07;
+    const conveyanceIncrease = newConveyance - oldConveyance;
+    const dra = draEligible ? basicAsOf2022 * .15 : 0;
+    const disabledIncrease = disabled ? 4000 : 0;
+    const grossIncrease = basicIncrease - discontinued + relief + conveyanceIncrease + dra + disabledIncrease + otherAdjustment;
+    const julyGross = Math.max(0, juneGross + grossIncrease);
+    const oldAnnualTax = taxFromSlabs(juneGross * 12, TAX_2026, true);
+    const newAnnualTax = taxFromSlabs(julyGross * 12, TAX_2027, false);
+    const oldMonthlyTax = oldAnnualTax / 12;
+    const newMonthlyTax = newAnnualTax / 12;
+    const oldNet = juneGross - oldMonthlyTax - deductions;
+    const newNet = julyGross - newMonthlyTax - deductions;
+    const netIncrease = newNet - oldNet;
+    const grossPercent = juneGross ? grossIncrease / juneGross * 100 : 0;
+    const retained = grossIncrease > 0 ? netIncrease / grossIncrease * 100 : 0;
+
+    document.getElementById('fOldBasic').textContent = money(oldBasic);
+    document.getElementById('fNewBasic').textContent = money(newBasic);
+    document.getElementById('fBasicIncrease').textContent = money(basicIncrease);
+    document.getElementById('fRelief').textContent = money(relief);
+    document.getElementById('fOldTax').textContent = money(oldMonthlyTax);
+    document.getElementById('fNewTax').textContent = money(newMonthlyTax);
+    document.getElementById('fOldNet').textContent = money(oldNet);
+    document.getElementById('fNewNet').textContent = money(newNet);
+    document.getElementById('fGrossIncrease').textContent = money(grossIncrease);
+    document.getElementById('fGrossPercent').textContent = grossPercent.toFixed(2) + '% change from June gross';
+    document.getElementById('fNetIncrease').textContent = money(netIncrease);
+    document.getElementById('fRetained').textContent = retained.toFixed(2) + '% of gross increase retained after estimated tax';
+    document.getElementById('fBreakdown').innerHTML =
+        line('BPS basic pay difference', money(basicIncrease), true) +
+        line('ARA-2022 / ARA-2025 removed', money(-discontinued), false) +
+        line('Other unchanged allowances', money(unchanged), false) +
+        line('ARA-2026 at 7%', money(relief), true) +
+        line('Conveyance increase', money(conveyanceIncrease), true) +
+        line('DRA-2026', money(dra), dra > 0) +
+        line('Disabled conveyance increase', money(disabledIncrease), disabledIncrease > 0) +
+        line('Other July adjustment', money(otherAdjustment), otherAdjustment > 0) +
+        line('Estimated July gross', money(julyGross), true);
+    document.getElementById('fAnnual').innerHTML =
+        line('June annualized gross', money(juneGross * 12), false) +
+        line('July annualized gross', money(julyGross * 12), true) +
+        line('Annualized gross increase', money(grossIncrease * 12), true) +
+        line('Previous-slab annual tax', money(oldAnnualTax), false) +
+        line('Tax Year 2027 annual tax', money(newAnnualTax), true) +
+        line('Annualized tax difference', money(newAnnualTax - oldAnnualTax), false);
+    document.getElementById('federalResults').classList.remove('hidden');
+}
+function updateIncreaseLabel() {
+    const percentage = document.getElementById('increaseType').value === 'percentage';
+    document.getElementById('increaseValueLabel').textContent = percentage ? 'Salary Increase (%)' : 'Fixed Monthly Increase (PKR)';
+    document.getElementById('increaseValue').step = percentage ? '0.01' : '1';
+}
+function calculateGeneral() {
+    const current = numberValue('currentSalary');
+    const increaseValue = numberValue('increaseValue');
+    const percentage = document.getElementById('increaseType').value === 'percentage';
+    const bonus = numberValue('annualBonus');
+    const deductions = numberValue('generalDeductions');
+    if (current <= 0) return setError('generalError','Enter your current monthly gross salary.');
+    if (increaseValue < 0) return setError('generalError','Salary increase cannot be negative.');
+    if (deductions > current) return setError('generalError','Recurring deductions cannot exceed current salary.');
+    setError('generalError','');
+
+    const increase = percentage ? current * increaseValue / 100 : increaseValue;
+    const revised = current + increase;
+    const oldAnnualTax = taxFromSlabs(current * 12 + bonus, TAX_2027, false);
+    const newAnnualTax = taxFromSlabs(revised * 12 + bonus, TAX_2027, false);
+    const oldNet = current - oldAnnualTax / 12 - deductions;
+    const newNet = revised - newAnnualTax / 12 - deductions;
+    const netIncrease = newNet - oldNet;
+    const increasePercent = current ? increase / current * 100 : 0;
+    const retained = increase > 0 ? netIncrease / increase * 100 : 0;
+
+    document.getElementById('gOldSalary').textContent = money(current);
+    document.getElementById('gNewSalary').textContent = money(revised);
+    document.getElementById('gOldTax').textContent = money(oldAnnualTax);
+    document.getElementById('gNewTax').textContent = money(newAnnualTax);
+    document.getElementById('gOldNet').textContent = money(oldNet);
+    document.getElementById('gNewNet').textContent = money(newNet);
+    document.getElementById('gGrossIncrease').textContent = money(increase);
+    document.getElementById('gGrossPercent').textContent = increasePercent.toFixed(2) + '% salary increase';
+    document.getElementById('gNetIncrease').textContent = money(netIncrease);
+    document.getElementById('gRetained').textContent = retained.toFixed(2) + '% of raise retained';
+    document.getElementById('generalResults').classList.remove('hidden');
+}
+function setMode(mode) {
+    const federal = mode === 'federal';
+    document.getElementById('federalMode').classList.toggle('hidden', !federal);
+    document.getElementById('generalMode').classList.toggle('hidden', federal);
+    document.getElementById('federalModeButton').classList.toggle('active', federal);
+    document.getElementById('generalModeButton').classList.toggle('active', !federal);
+    document.getElementById('federalModeButton').setAttribute('aria-selected', String(federal));
+    document.getElementById('generalModeButton').setAttribute('aria-selected', String(!federal));
+}
+
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+mobileMenuBtn.addEventListener('click', () => {
+    const open = mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== '0px';
+    mobileMenu.style.maxHeight = open ? '0px' : mobileMenu.scrollHeight + 'px';
+    mobileMenuBtn.setAttribute('aria-expanded', String(!open));
+});
+document.getElementById('federalModeButton').addEventListener('click', () => setMode('federal'));
+document.getElementById('generalModeButton').addEventListener('click', () => setMode('general'));
+document.getElementById('bps').addEventListener('change', updateStages);
+document.getElementById('draEligible').addEventListener('change', event => document.getElementById('draInputWrap').classList.toggle('hidden', !event.target.checked));
+document.getElementById('increaseType').addEventListener('change', updateIncreaseLabel);
+document.getElementById('calculateFederal').addEventListener('click', calculateFederal);
+document.getElementById('calculateGeneral').addEventListener('click', calculateGeneral);
+initializeBps();
+calculateGeneral();
+</script>
+</body>
+</html>
