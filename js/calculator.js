@@ -212,11 +212,8 @@ function calculateSalaryTax() {
     
     let deductions = calculateDeductions(monthlySalary, options);
     let totalMonthlyDeductions = Object.values(deductions).reduce((a, b) => a + b, 0);
-    let totalAnnualDeductions = totalMonthlyDeductions * 12;
-    
-    let taxableIncome = grossAnnualSalary - totalAnnualDeductions;
-    
-    let annualTax = calculateTax(taxableIncome);
+    // Payroll deductions affect take-home, not the default taxable salary estimate.
+    let annualTax = calculateTax(grossAnnualSalary);
     let monthlyTax = annualTax / 12;
     
     let netMonthlySalary = monthlySalary - monthlyTax - totalMonthlyDeductions;
@@ -231,7 +228,7 @@ function calculateSalaryTax() {
     document.getElementById('salary-effectiveRate').textContent = effectiveRate + '%';
     
     // Display tax breakdown table
-    displayTaxBreakdown(taxableIncome);
+    displayTaxBreakdown(grossAnnualSalary);
     
     // Update chart
     updateSalaryChart(monthlySalary, monthlyTax, totalMonthlyDeductions, netMonthlySalary);

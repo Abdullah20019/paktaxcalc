@@ -18,7 +18,7 @@
     <meta name="twitter:image" content="https://paktaxcalc.com/images/paktaxcalc-logo.png">
     <link rel="icon" type="image/png" href="/images/paktaxcalc-logo.png">
     <link rel="apple-touch-icon" href="/images/paktaxcalc-logo.png">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/tailwind.generated.css">
     <link rel="stylesheet" href="css/dark-theme.css">
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"WebPage","name":"Salary After Tax Calculator Pakistan 2026","url":"https://paktaxcalc.com/salary-after-tax-calculator-pakistan.html","description":"Take-home salary estimator for Pakistan with monthly salary, bonus, EOBI, and provident fund inputs."}
@@ -28,6 +28,14 @@
         .input-dark{background:#0f0f0f;border:1px solid rgba(255,255,255,.1);color:#fff}
         .input-dark:focus{outline:none;border-color:rgba(16,185,129,.6);box-shadow:0 0 0 3px rgba(16,185,129,.12)}
     </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SQ6C7S157Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-SQ6C7S157Q');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2426410046563968" crossorigin="anonymous"></script>
 </head>
 <body class="bg-[#0a0a0a] min-h-screen text-white">
 <header class="dark-header fixed w-full top-0 z-50"><nav class="container mx-auto px-4 py-4"><div class="flex justify-between items-center"><a href="/" class="flex items-center space-x-3 group"><img src="/images/paktaxcalc-logo.png" alt="PakTaxCalc logo" class="w-10 h-10 rounded-xl object-cover shadow-lg group-hover:shadow-emerald-500/30 transition-all"><div class="text-2xl font-bold tracking-tight">Pak<span class="text-emerald-400">Tax</span>Calc</div></a><div class="hidden md:block"><div class="slide-tabs-container" id="slideTabs"><div class="slide-tabs-cursor" id="slideCursor"></div><a href="/" class="slide-tab" data-index="0">Home</a><a href="/calculators.html" class="slide-tab active" data-index="1">Calculators</a><a href="/blog/" class="slide-tab" data-index="2">Tax Guides</a><a href="/about.html" class="slide-tab" data-index="3">About</a><a href="/contact.html" class="slide-tab" data-index="4">Contact</a></div></div><a href="/#calculators" class="hidden md:block btn-green text-sm">Open Main Calculator</a><button id="mobileMenuBtn" class="md:hidden hamburger" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button></div><div id="mobileMenu" class="md:hidden mobile-menu mt-4 rounded-xl overflow-hidden max-h-0 transition-all duration-300"><div class="flex flex-col p-4 space-y-2"><a href="/" class="py-3 px-4 rounded-lg hover:bg-white/5 text-gray-300 hover:text-emerald-400 transition-colors">Home</a><a href="/calculators.html" class="py-3 px-4 rounded-lg bg-white/10 text-emerald-400">Calculators</a><a href="/blog/" class="py-3 px-4 rounded-lg hover:bg-white/5 text-gray-300 hover:text-emerald-400 transition-colors">Tax Guides</a><a href="/about.html" class="py-3 px-4 rounded-lg hover:bg-white/5 text-gray-300 hover:text-emerald-400 transition-colors">About</a><a href="/contact.html" class="py-3 px-4 rounded-lg hover:bg-white/5 text-gray-300 hover:text-emerald-400 transition-colors">Contact</a><a href="/#calculators" class="btn-green text-center mt-2">Open Main Calculator</a></div></div></nav></header>
@@ -44,7 +52,7 @@
                 <div><label for="monthlySalary" class="block text-sm text-gray-300 mb-2">Monthly gross salary</label><input id="monthlySalary" type="number" min="0" value="100000" class="input-dark w-full rounded-xl px-4 py-3"></div>
                 <div><label for="annualBonus" class="block text-sm text-gray-300 mb-2">Annual bonus</label><input id="annualBonus" type="number" min="0" value="0" class="input-dark w-full rounded-xl px-4 py-3"></div>
                 <div><label for="providentFund" class="block text-sm text-gray-300 mb-2">Monthly provident fund</label><input id="providentFund" type="number" min="0" value="0" class="input-dark w-full rounded-xl px-4 py-3"></div>
-                <div><label for="eobi" class="block text-sm text-gray-300 mb-2">Monthly EOBI</label><input id="eobi" type="number" min="0" value="407" class="input-dark w-full rounded-xl px-4 py-3"></div>
+                <div><label for="eobi" class="block text-sm text-gray-300 mb-2">Monthly EOBI (from payslip)</label><input id="eobi" type="number" min="0" value="0" class="input-dark w-full rounded-xl px-4 py-3"></div>
             </div>
             <button id="calculateBtn" class="btn-green mt-6 w-full md:w-auto">Calculate Take-Home Pay</button>
             <div class="grid md:grid-cols-2 gap-4 mt-8">
@@ -57,7 +65,7 @@
         <div class="tool-card p-6 md:p-8">
             <h2 class="text-2xl font-bold mb-4">How This Estimate Works</h2>
             <div class="space-y-4 text-gray-300 leading-relaxed">
-                <p>The estimator converts your monthly salary into annual salary, adds bonus, subtracts the employee deductions you enter, and then applies the current PakTaxCalc salary slab logic used across the salary content cluster.</p>
+                <p>The estimator converts monthly gross salary to an annual figure, adds taxable bonus and applies FY 2026-27 salaried slabs. EOBI and provident-fund entries reduce the take-home estimate only; they are not automatically deducted from taxable salary.</p>
                 <p>It is designed for take-home pay planning, so the output emphasizes net monthly salary rather than only annual tax. That makes it useful when you are comparing job offers, checking a payslip, or planning an increment.</p>
                 <p>For salary-slip reading and payroll-line understanding, also use the <a href="/salary-slip-tax-calculator-pakistan.html" class="text-emerald-400 hover:text-emerald-300 font-semibold">salary slip tax calculator</a>. If you are comparing an increment or the Federal BPS-2026 revision, use the <a href="/salary-increase-calculator-pakistan.html" class="text-emerald-400 hover:text-emerald-300 font-semibold">salary increase calculator</a>. For the underlying rules, read our <a href="/blog/salary-tax-monthly-vs-annual-pakistan.html" class="text-emerald-400 hover:text-emerald-300 font-semibold">monthly vs annual salary tax guide</a>, <a href="/blog/how-employer-calculates-salary-tax-pakistan.html" class="text-emerald-400 hover:text-emerald-300 font-semibold">employer payroll guide</a>, and <a href="/blog/salary-after-tax-pakistan.html" class="text-emerald-400 hover:text-emerald-300 font-semibold">salary after tax explainer</a>.</p>
             </div>
@@ -75,7 +83,7 @@ const mobileMenuBtn=document.getElementById('mobileMenuBtn');const mobileMenu=do
 function formatCurrency(value){return 'Rs. '+Math.round(value).toLocaleString('en-PK');}
 const SALARY_TAX_SLABS_2027=[{threshold:600000,baseTax:0,baseIncome:0,rate:0},{threshold:1200000,baseTax:0,baseIncome:600000,rate:0.01},{threshold:2200000,baseTax:6000,baseIncome:1200000,rate:0.11},{threshold:3200000,baseTax:116000,baseIncome:2200000,rate:0.20},{threshold:4100000,baseTax:316000,baseIncome:3200000,rate:0.25},{threshold:5600000,baseTax:541000,baseIncome:4100000,rate:0.29},{threshold:7000000,baseTax:976000,baseIncome:5600000,rate:0.32},{threshold:Infinity,baseTax:1424000,baseIncome:7000000,rate:0.35}];
 function annualTaxFromIncome(income){const slab=SALARY_TAX_SLABS_2027.find(item=>income<=item.threshold);return Math.max(0,slab.baseTax+Math.max(0,income-slab.baseIncome)*slab.rate);}
-function calculate(){const monthlySalary=Number(document.getElementById('monthlySalary').value)||0;const annualBonus=Number(document.getElementById('annualBonus').value)||0;const providentFund=Number(document.getElementById('providentFund').value)||0;const eobi=Number(document.getElementById('eobi').value)||0;const annualGross=(monthlySalary*12)+annualBonus;const deductible=(providentFund+eobi)*12;const taxableIncome=Math.max(0,annualGross-deductible);const annualTax=annualTaxFromIncome(taxableIncome);const monthlyTax=annualTax/12;const netMonthly=monthlySalary-monthlyTax-providentFund-eobi;const rate=annualGross?((annualTax/annualGross)*100):0;document.getElementById('annualTax').textContent=formatCurrency(annualTax);document.getElementById('monthlyTax').textContent=formatCurrency(monthlyTax);document.getElementById('netMonthly').textContent=formatCurrency(netMonthly);document.getElementById('effectiveRate').textContent=rate.toFixed(2)+'%';}
+function calculate(){const monthlySalary=Math.max(0,Number(document.getElementById('monthlySalary').value)||0);const annualBonus=Math.max(0,Number(document.getElementById('annualBonus').value)||0);const providentFund=Math.max(0,Number(document.getElementById('providentFund').value)||0);const eobi=Math.max(0,Number(document.getElementById('eobi').value)||0);const annualGross=(monthlySalary*12)+annualBonus;const annualTax=annualTaxFromIncome(annualGross);const monthlyTax=annualTax/12;const netMonthly=monthlySalary-monthlyTax-providentFund-eobi;const rate=annualGross?((annualTax/annualGross)*100):0;document.getElementById('annualTax').textContent=formatCurrency(annualTax);document.getElementById('monthlyTax').textContent=formatCurrency(monthlyTax);document.getElementById('netMonthly').textContent=formatCurrency(netMonthly);document.getElementById('effectiveRate').textContent=rate.toFixed(2)+'%';}
 document.getElementById('calculateBtn').addEventListener('click',calculate);calculate();
 </script>
 </body>

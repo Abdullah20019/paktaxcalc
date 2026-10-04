@@ -2,6 +2,11 @@
     "cleanUrls":  false,
     "redirects":  [
                       {
+                          "source":  "/blog/how-to-calculate-salary-tax-pakistan.html",
+                          "destination":  "/blog/salary-tax-calculator-pakistan-2026.html",
+                          "permanent":  true
+                      },
+                      {
                           "source":  "/llm.txt",
                           "destination":  "/llms.txt",
                           "permanent":  true
